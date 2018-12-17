@@ -350,6 +350,7 @@ definitions:
       enabled:
         description: Enable or disable the Message VPN. The default value is `false`.
         type: boolean
+        x-nullable: true
       eventConnectionCountThreshold:
         $ref: '#/definitions/EventThreshold'
       eventEgressFlowCountThreshold:

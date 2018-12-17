@@ -109,7 +109,7 @@ type MsgVpn struct {
 	DistributedCacheManagementEnabled bool `json:"distributedCacheManagementEnabled,omitempty"`
 
 	// Enable or disable the Message VPN. The default value is `false`.
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled"`
 
 	// event connection count threshold
 	EventConnectionCountThreshold *EventThreshold `json:"eventConnectionCountThreshold,omitempty"`

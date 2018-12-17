@@ -261,7 +261,7 @@ type MsgVpn struct {
 	ReplicationBridgeUnidirectionalClientProfileName string `json:"replicationBridgeUnidirectionalClientProfileName,omitempty"`
 
 	// Enable or disable the Replication feature for the Message VPN. The default value is `false`.
-	ReplicationEnabled bool `json:"replicationEnabled,omitempty"`
+	ReplicationEnabled bool `json:"replicationEnabled"`
 
 	// The behavior to take when enabling the Replication feature for the Message VPN, depending on the existence of the Replication Queue. The default value is `"fail-on-existing-queue"`. The allowed values and their meaning are:
 	//

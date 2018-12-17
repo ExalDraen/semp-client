@@ -565,6 +565,7 @@ definitions:
         description: Enable or disable the Replication feature for the Message VPN.
           The default value is `false`.
         type: boolean
+        x-omitempty: false
       replicationEnabledQueueBehavior:
         description: 'The behavior to take when enabling the Replication feature for
           the Message VPN, depending on the existence of the Replication Queue. The

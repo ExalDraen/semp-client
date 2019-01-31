@@ -194,6 +194,7 @@ definitions:
         description: Enable or disable Basic Authentication for clients connecting
           to the Message VPN. The default value is `true`.
         type: boolean
+        x-nullable: true
       authenticationBasicProfileName:
         description: The name of the RADIUS or LDAP Profile to use when "authenticationBasicType"
           is "radius" or "ldap" respectively. The default value is `"default"`.
@@ -350,7 +351,7 @@ definitions:
       enabled:
         description: Enable or disable the Message VPN. The default value is `false`.
         type: boolean
-        x-omitempty: false
+        x-nullable: true
       eventConnectionCountThreshold:
         $ref: '#/definitions/EventThreshold'
       eventEgressFlowCountThreshold:
@@ -455,42 +456,50 @@ definitions:
           The default is the max value supported by the hardware.
         format: int64
         type: integer
+        x-nullable: true
       maxEgressFlowCount:
         description: The maximum number of egress flows that can be created in the
           Message VPN. The default value is `16000`.
         format: int64
         type: integer
+        x-nullable: true
       maxEndpointCount:
         description: The maximum number of Queues and Topic Endpoints that can be
           created in the Message VPN. The default value is `16000`.
         format: int64
         type: integer
+        x-nullable: true
       maxIngressFlowCount:
         description: The maximum number of ingress flows that can be created in the
           Message VPN. The default value is `16000`.
         format: int64
         type: integer
+        x-nullable: true
       maxMsgSpoolUsage:
         description: The maximum Message Spool usage by the Message VPN, in megabytes.
           The default value is `0`.
         format: int64
         type: integer
+        x-nullable: true
       maxSubscriptionCount:
         description: The maximum number of local client subscriptions (both primary
           and backup) that can be added to the Message VPN. The default varies by
           platform. The default varies by platform.
         format: int64
         type: integer
+        x-nullable: true
       maxTransactedSessionCount:
         description: The maximum number of transacted sessions for the Message VPN.
           The default varies by platform. The default varies by platform.
         format: int64
         type: integer
+        x-nullable: true
       maxTransactionCount:
         description: The maximum number of transactions for the Message VPN. The default
           varies by platform. The default varies by platform.
         format: int64
         type: integer
+        x-nullable: true
       msgVpnName:
         description: The name of the Message VPN.
         type: string
@@ -565,7 +574,7 @@ definitions:
         description: Enable or disable the Replication feature for the Message VPN.
           The default value is `false`.
         type: boolean
-        x-omitempty: false
+        x-nullable: true
       replicationEnabledQueueBehavior:
         description: 'The behavior to take when enabling the Replication feature for
           the Message VPN, depending on the existence of the Replication Queue. The

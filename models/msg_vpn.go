@@ -20,7 +20,7 @@ import (
 type MsgVpn struct {
 
 	// Enable or disable Basic Authentication for clients connecting to the Message VPN. The default value is `true`.
-	AuthenticationBasicEnabled bool `json:"authenticationBasicEnabled,omitempty"`
+	AuthenticationBasicEnabled *bool `json:"authenticationBasicEnabled,omitempty"`
 
 	// The name of the RADIUS or LDAP Profile to use when "authenticationBasicType" is "radius" or "ldap" respectively. The default value is `"default"`.
 	AuthenticationBasicProfileName string `json:"authenticationBasicProfileName,omitempty"`
@@ -109,7 +109,7 @@ type MsgVpn struct {
 	DistributedCacheManagementEnabled bool `json:"distributedCacheManagementEnabled,omitempty"`
 
 	// Enable or disable the Message VPN. The default value is `false`.
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 
 	// event connection count threshold
 	EventConnectionCountThreshold *EventThreshold `json:"eventConnectionCountThreshold,omitempty"`
@@ -194,28 +194,28 @@ type MsgVpn struct {
 	JndiEnabled bool `json:"jndiEnabled,omitempty"`
 
 	// The maximum number of client connections that can be simultaneously connected to the Message VPN. This value may be higher than supported by the hardware. The default is the maximum value supported by the hardware. The default is the max value supported by the hardware.
-	MaxConnectionCount int64 `json:"maxConnectionCount,omitempty"`
+	MaxConnectionCount *int64 `json:"maxConnectionCount,omitempty"`
 
 	// The maximum number of egress flows that can be created in the Message VPN. The default value is `16000`.
-	MaxEgressFlowCount int64 `json:"maxEgressFlowCount,omitempty"`
+	MaxEgressFlowCount *int64 `json:"maxEgressFlowCount,omitempty"`
 
 	// The maximum number of Queues and Topic Endpoints that can be created in the Message VPN. The default value is `16000`.
-	MaxEndpointCount int64 `json:"maxEndpointCount,omitempty"`
+	MaxEndpointCount *int64 `json:"maxEndpointCount,omitempty"`
 
 	// The maximum number of ingress flows that can be created in the Message VPN. The default value is `16000`.
-	MaxIngressFlowCount int64 `json:"maxIngressFlowCount,omitempty"`
+	MaxIngressFlowCount *int64 `json:"maxIngressFlowCount,omitempty"`
 
 	// The maximum Message Spool usage by the Message VPN, in megabytes. The default value is `0`.
-	MaxMsgSpoolUsage int64 `json:"maxMsgSpoolUsage,omitempty"`
+	MaxMsgSpoolUsage *int64 `json:"maxMsgSpoolUsage,omitempty"`
 
 	// The maximum number of local client subscriptions (both primary and backup) that can be added to the Message VPN. The default varies by platform. The default varies by platform.
-	MaxSubscriptionCount int64 `json:"maxSubscriptionCount,omitempty"`
+	MaxSubscriptionCount *int64 `json:"maxSubscriptionCount,omitempty"`
 
 	// The maximum number of transacted sessions for the Message VPN. The default varies by platform. The default varies by platform.
-	MaxTransactedSessionCount int64 `json:"maxTransactedSessionCount,omitempty"`
+	MaxTransactedSessionCount *int64 `json:"maxTransactedSessionCount,omitempty"`
 
 	// The maximum number of transactions for the Message VPN. The default varies by platform. The default varies by platform.
-	MaxTransactionCount int64 `json:"maxTransactionCount,omitempty"`
+	MaxTransactionCount *int64 `json:"maxTransactionCount,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
@@ -261,7 +261,7 @@ type MsgVpn struct {
 	ReplicationBridgeUnidirectionalClientProfileName string `json:"replicationBridgeUnidirectionalClientProfileName,omitempty"`
 
 	// Enable or disable the Replication feature for the Message VPN. The default value is `false`.
-	ReplicationEnabled bool `json:"replicationEnabled"`
+	ReplicationEnabled *bool `json:"replicationEnabled,omitempty"`
 
 	// The behavior to take when enabling the Replication feature for the Message VPN, depending on the existence of the Replication Queue. The default value is `"fail-on-existing-queue"`. The allowed values and their meaning are:
 	//

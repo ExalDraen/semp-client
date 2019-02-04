@@ -33,7 +33,7 @@ type MsgVpnBridgeRemoteSubscription struct {
 	// Enum: [primary backup auto]
 	BridgeVirtualRouter string `json:"bridgeVirtualRouter,omitempty"`
 
-	// Flag the Subscription Topic as deliver always instead of with the deliver-to-one remote priority value for the Bridge given by `remoteDeliverToOnePriority`. A given topic may be deliver-to-one or deliver always but not both.
+	// Flag the Subscription Topic as deliver always instead of with the deliver-to-one remote priority value for the Bridge given by "remoteDeliverToOnePriority". A given topic may be deliver-to-one or deliver always but not both.
 	DeliverAlwaysEnabled bool `json:"deliverAlwaysEnabled,omitempty"`
 
 	// The name of the Message VPN.

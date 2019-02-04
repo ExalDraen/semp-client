@@ -441,7 +441,6 @@ authenticationKerberosEnabled|global/readwrite
 bridgingTlsServerCertEnforceTrustedCommonNameEnabled|global/readwrite
 bridgingTlsServerCertMaxChainDepth|global/readwrite
 bridgingTlsServerCertValidateDateEnabled|global/readwrite
-dmrEnabled|global/readwrite
 exportSubscriptionsEnabled|global/readwrite
 maxConnectionCount|global/readwrite
 maxEgressFlowCount|global/readwrite
@@ -472,6 +471,7 @@ sempOverMsgBusAdminClientEnabled|global/readwrite
 sempOverMsgBusAdminDistributedCacheEnabled|global/readwrite
 sempOverMsgBusAdminEnabled|global/readwrite
 sempOverMsgBusEnabled|global/readwrite
+sempOverMsgBusLegacyShowClearEnabled|global/readwrite
 sempOverMsgBusShowEnabled|global/readwrite
 serviceRestIncomingMaxConnectionCount|global/readwrite
 serviceRestIncomingPlainTextListenPort|global/readwrite
@@ -568,7 +568,6 @@ authenticationKerberosEnabled|global/readwrite
 bridgingTlsServerCertEnforceTrustedCommonNameEnabled|global/readwrite
 bridgingTlsServerCertMaxChainDepth|global/readwrite
 bridgingTlsServerCertValidateDateEnabled|global/readwrite
-dmrEnabled|global/readwrite
 exportSubscriptionsEnabled|global/readwrite
 maxConnectionCount|global/readwrite
 maxEgressFlowCount|global/readwrite
@@ -599,6 +598,7 @@ sempOverMsgBusAdminClientEnabled|global/readwrite
 sempOverMsgBusAdminDistributedCacheEnabled|global/readwrite
 sempOverMsgBusAdminEnabled|global/readwrite
 sempOverMsgBusEnabled|global/readwrite
+sempOverMsgBusLegacyShowClearEnabled|global/readwrite
 sempOverMsgBusShowEnabled|global/readwrite
 serviceRestIncomingMaxConnectionCount|global/readwrite
 serviceRestIncomingPlainTextListenPort|global/readwrite

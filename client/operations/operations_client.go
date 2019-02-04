@@ -882,6 +882,49 @@ func (a *Client) CreateMsgVpnQueueSubscription(params *CreateMsgVpnQueueSubscrip
 }
 
 /*
+CreateMsgVpnReplayLog creates a replay log object
+
+Creates a ReplayLog object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+msgVpnName|x||x||
+replayLogName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+
+This has been available since 2.10.
+*/
+func (a *Client) CreateMsgVpnReplayLog(params *CreateMsgVpnReplayLogParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnReplayLogOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnReplayLogParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnReplayLog",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/replayLogs",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnReplayLogReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnReplayLogOK), nil
+
+}
+
+/*
 CreateMsgVpnReplicatedTopic creates a replicated topic object
 
 Creates a Replicated Topic object. Any attribute missing from the request will be set to its default value.
@@ -1088,7 +1131,7 @@ tlsTrustedCommonName|x|x|||
 
 A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
 
-This has been available since 2.7.
+This has been available since 2.0.
 */
 func (a *Client) CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(params *CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameOK, error) {
 	// TODO: Validate the params before sending
@@ -1802,6 +1845,41 @@ func (a *Client) DeleteMsgVpnQueueSubscription(params *DeleteMsgVpnQueueSubscrip
 }
 
 /*
+DeleteMsgVpnReplayLog deletes a replay log object
+
+Deletes a ReplayLog object.
+
+A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+
+This has been available since 2.10.
+*/
+func (a *Client) DeleteMsgVpnReplayLog(params *DeleteMsgVpnReplayLogParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnReplayLogOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnReplayLogParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnReplayLog",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/replayLogs/{replayLogName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnReplayLogReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnReplayLogOK), nil
+
+}
+
+/*
 DeleteMsgVpnReplicatedTopic deletes a replicated topic object
 
 Deletes a Replicated Topic object.
@@ -1948,7 +2026,7 @@ Deletes a Trusted Common Name object.
 
 A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
 
-This has been available since 2.7.
+This has been available since 2.0.
 */
 func (a *Client) DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(params *DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameOK, error) {
 	// TODO: Validate the params before sending
@@ -3610,6 +3688,92 @@ func (a *Client) GetMsgVpnQueues(params *GetMsgVpnQueuesParams, authInfo runtime
 }
 
 /*
+GetMsgVpnReplayLog gets a replay log object
+
+Gets a ReplayLog object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+msgVpnName|x||
+replayLogName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+
+This has been available since 2.10.
+*/
+func (a *Client) GetMsgVpnReplayLog(params *GetMsgVpnReplayLogParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnReplayLogOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnReplayLogParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnReplayLog",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/replayLogs/{replayLogName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnReplayLogReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnReplayLogOK), nil
+
+}
+
+/*
+GetMsgVpnReplayLogs gets a list of replay log objects
+
+Gets a list of ReplayLog objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+msgVpnName|x||
+replayLogName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+
+This has been available since 2.10.
+*/
+func (a *Client) GetMsgVpnReplayLogs(params *GetMsgVpnReplayLogsParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnReplayLogsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnReplayLogsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnReplayLogs",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/replayLogs",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnReplayLogsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnReplayLogsOK), nil
+
+}
+
+/*
 GetMsgVpnReplicatedTopic gets a replicated topic object
 
 Gets a Replicated Topic object.
@@ -3890,7 +4054,7 @@ tlsTrustedCommonName|x||
 
 A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
 
-This has been available since 2.7.
+This has been available since 2.0.
 */
 func (a *Client) GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(params *GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameOK, error) {
 	// TODO: Validate the params before sending
@@ -3935,7 +4099,7 @@ tlsTrustedCommonName|x||
 
 A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
 
-This has been available since 2.7.
+This has been available since 2.0.
 */
 func (a *Client) GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNames(params *GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesOK, error) {
 	// TODO: Validate the params before sending
@@ -4741,6 +4905,49 @@ func (a *Client) ReplaceMsgVpnQueue(params *ReplaceMsgVpnQueueParams, authInfo r
 		return nil, err
 	}
 	return result.(*ReplaceMsgVpnQueueOK), nil
+
+}
+
+/*
+ReplaceMsgVpnReplayLog replaces a replay log object
+
+Replaces a ReplayLog object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+msgVpnName|x|x|||
+replayLogName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+
+This has been available since 2.10.
+*/
+func (a *Client) ReplaceMsgVpnReplayLog(params *ReplaceMsgVpnReplayLogParams, authInfo runtime.ClientAuthInfoWriter) (*ReplaceMsgVpnReplayLogOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReplaceMsgVpnReplayLogParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "replaceMsgVpnReplayLog",
+		Method:             "PUT",
+		PathPattern:        "/msgVpns/{msgVpnName}/replayLogs/{replayLogName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &ReplaceMsgVpnReplayLogReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ReplaceMsgVpnReplayLogOK), nil
 
 }
 
@@ -5603,6 +5810,49 @@ func (a *Client) UpdateMsgVpnQueue(params *UpdateMsgVpnQueueParams, authInfo run
 		return nil, err
 	}
 	return result.(*UpdateMsgVpnQueueOK), nil
+
+}
+
+/*
+UpdateMsgVpnReplayLog updates a replay log object
+
+Updates a ReplayLog object. Any attribute missing from the request will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+msgVpnName|x|x|||
+replayLogName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+
+This has been available since 2.10.
+*/
+func (a *Client) UpdateMsgVpnReplayLog(params *UpdateMsgVpnReplayLogParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateMsgVpnReplayLogOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateMsgVpnReplayLogParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "updateMsgVpnReplayLog",
+		Method:             "PATCH",
+		PathPattern:        "/msgVpns/{msgVpnName}/replayLogs/{replayLogName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &UpdateMsgVpnReplayLogReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*UpdateMsgVpnReplayLogOK), nil
 
 }
 

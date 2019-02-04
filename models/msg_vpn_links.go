@@ -45,6 +45,9 @@ type MsgVpnLinks struct {
 	// The URI of this MsgVpn's queues collection.
 	QueuesURI string `json:"queuesUri,omitempty"`
 
+	// The URI of this MsgVpn's replayLogs collection. Available since 2.10.
+	ReplayLogsURI string `json:"replayLogsUri,omitempty"`
+
 	// The URI of this MsgVpn's replicatedTopics collection. Available since 2.9.
 	ReplicatedTopicsURI string `json:"replicatedTopicsUri,omitempty"`
 

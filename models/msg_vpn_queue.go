@@ -32,7 +32,7 @@ type MsgVpnQueue struct {
 	// Enable or disable the propagation of Consumer ACKs received on the active replication Message VPN to the standby replication Message VPN. The default value is `true`.
 	ConsumerAckPropagationEnabled bool `json:"consumerAckPropagationEnabled,omitempty"`
 
-	// The name of the Dead Message Queue (DMQ) used by the Queue. The default value is `"#DEAD_MSG_QUEUE"`. Available since 2.2.
+	// The name of the Dead Message Queue (DMQ) used by the Queue. The default value is `"#DEAD_MSG_QUEUE"`.
 	DeadMsgQueue string `json:"deadMsgQueue,omitempty"`
 
 	// Enable or disable the egress flow of messages from the Queue. The default value is `false`.
@@ -103,7 +103,7 @@ type MsgVpnQueue struct {
 	// "when-queue-enabled" - Message discards result in negative acknowledgments (NACKs) being returned to the sending client, except if the discard reason is that the Queue is disabled.
 	// "never" - Message discards never result in negative acknowledgments (NACKs) being returned to the sending client.
 	// </pre>
-	//  Available since 2.1.
+	//
 	// Enum: [always when-queue-enabled never]
 	RejectMsgToSenderOnDiscardBehavior string `json:"rejectMsgToSenderOnDiscardBehavior,omitempty"`
 

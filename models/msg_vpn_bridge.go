@@ -58,11 +58,10 @@ type MsgVpnBridge struct {
 	//
 	// <pre>
 	// "basic" - Basic Authentication Scheme (via username and password).
-	// "client-certificate" - Client Certificate Authentication Scheme (via certificate-file).
-	// "not-applicable" - Monitor Only Value.
+	// "client-certificate" - Client Certificate Authentication Scheme (via certificate file or content).
 	// </pre>
 	//
-	// Enum: [basic client-certificate not-applicable]
+	// Enum: [basic client-certificate]
 	RemoteAuthenticationScheme string `json:"remoteAuthenticationScheme,omitempty"`
 
 	// The maximum number of attempts to establish a connection to the Remote Message VPN. The default value is `0`.
@@ -84,7 +83,7 @@ type MsgVpnBridge struct {
 	// Enum: [p1 p2 p3 p4 da]
 	RemoteDeliverToOnePriority string `json:"remoteDeliverToOnePriority,omitempty"`
 
-	// The list of cipher suites supported for TLS connections to the Remote Message VPN. The default value is `"ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:AES256-GCM-SHA384:AES256-SHA256:AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:AES128-GCM-SHA256:AES128-SHA256:AES128-SHA"`.
+	// The list of cipher suites supported for TLS connections to the Remote Message VPN. The default value is `"default"`.
 	TLSCipherSuiteList string `json:"tlsCipherSuiteList,omitempty"`
 }
 
@@ -160,7 +159,7 @@ var msgVpnBridgeTypeRemoteAuthenticationSchemePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["basic","client-certificate","not-applicable"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["basic","client-certificate"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -175,9 +174,6 @@ const (
 
 	// MsgVpnBridgeRemoteAuthenticationSchemeClientCertificate captures enum value "client-certificate"
 	MsgVpnBridgeRemoteAuthenticationSchemeClientCertificate string = "client-certificate"
-
-	// MsgVpnBridgeRemoteAuthenticationSchemeNotApplicable captures enum value "not-applicable"
-	MsgVpnBridgeRemoteAuthenticationSchemeNotApplicable string = "not-applicable"
 )
 
 // prop value enum

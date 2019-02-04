@@ -57,7 +57,7 @@ type MsgVpnBridgeRemoteMsgVpn struct {
 	// The queue binding of the Bridge for the Remote Message VPN. The Bridge attempts to bind to that queue over the Bridge link once the link has been established, or immediately if it already is established. The queue must be configured on the remote router when the Bridge connection is established. If the bind fails an event log is generated which includes the reason for the failure. The default value is `""`.
 	QueueBinding string `json:"queueBinding,omitempty"`
 
-	// The interface on the local router through which to access the Remote Message VPN. If not provided (recommended) then an interface will be chosen automatically based on routing tables. If an interface is provided, `remoteMsgVpnLocation` must be either a hostname or IP Address, not a virtual router-name.
+	// The interface on the local router through which to access the Remote Message VPN. If not provided (recommended) then an interface will be chosen automatically based on routing tables. If an interface is provided, "remoteMsgVpnLocation" must be either a hostname or IP Address, not a virtual router-name.
 	RemoteMsgVpnInterface string `json:"remoteMsgVpnInterface,omitempty"`
 
 	// The location of the Remote Message VPN. This may be given as either an FQDN (resolvable via DNS), IP Address, or virtual router-name (starts with 'v:'). If specified as a FQDN or IP Address, a port must be specified as well.

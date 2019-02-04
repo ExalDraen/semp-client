@@ -19,14 +19,14 @@ import (
 // swagger:model MsgVpnMqttSessionSubscription
 type MsgVpnMqttSessionSubscription struct {
 
-	// The client-id of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
+	// The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 	MqttSessionClientID string `json:"mqttSessionClientId,omitempty"`
 
 	// The Virtual Router of the MQTT Session. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "primary" - MQTT Session belongs to the primary Virtual Router.
-	// "backup" - MQTT Session belongs to the backup Virtual Router.
+	// "primary" - The MQTT Session belongs to the primary Virtual Router.
+	// "backup" - The MQTT Session belongs to the backup Virtual Router.
 	// </pre>
 	//
 	// Enum: [primary backup]
@@ -35,10 +35,10 @@ type MsgVpnMqttSessionSubscription struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The quality of service for the subscription. The value is either `0` (deliver at most once) or `1` (deliver at least once). The default value is `0`.
+	// The quality of service (QoS) for the subscription as either 0 (deliver at most once) or 1 (deliver at least once). QoS 2 is not supported, but QoS 2 messages attracted by QoS 0 or QoS 1 subscriptions are accepted and delivered accordingly. The default value is `0`.
 	SubscriptionQos int64 `json:"subscriptionQos,omitempty"`
 
-	// An MQTT topic string.
+	// The MQTT subscription topic.
 	SubscriptionTopic string `json:"subscriptionTopic,omitempty"`
 }
 

@@ -19,17 +19,17 @@ import (
 // swagger:model MsgVpnMqttSession
 type MsgVpnMqttSession struct {
 
-	// Enable or disable the MQTT Session. When disabled a client attempting to connect to this session will be denied, and an existing connection will be closed. QoS 1 subscriptions of an MQTT Session will continue to attract messages while disabled. The default value is `false`.
+	// Enable or disable the MQTT Session. When disabled, the client is disconnected, new messages matching QoS 0 subscriptions are discarded, and new messages matching QoS 1 subscriptions are stored for future delivery. The default value is `false`.
 	Enabled bool `json:"enabled,omitempty"`
 
-	// The client-id of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
+	// The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 	MqttSessionClientID string `json:"mqttSessionClientId,omitempty"`
 
 	// The Virtual Router of the MQTT Session. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "primary" - MQTT Session belongs to the primary Virtual Router.
-	// "backup" - MQTT Session belongs to the backup Virtual Router.
+	// "primary" - The MQTT Session belongs to the primary Virtual Router.
+	// "backup" - The MQTT Session belongs to the backup Virtual Router.
 	// </pre>
 	//
 	// Enum: [primary backup]
@@ -38,7 +38,7 @@ type MsgVpnMqttSession struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The owner of the MQTT Session. For externally-created sessions this will be the Client Username of the connecting client. For management-created sessions this will be empty by default. In either case the owner can be changed by the administrator. The MQTT Session must be disabled to change its owner. The default value is `""`.
+	// The owner of the MQTT Session. For externally-created sessions this defaults to the Client Username of the connecting client. For management-created sessions this defaults to empty. Before configuring, the MQTT Session must be disabled. The default value is `""`.
 	Owner string `json:"owner,omitempty"`
 }
 

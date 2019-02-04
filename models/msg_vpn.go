@@ -23,7 +23,7 @@ type MsgVpn struct {
 	AuthenticationBasicEnabled *bool `json:"authenticationBasicEnabled,omitempty"`
 
 	// The name of the RADIUS or LDAP Profile to use when "authenticationBasicType" is "radius" or "ldap" respectively. The default value is `"default"`.
-	AuthenticationBasicProfileName string `json:"authenticationBasicProfileName,omitempty"`
+	AuthenticationBasicProfileName *string `json:"authenticationBasicProfileName,omitempty"`
 
 	// The RADIUS domain string to use when "authenticationBasicType" is "radius". The default value is `""`.
 	AuthenticationBasicRadiusDomain string `json:"authenticationBasicRadiusDomain,omitempty"`
@@ -105,7 +105,7 @@ type MsgVpn struct {
 	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the server certificate. When disabled, a certificate will be accepted even if the certificate is not valid according to the "Not Before" and "Not After" validity dates in the certificate. The default value is `true`.
 	BridgingTLSServerCertValidateDateEnabled bool `json:"bridgingTlsServerCertValidateDateEnabled,omitempty"`
 
-	// Enable or disable managing of Cache Instances over the Message Bus. For a given Message VPN only one router in the network should have this attribute enabled. The default value is `true`.
+	// Enable or disable managing of cache instances over the message bus. The default value is `true`.
 	DistributedCacheManagementEnabled bool `json:"distributedCacheManagementEnabled,omitempty"`
 
 	// Enable or disable the Message VPN. The default value is `false`.
@@ -220,6 +220,16 @@ type MsgVpn struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
+	// IP version to use if DNS lookup contains both an IPv4 and IPv6 address. The default value is `"ipv6"`. The allowed values and their meaning are:
+	//
+	// <pre>
+	// "ipv4" - Use IPv4 address when DNS lookup contains both an IPv4 and IPv6 address.
+	// "ipv6" - Use IPv6 address when DNS lookup contains both an IPv4 and IPv6 address.
+	// </pre>
+	//  Available since 2.9.
+	// Enum: [ipv4 ipv6]
+	PreferIPVersion string `json:"preferIpVersion,omitempty"`
+
 	// The acknowledgement (ACK) propagation interval for the Replication Bridge, in number of replicated messages. The default value is `20`.
 	ReplicationAckPropagationIntervalMsgCount int64 `json:"replicationAckPropagationIntervalMsgCount,omitempty"`
 
@@ -239,7 +249,7 @@ type MsgVpn struct {
 	//
 	// <pre>
 	// "basic" - Basic Authentication Scheme (via username and password).
-	// "client-certificate" - Client Certificate Authentication Scheme (via certificate-file).
+	// "client-certificate" - Client Certificate Authentication Scheme (via certificate file or content).
 	// </pre>
 	//
 	// Enum: [basic client-certificate]
@@ -312,19 +322,22 @@ type MsgVpn struct {
 	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the server certificate from the remote REST Consumer. When disabled, a certificate will be accepted even if the certificate is not valid according to the "Not Before" and "Not After" validity dates in the certificate. The default value is `true`.
 	RestTLSServerCertValidateDateEnabled bool `json:"restTlsServerCertValidateDateEnabled,omitempty"`
 
-	// Enable or disable "admin client" SEMP over Message Bus for the current Message VPN. This applies only to SEMPv1. The default value is `false`.
+	// Enable or disable "admin client" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
 	SempOverMsgBusAdminClientEnabled bool `json:"sempOverMsgBusAdminClientEnabled,omitempty"`
 
-	// Enable or disable "admin distributed-cache" SEMP over Message Bus for the current Message VPN. This applies only to SEMPv1. The default value is `false`.
+	// Enable or disable "admin distributed-cache" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
 	SempOverMsgBusAdminDistributedCacheEnabled bool `json:"sempOverMsgBusAdminDistributedCacheEnabled,omitempty"`
 
-	// Enable or disable "admin" SEMP over Message Bus for the current Message VPN. This applies only to SEMPv1. The default value is `false`.
+	// Enable or disable "admin" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
 	SempOverMsgBusAdminEnabled bool `json:"sempOverMsgBusAdminEnabled,omitempty"`
 
-	// Enable or disable SEMP over Message Bus for the current Message VPN. This applies only to SEMPv1. The default value is `true`.
+	// Enable or disable SEMP over the message bus for the current Message VPN. The default value is `true`.
 	SempOverMsgBusEnabled bool `json:"sempOverMsgBusEnabled,omitempty"`
 
-	// Enable or disable "show" SEMP over Message Bus for the current Message VPN. This applies only to SEMPv1. The default value is `false`.
+	// Enable or disable "legacy-show-clear" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
+	SempOverMsgBusLegacyShowClearEnabled bool `json:"sempOverMsgBusLegacyShowClearEnabled,omitempty"`
+
+	// Enable or disable "show" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
 	SempOverMsgBusShowEnabled bool `json:"sempOverMsgBusShowEnabled,omitempty"`
 
 	// The maximum number of AMQP client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the hardware. Available since 2.2.
@@ -500,6 +513,10 @@ func (m *MsgVpn) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateEventTransactionCountThreshold(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePreferIPVersion(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1027,6 +1044,49 @@ func (m *MsgVpn) validateEventTransactionCountThreshold(formats strfmt.Registry)
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+var msgVpnTypePreferIPVersionPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["ipv4","ipv6"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		msgVpnTypePreferIPVersionPropEnum = append(msgVpnTypePreferIPVersionPropEnum, v)
+	}
+}
+
+const (
+
+	// MsgVpnPreferIPVersionIPV4 captures enum value "ipv4"
+	MsgVpnPreferIPVersionIPV4 string = "ipv4"
+
+	// MsgVpnPreferIPVersionIPV6 captures enum value "ipv6"
+	MsgVpnPreferIPVersionIPV6 string = "ipv6"
+)
+
+// prop value enum
+func (m *MsgVpn) validatePreferIPVersionEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, msgVpnTypePreferIPVersionPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *MsgVpn) validatePreferIPVersion(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.PreferIPVersion) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validatePreferIPVersionEnum("preferIpVersion", "body", m.PreferIPVersion); err != nil {
+		return err
 	}
 
 	return nil

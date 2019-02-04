@@ -25,19 +25,19 @@ type MsgVpnClientUsername struct {
 	ClientUsername string `json:"clientUsername,omitempty"`
 
 	// Enables or disables the Client Username. When disabled all clients currently connected as the Client Username are disconnected. The default value is `false`.
-	Enabled bool `json:"enabled,omitempty"`
+	Enabled *bool `json:"enabled,omitempty"`
 
 	// Enables or disables guaranteed endpoint permission override for the Client Username. When enabled all guaranteed endpoints may be accessed, modified or deleted with the same permission as the owner. The default value is `false`.
-	GuaranteedEndpointPermissionOverrideEnabled bool `json:"guaranteedEndpointPermissionOverrideEnabled,omitempty"`
+	GuaranteedEndpointPermissionOverrideEnabled *bool `json:"guaranteedEndpointPermissionOverrideEnabled,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
 	// The password of this Client Username for internal Authentication. The default is to have no password. The default is to have no `password`.
-	Password string `json:"password,omitempty"`
+	Password *string `json:"password,omitempty"`
 
 	// Enables or disables the subscription management capability of the Client Username. This is the ability to manage subscriptions on behalf of other Client Usernames. The default value is `false`.
-	SubscriptionManagerEnabled bool `json:"subscriptionManagerEnabled,omitempty"`
+	SubscriptionManagerEnabled *bool `json:"subscriptionManagerEnabled,omitempty"`
 }
 
 // Validate validates this msg vpn client username

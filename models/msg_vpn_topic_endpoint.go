@@ -32,7 +32,7 @@ type MsgVpnTopicEndpoint struct {
 	// Enable or disable the propagation of Consumer ACKs received on the active replication Message VPN to the standby replication Message VPN. The default value is `true`.
 	ConsumerAckPropagationEnabled bool `json:"consumerAckPropagationEnabled,omitempty"`
 
-	// The name of the Dead Message Queue (DMQ) used by the Topic Endpoint. The default value is `"#DEAD_MSG_QUEUE"`. Available since 2.2.
+	// The name of the Dead Message Queue (DMQ) used by the Topic Endpoint. The default value is `"#DEAD_MSG_QUEUE"`.
 	DeadMsgQueue string `json:"deadMsgQueue,omitempty"`
 
 	// Enable or disable the egress flow of messages from the Topic Endpoint. The default value is `false`.

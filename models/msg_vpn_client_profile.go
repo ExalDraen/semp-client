@@ -17,22 +17,22 @@ import (
 type MsgVpnClientProfile struct {
 
 	// Allow or deny Bridge clients to connect. Changing this setting does not affect existing Bridge client connections. The default value is `false`.
-	AllowBridgeConnectionsEnabled bool `json:"allowBridgeConnectionsEnabled,omitempty"`
+	AllowBridgeConnectionsEnabled *bool `json:"allowBridgeConnectionsEnabled,omitempty"`
 
 	// Allow or deny clients to bind to topic endpoints or queues with the cut-through delivery mode. Changing this setting does not affect existing client connections. The default value is `false`.
-	AllowCutThroughForwardingEnabled bool `json:"allowCutThroughForwardingEnabled,omitempty"`
+	AllowCutThroughForwardingEnabled *bool `json:"allowCutThroughForwardingEnabled,omitempty"`
 
 	// Allow or deny clients to create topic endponts or queues. Changing this setting does not affect existing client connections. The default value is `false`.
-	AllowGuaranteedEndpointCreateEnabled bool `json:"allowGuaranteedEndpointCreateEnabled,omitempty"`
+	AllowGuaranteedEndpointCreateEnabled *bool `json:"allowGuaranteedEndpointCreateEnabled,omitempty"`
 
 	// Allow or deny clients to receive guaranteed messages. Changing this setting does not affect existing client connections. The default value is `false`.
-	AllowGuaranteedMsgReceiveEnabled bool `json:"allowGuaranteedMsgReceiveEnabled,omitempty"`
+	AllowGuaranteedMsgReceiveEnabled *bool `json:"allowGuaranteedMsgReceiveEnabled,omitempty"`
 
 	// Allow or deny clients to send guaranteed messages. Changing this setting does not affect existing client connections. The default value is `false`.
-	AllowGuaranteedMsgSendEnabled bool `json:"allowGuaranteedMsgSendEnabled,omitempty"`
+	AllowGuaranteedMsgSendEnabled *bool `json:"allowGuaranteedMsgSendEnabled,omitempty"`
 
 	// Allow or deny clients to establish transacted sessions. Changing this setting does not affect existing client connections. The default value is `false`.
-	AllowTransactedSessionsEnabled bool `json:"allowTransactedSessionsEnabled,omitempty"`
+	AllowTransactedSessionsEnabled *bool `json:"allowTransactedSessionsEnabled,omitempty"`
 
 	// The name of a Queue to copy settings from when a new Queue is created by an API. The referenced Queue must exist on the Message VPN. The default value is `""`.
 	APIQueueManagementCopyFromOnCreateName string `json:"apiQueueManagementCopyFromOnCreateName,omitempty"`
@@ -43,11 +43,14 @@ type MsgVpnClientProfile struct {
 	// The Client Profile name.
 	ClientProfileName string `json:"clientProfileName,omitempty"`
 
+	// Enable or disable whether connected clients are allowed to use compression. The default value is `true`. Available since 2.10.
+	CompressionEnabled *bool `json:"compressionEnabled,omitempty"`
+
 	// The amount of time to delay the delivery of messages to clients after the initial message has been delivered (the eliding delay interval), in milliseconds. Zero value means there is no delay in delivering messages to clients. The default value is `0`.
 	ElidingDelay int64 `json:"elidingDelay,omitempty"`
 
 	// Enable or disable the Message Eliding. The default value is `false`.
-	ElidingEnabled bool `json:"elidingEnabled,omitempty"`
+	ElidingEnabled *bool `json:"elidingEnabled,omitempty"`
 
 	// The maximum number of topics tracked for Message Eliding per one Client connection. The default value is `256`.
 	ElidingMaxTopicCount int64 `json:"elidingMaxTopicCount,omitempty"`
@@ -136,7 +139,7 @@ type MsgVpnClientProfile struct {
 	// The number of messages that are always allowed entry into the "Guaranteed 1" (G-3) priority queue, regardless of the "queueGuaranteed1MaxDepth" value. The default value is `255`.
 	QueueGuaranteed1MinMsgBurst int32 `json:"queueGuaranteed1MinMsgBurst,omitempty"`
 
-	// Enable or disable sending of a negative acknowledgement (NACK) on the discard of a message because of a message subscription was not found. The default value is `false`. Available since 2.2.
+	// Enable or disable sending of a negative acknowledgement (NACK) on the discard of a message because of a message subscription was not found. The default value is `false`.
 	RejectMsgToSenderOnNoSubscriptionMatchEnabled bool `json:"rejectMsgToSenderOnNoSubscriptionMatchEnabled,omitempty"`
 
 	// Allow or deny clients to connect to the Message VPN if its Replication state is standby. The default value is `false`.

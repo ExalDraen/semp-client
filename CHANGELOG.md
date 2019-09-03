@@ -18,3 +18,4 @@ First formal release
 ### Changed
 
 * Switch to Go modules.
+* Added trivial trivial test executable

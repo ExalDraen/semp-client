@@ -20,3 +20,6 @@
 /Godeps/
 
 # End of https://www.gitignore.io/api/go
+
+# Built binaries
+semp-client-test

@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-First formal release
-
 ### Known Issues
+
+### Added
+
+### Changed
+
+## 0.1.0
+
+First formal release
 
 ### Added
 
@@ -18,4 +24,5 @@ First formal release
 ### Changed
 
 * Switch to Go modules.
-* Added trivial trivial test executable
+* Added very trivial test executable
+* Update to SEMP v2.12

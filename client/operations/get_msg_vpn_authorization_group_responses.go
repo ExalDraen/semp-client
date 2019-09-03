@@ -82,7 +82,7 @@ func NewGetMsgVpnAuthorizationGroupDefault(code int) *GetMsgVpnAuthorizationGrou
 
 /*GetMsgVpnAuthorizationGroupDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnAuthorizationGroupDefault struct {
 	_statusCode int

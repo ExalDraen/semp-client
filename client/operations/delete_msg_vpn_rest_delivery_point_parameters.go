@@ -63,12 +63,12 @@ for the delete msg vpn rest delivery point operation typically these are written
 type DeleteMsgVpnRestDeliveryPointParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*RestDeliveryPointName
-	  The restDeliveryPointName of the REST Delivery Point.
+	  The name of the REST Delivery Point.
 
 	*/
 	RestDeliveryPointName string

@@ -82,7 +82,7 @@ func NewDeleteMsgVpnSequencedTopicDefault(code int) *DeleteMsgVpnSequencedTopicD
 
 /*DeleteMsgVpnSequencedTopicDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnSequencedTopicDefault struct {
 	_statusCode int

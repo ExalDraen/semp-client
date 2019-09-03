@@ -22,24 +22,24 @@ type MsgVpnBridgeRemoteSubscription struct {
 	// The name of the Bridge.
 	BridgeName string `json:"bridgeName,omitempty"`
 
-	// Specify whether the Bridge is configured for the primary or backup Virtual Router or auto configured. The allowed values and their meaning are:
+	// The virtual router of the Bridge. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "primary" - The Bridge is used for the primary Virtual Router.
-	// "backup" - The Bridge is used for the backup Virtual Router.
-	// "auto" - The Bridge is automatically assigned a Router.
+	// "primary" - The Bridge is used for the primary virtual router.
+	// "backup" - The Bridge is used for the backup virtual router.
+	// "auto" - The Bridge is automatically assigned a router.
 	// </pre>
 	//
 	// Enum: [primary backup auto]
 	BridgeVirtualRouter string `json:"bridgeVirtualRouter,omitempty"`
 
-	// Flag the Subscription Topic as deliver always instead of with the deliver-to-one remote priority value for the Bridge given by "remoteDeliverToOnePriority". A given topic may be deliver-to-one or deliver always but not both.
+	// Enable deliver-always for the Bridge remote subscription topic instead of a deliver-to-one remote priority. A given topic for the Bridge may be deliver-to-one or deliver-always but not both.
 	DeliverAlwaysEnabled bool `json:"deliverAlwaysEnabled,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The Topic of the Remote Subscription.
+	// The topic of the Bridge remote subscription.
 	RemoteSubscriptionTopic string `json:"remoteSubscriptionTopic,omitempty"`
 }
 

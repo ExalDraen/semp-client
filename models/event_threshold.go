@@ -15,16 +15,16 @@ import (
 // swagger:model EventThreshold
 type EventThreshold struct {
 
-	// The clear threshold for the value of this counter as percentage of its maximum value. Falling below this value will trigger a corresponding Event.
+	// The clear threshold for the value of this counter as a percentage of its maximum value. Falling below this value will trigger a corresponding event.
 	ClearPercent int64 `json:"clearPercent,omitempty"`
 
-	// The clear threshold for the absolute value of this counter. Falling below this value will trigger a corresponding Event.
+	// The clear threshold for the absolute value of this counter. Falling below this value will trigger a corresponding event.
 	ClearValue int64 `json:"clearValue,omitempty"`
 
-	// The set threshold for the value of this counter as percentage of its maximum value. Exceeding this value will trigger a corresponding Event.
+	// The set threshold for the value of this counter as a percentage of its maximum value. Exceeding this value will trigger a corresponding event.
 	SetPercent int64 `json:"setPercent,omitempty"`
 
-	// The set threshold for the absolute value of this counter. Exceeding this value will trigger a corresponding Event.
+	// The set threshold for the absolute value of this counter. Exceeding this value will trigger a corresponding event.
 	SetValue int64 `json:"setValue,omitempty"`
 }
 

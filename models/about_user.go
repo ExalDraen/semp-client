@@ -19,13 +19,13 @@ import (
 // swagger:model AboutUser
 type AboutUser struct {
 
-	// Global access level of the Current User. The allowed values and their meaning are:
+	// The global access level of the User. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "admin" - Administrative access allowed.
-	// "none" - No access allowed.
-	// "read-only" - Read only.
-	// "read-write" - Read and Write.
+	// "admin" - Full administrative access.
+	// "none" - No access.
+	// "read-only" - Read only access.
+	// "read-write" - Read and write access.
 	// </pre>
 	//
 	// Enum: [admin none read-only read-write]

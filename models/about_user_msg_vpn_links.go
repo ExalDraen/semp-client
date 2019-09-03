@@ -15,7 +15,7 @@ import (
 // swagger:model AboutUserMsgVpnLinks
 type AboutUserMsgVpnLinks struct {
 
-	// The URI of this AboutUserMsgVpn object.
+	// The URI of this User Message VPN object.
 	URI string `json:"uri,omitempty"`
 }
 

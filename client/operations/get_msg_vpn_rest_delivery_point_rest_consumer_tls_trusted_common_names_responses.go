@@ -82,7 +82,7 @@ func NewGetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesDefault(code 
 
 /*GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesDefault struct {
 	_statusCode int

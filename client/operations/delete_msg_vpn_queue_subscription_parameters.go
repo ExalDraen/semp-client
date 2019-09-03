@@ -63,17 +63,17 @@ for the delete msg vpn queue subscription operation typically these are written 
 type DeleteMsgVpnQueueSubscriptionParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueName
-	  The queueName of the Queue.
+	  The name of the Queue.
 
 	*/
 	QueueName string
 	/*SubscriptionTopic
-	  The subscriptionTopic of the Queue Subscription.
+	  The topic of the Subscription.
 
 	*/
 	SubscriptionTopic string

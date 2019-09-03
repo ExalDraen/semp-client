@@ -51,7 +51,7 @@ func NewReplaceMsgVpnReplayLogOK() *ReplaceMsgVpnReplayLogOK {
 
 /*ReplaceMsgVpnReplayLogOK handles this case with default header values.
 
-The ReplayLog object's attributes after being replaced, and the request metadata.
+The Replay Log object's attributes after being replaced, and the request metadata.
 */
 type ReplaceMsgVpnReplayLogOK struct {
 	Payload *models.MsgVpnReplayLogResponse
@@ -82,7 +82,7 @@ func NewReplaceMsgVpnReplayLogDefault(code int) *ReplaceMsgVpnReplayLogDefault {
 
 /*ReplaceMsgVpnReplayLogDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type ReplaceMsgVpnReplayLogDefault struct {
 	_statusCode int

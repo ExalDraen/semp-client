@@ -51,7 +51,7 @@ func NewGetAboutUserMsgVpnsOK() *GetAboutUserMsgVpnsOK {
 
 /*GetAboutUserMsgVpnsOK handles this case with default header values.
 
-The list of Current User Message VPN objects' attributes, and the request metadata.
+The list of User Message VPN objects' attributes, and the request metadata.
 */
 type GetAboutUserMsgVpnsOK struct {
 	Payload *models.AboutUserMsgVpnsResponse
@@ -82,7 +82,7 @@ func NewGetAboutUserMsgVpnsDefault(code int) *GetAboutUserMsgVpnsDefault {
 
 /*GetAboutUserMsgVpnsDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetAboutUserMsgVpnsDefault struct {
 	_statusCode int

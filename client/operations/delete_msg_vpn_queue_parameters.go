@@ -63,12 +63,12 @@ for the delete msg vpn queue operation typically these are written to a http.Req
 type DeleteMsgVpnQueueParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueName
-	  The queueName of the Queue.
+	  The name of the Queue.
 
 	*/
 	QueueName string

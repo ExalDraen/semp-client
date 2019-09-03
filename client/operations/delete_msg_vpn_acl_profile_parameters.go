@@ -63,12 +63,12 @@ for the delete msg vpn Acl profile operation typically these are written to a ht
 type DeleteMsgVpnACLProfileParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

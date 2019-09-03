@@ -16,43 +16,46 @@ import (
 // swagger:model MsgVpnClientProfile
 type MsgVpnClientProfile struct {
 
-	// Allow or deny Bridge clients to connect. Changing this setting does not affect existing Bridge client connections. The default value is `false`.
+	// Enable or disable allowing Bridge clients using the Client Profile to connect. Changing this setting does not affect existing Bridge client connections. The default value is `false`.
 	AllowBridgeConnectionsEnabled *bool `json:"allowBridgeConnectionsEnabled,omitempty"`
 
-	// Allow or deny clients to bind to topic endpoints or queues with the cut-through delivery mode. Changing this setting does not affect existing client connections. The default value is `false`.
+	// Enable or disable allowing clients using the Client Profile to bind to endpoints with the cut-through forwarding delivery mode. Changing this value does not affect existing client connections. The default value is `false`.
 	AllowCutThroughForwardingEnabled *bool `json:"allowCutThroughForwardingEnabled,omitempty"`
 
-	// Allow or deny clients to create topic endponts or queues. Changing this setting does not affect existing client connections. The default value is `false`.
+	// Enable or disable allowing clients using the Client Profile to create topic endponts or queues. Changing this value does not affect existing client connections. The default value is `false`.
 	AllowGuaranteedEndpointCreateEnabled *bool `json:"allowGuaranteedEndpointCreateEnabled,omitempty"`
 
-	// Allow or deny clients to receive guaranteed messages. Changing this setting does not affect existing client connections. The default value is `false`.
+	// Enable or disable allowing clients using the Client Profile to receive guaranteed messages. Changing this setting does not affect existing client connections. The default value is `false`.
 	AllowGuaranteedMsgReceiveEnabled *bool `json:"allowGuaranteedMsgReceiveEnabled,omitempty"`
 
-	// Allow or deny clients to send guaranteed messages. Changing this setting does not affect existing client connections. The default value is `false`.
+	// Enable or disable allowing clients using the Client Profile to send guaranteed messages. Changing this setting does not affect existing client connections. The default value is `false`.
 	AllowGuaranteedMsgSendEnabled *bool `json:"allowGuaranteedMsgSendEnabled,omitempty"`
 
-	// Allow or deny clients to establish transacted sessions. Changing this setting does not affect existing client connections. The default value is `false`.
+	// Enable or disable allowing shared subscriptions. Changing this setting does not affect existing subscriptions. The default value is `false`. Available since 2.11.
+	AllowSharedSubscriptionsEnabled *bool `json:"allowSharedSubscriptionsEnabled,omitempty"`
+
+	// Enable or disable allowing clients using the Client Profile to establish transacted sessions. Changing this setting does not affect existing client connections. The default value is `false`.
 	AllowTransactedSessionsEnabled *bool `json:"allowTransactedSessionsEnabled,omitempty"`
 
-	// The name of a Queue to copy settings from when a new Queue is created by an API. The referenced Queue must exist on the Message VPN. The default value is `""`.
+	// The name of a queue to copy settings from when a new queue is created by a client using the Client Profile. The referenced queue must exist in the Message VPN. The default value is `""`.
 	APIQueueManagementCopyFromOnCreateName string `json:"apiQueueManagementCopyFromOnCreateName,omitempty"`
 
-	// The name of a Topic Endpoint to copy settings from when a new Topic Endpoint is created by an API. The referenced Topic Endpoint must exist on the Message VPN. The default value is `""`.
+	// The name of a topic endpoint to copy settings from when a new topic endpoint is created by a client using the Client Profile. The referenced topic endpoint must exist in the Message VPN. The default value is `""`.
 	APITopicEndpointManagementCopyFromOnCreateName string `json:"apiTopicEndpointManagementCopyFromOnCreateName,omitempty"`
 
-	// The Client Profile name.
+	// The name of the Client Profile.
 	ClientProfileName string `json:"clientProfileName,omitempty"`
 
-	// Enable or disable whether connected clients are allowed to use compression. The default value is `true`. Available since 2.10.
+	// Enable or disable allowing clients using the Client Profile to use compression. The default value is `true`. Available since 2.10.
 	CompressionEnabled *bool `json:"compressionEnabled,omitempty"`
 
-	// The amount of time to delay the delivery of messages to clients after the initial message has been delivered (the eliding delay interval), in milliseconds. Zero value means there is no delay in delivering messages to clients. The default value is `0`.
+	// The amount of time to delay the delivery of messages to clients using the Client Profile after the initial message has been delivered (the eliding delay interval), in milliseconds. A value of 0 means there is no delay in delivering messages to clients. The default value is `0`.
 	ElidingDelay int64 `json:"elidingDelay,omitempty"`
 
-	// Enable or disable the Message Eliding. The default value is `false`.
+	// Enable or disable message eliding for clients using the Client Profile. The default value is `false`.
 	ElidingEnabled *bool `json:"elidingEnabled,omitempty"`
 
-	// The maximum number of topics tracked for Message Eliding per one Client connection. The default value is `256`.
+	// The maximum number of topics tracked for message eliding per client connection using the Client Profile. The default value is `256`.
 	ElidingMaxTopicCount int64 `json:"elidingMaxTopicCount,omitempty"`
 
 	// event client provisioned endpoint spool usage threshold
@@ -85,25 +88,25 @@ type MsgVpnClientProfile struct {
 	// event transaction count threshold
 	EventTransactionCountThreshold *EventThreshold `json:"eventTransactionCountThreshold,omitempty"`
 
-	// The maximum number of client connections that can be simultaneously connected with the same Client Username. The default is the max value supported by the hardware.
+	// The maximum number of client connections per Client Username using the Client Profile. The default is the max value supported by the platform.
 	MaxConnectionCountPerClientUsername int64 `json:"maxConnectionCountPerClientUsername,omitempty"`
 
-	// The maximum number of egress flows that can be created by one client. The default is the max value supported by the hardware.
+	// The maximum number of transmit flows that can be created by one client using the Client Profile. The default value is `1000`.
 	MaxEgressFlowCount int64 `json:"maxEgressFlowCount,omitempty"`
 
-	// The maximum number of queues and topic endpoints that can be created by clients with the same Client Username. The default is the max value supported by the hardware.
+	// The maximum number of queues and topic endpoints that can be created by clients with the same Client Username using the Client Profile. The default value is `1000`.
 	MaxEndpointCountPerClientUsername int64 `json:"maxEndpointCountPerClientUsername,omitempty"`
 
-	// The maximum number of ingress flows that can be created by one client. The default is the max value supported by the hardware.
+	// The maximum number of receive flows that can be created by one client using the Client Profile. The default value is `1000`.
 	MaxIngressFlowCount int64 `json:"maxIngressFlowCount,omitempty"`
 
-	// The maximum number of subscriptions that can be created by one client. The default varies by platform.
+	// The maximum number of subscriptions per client using the Client Profile. The default varies by platform.
 	MaxSubscriptionCount int64 `json:"maxSubscriptionCount,omitempty"`
 
-	// The maximum number of transacted sessions that can be created by one client. The default value is `10`.
+	// The maximum number of transacted sessions that can be created by one client using the Client Profile. The default value is `10`.
 	MaxTransactedSessionCount int64 `json:"maxTransactedSessionCount,omitempty"`
 
-	// The maximum number of transactions that can be created by one client. The default varies by platform.
+	// The maximum number of transactions that can be created by one client using the Client Profile. The default varies by platform.
 	MaxTransactionCount int64 `json:"maxTransactionCount,omitempty"`
 
 	// The name of the Message VPN.
@@ -112,70 +115,70 @@ type MsgVpnClientProfile struct {
 	// The maximum depth of the "Control 1" (C-1) priority queue, in work units. Each work unit is 2048 bytes of message data. The default value is `20000`.
 	QueueControl1MaxDepth int32 `json:"queueControl1MaxDepth,omitempty"`
 
-	// The number of messages that are always allowed entry into the "Control 1" (C-1) priority queue, regardless of the "queueControl1MaxDepth" value. The default value is `4`.
+	// The number of messages that are always allowed entry into the "Control 1" (C-1) priority queue, regardless of the `queueControl1MaxDepth` value. The default value is `4`.
 	QueueControl1MinMsgBurst int32 `json:"queueControl1MinMsgBurst,omitempty"`
 
 	// The maximum depth of the "Direct 1" (D-1) priority queue, in work units. Each work unit is 2048 bytes of message data. The default value is `20000`.
 	QueueDirect1MaxDepth int32 `json:"queueDirect1MaxDepth,omitempty"`
 
-	// The number of messages that are always allowed entry into the "Direct 1" (D-1) priority queue, regardless of the "queueDirect1MaxDepth" value. The default value is `4`.
+	// The number of messages that are always allowed entry into the "Direct 1" (D-1) priority queue, regardless of the `queueDirect1MaxDepth` value. The default value is `4`.
 	QueueDirect1MinMsgBurst int32 `json:"queueDirect1MinMsgBurst,omitempty"`
 
 	// The maximum depth of the "Direct 2" (D-2) priority queue, in work units. Each work unit is 2048 bytes of message data. The default value is `20000`.
 	QueueDirect2MaxDepth int32 `json:"queueDirect2MaxDepth,omitempty"`
 
-	// The number of messages that are always allowed entry into the "Direct 2" (D-2) priority queue, regardless of the "queueDirect2MaxDepth" value. The default value is `4`.
+	// The number of messages that are always allowed entry into the "Direct 2" (D-2) priority queue, regardless of the `queueDirect2MaxDepth` value. The default value is `4`.
 	QueueDirect2MinMsgBurst int32 `json:"queueDirect2MinMsgBurst,omitempty"`
 
 	// The maximum depth of the "Direct 3" (D-3) priority queue, in work units. Each work unit is 2048 bytes of message data. The default value is `20000`.
 	QueueDirect3MaxDepth int32 `json:"queueDirect3MaxDepth,omitempty"`
 
-	// The number of messages that are always allowed entry into the "Direct 3" (D-3) priority queue, regardless of the "queueDirect3MaxDepth" value. The default value is `4`.
+	// The number of messages that are always allowed entry into the "Direct 3" (D-3) priority queue, regardless of the `queueDirect3MaxDepth` value. The default value is `4`.
 	QueueDirect3MinMsgBurst int32 `json:"queueDirect3MinMsgBurst,omitempty"`
 
 	// The maximum depth of the "Guaranteed 1" (G-1) priority queue, in work units. Each work unit is 2048 bytes of message data. The default value is `20000`.
 	QueueGuaranteed1MaxDepth int32 `json:"queueGuaranteed1MaxDepth,omitempty"`
 
-	// The number of messages that are always allowed entry into the "Guaranteed 1" (G-3) priority queue, regardless of the "queueGuaranteed1MaxDepth" value. The default value is `255`.
+	// The number of messages that are always allowed entry into the "Guaranteed 1" (G-3) priority queue, regardless of the `queueGuaranteed1MaxDepth` value. The default value is `255`.
 	QueueGuaranteed1MinMsgBurst int32 `json:"queueGuaranteed1MinMsgBurst,omitempty"`
 
-	// Enable or disable sending of a negative acknowledgement (NACK) on the discard of a message because of a message subscription was not found. The default value is `false`.
+	// Enable or disable the sending of a negative acknowledgement (NACK) to a client using the Client Profile when discarding a guaranteed message due to no matching subscription found. The default value is `false`. Available since 2.2.
 	RejectMsgToSenderOnNoSubscriptionMatchEnabled bool `json:"rejectMsgToSenderOnNoSubscriptionMatchEnabled,omitempty"`
 
-	// Allow or deny clients to connect to the Message VPN if its Replication state is standby. The default value is `false`.
+	// Enable or disable allowing clients using the Client Profile to connect to the Message VPN when its replication state is standby. The default value is `false`.
 	ReplicationAllowClientConnectWhenStandbyEnabled bool `json:"replicationAllowClientConnectWhenStandbyEnabled,omitempty"`
 
-	// The maximum number of SMF client connections that can be simultaneously connected with the same Client Username. The default is the max value supported by the hardware.
+	// The maximum number of SMF client connections per Client Username using the Client Profile. The default is the max value supported by the platform.
 	ServiceSmfMaxConnectionCountPerClientUsername int64 `json:"serviceSmfMaxConnectionCountPerClientUsername,omitempty"`
 
-	// The timeout for inactive Web Transport client sessions, in seconds. The default value is `30`.
+	// The timeout for inactive Web Transport client sessions using the Client Profile, in seconds. The default value is `30`.
 	ServiceWebInactiveTimeout int64 `json:"serviceWebInactiveTimeout,omitempty"`
 
-	// The maximum number of Web Transport client connections that can be simultaneously connected with the same Client Username. The default is the max value supported by the hardware.
+	// The maximum number of Web Transport client connections per Client Username using the Client Profile. The default is the max value supported by the platform.
 	ServiceWebMaxConnectionCountPerClientUsername int64 `json:"serviceWebMaxConnectionCountPerClientUsername,omitempty"`
 
-	// The maximum Web Transport payload size before its fragmentation occurs, in bytes. The size of the header is not included. The default value is `1000000`.
+	// The maximum Web Transport payload size before fragmentation occurs for clients using the Client Profile, in bytes. The size of the header is not included. The default value is `1000000`.
 	ServiceWebMaxPayload int64 `json:"serviceWebMaxPayload,omitempty"`
 
-	// The TCP initial congestion window size, in multiple of the TCP Maximum Segment Size (MSS). Changing the value from its default of 2 results in non-compliance with RFC 2581. Contact Solace Support before changing this value. The default value is `2`.
+	// The TCP initial congestion window size for clients using the Client Profile, in multiples of the TCP Maximum Segment Size (MSS). Changing the value from its default of 2 results in non-compliance with RFC 2581. Contact Solace Support before changing this value. The default value is `2`.
 	TCPCongestionWindowSize int64 `json:"tcpCongestionWindowSize,omitempty"`
 
-	// The number of TCP keepalive retransmissions to be carried out before declaring that the remote end is not available. The default value is `5`.
+	// The number of TCP keepalive retransmissions to a client using the Client Profile before declaring that it is not available. The default value is `5`.
 	TCPKeepaliveCount int64 `json:"tcpKeepaliveCount,omitempty"`
 
-	// The amount of time a connection must remain idle before TCP begins sending keepalive probes, in seconds. The default value is `3`.
+	// The amount of time a client connection using the Client Profile must remain idle before TCP begins sending keepalive probes, in seconds. The default value is `3`.
 	TCPKeepaliveIDLETime int64 `json:"tcpKeepaliveIdleTime,omitempty"`
 
-	// The amount of time between TCP keepalive retransmissions when no acknowledgement is received, in seconds. The default value is `1`.
+	// The amount of time between TCP keepalive retransmissions to a client using the Client Profile when no acknowledgement is received, in seconds. The default value is `1`.
 	TCPKeepaliveInterval int64 `json:"tcpKeepaliveInterval,omitempty"`
 
-	// The TCP maximum segment size, in kilobytes. Changes are applied to all existing connections. The default value is `1460`.
+	// The TCP maximum segment size for clients using the Client Profile, in kilobytes. Changes are applied to all existing connections. The default value is `1460`.
 	TCPMaxSegmentSize int64 `json:"tcpMaxSegmentSize,omitempty"`
 
-	// The TCP maximum window size, in kilobytes. Changes are applied to all existing connections. The default value is `256`.
+	// The TCP maximum window size for clients using the Client Profile, in kilobytes. Changes are applied to all existing connections. The default value is `256`.
 	TCPMaxWindowSize int64 `json:"tcpMaxWindowSize,omitempty"`
 
-	// Enable or disable allowing a client to downgrade an encrypted connection to plain text. The default value is `true`. Available since 2.8.
+	// Enable or disable allowing a client using the Client Profile to downgrade an encrypted connection to plain text. The default value is `true`. Available since 2.8.
 	TLSAllowDowngradeToPlainTextEnabled bool `json:"tlsAllowDowngradeToPlainTextEnabled,omitempty"`
 }
 

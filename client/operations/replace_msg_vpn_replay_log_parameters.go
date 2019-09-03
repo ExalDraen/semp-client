@@ -66,22 +66,22 @@ for the replace msg vpn replay log operation typically these are written to a ht
 type ReplaceMsgVpnReplayLogParams struct {
 
 	/*Body
-	  The ReplayLog object's attributes.
+	  The Replay Log object's attributes.
 
 	*/
 	Body *models.MsgVpnReplayLog
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*ReplayLogName
-	  The replayLogName of the ReplayLog.
+	  The name of the Replay Log.
 
 	*/
 	ReplayLogName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

@@ -82,7 +82,7 @@ func NewUpdateMsgVpnReplicatedTopicDefault(code int) *UpdateMsgVpnReplicatedTopi
 
 /*UpdateMsgVpnReplicatedTopicDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type UpdateMsgVpnReplicatedTopicDefault struct {
 	_statusCode int

@@ -30,10 +30,10 @@ type MsgVpnAuthorizationGroup struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// Lower the priority to be less than this group. The default is not applicable. The default is not applicable.
+	// Lower the priority to be less than this group. The default is not applicable.
 	OrderAfterAuthorizationGroupName string `json:"orderAfterAuthorizationGroupName,omitempty"`
 
-	// Raise the priority to be greater than this group. The default is not applicable. The default is not applicable.
+	// Raise the priority to be greater than this group. The default is not applicable.
 	OrderBeforeAuthorizationGroupName string `json:"orderBeforeAuthorizationGroupName,omitempty"`
 }
 

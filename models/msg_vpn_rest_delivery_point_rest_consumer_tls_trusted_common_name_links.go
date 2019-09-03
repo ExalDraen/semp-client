@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnRestDeliveryPointRestConsumerTlsTrustedCommonNameLinks
 type MsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameLinks struct {
 
-	// The URI of this MsgVpnRestDeliveryPointRestConsumerTlsTrustedCommonName object.
+	// The URI of this Trusted Common Name object.
 	URI string `json:"uri,omitempty"`
 }
 

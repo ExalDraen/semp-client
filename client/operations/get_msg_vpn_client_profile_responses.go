@@ -82,7 +82,7 @@ func NewGetMsgVpnClientProfileDefault(code int) *GetMsgVpnClientProfileDefault {
 
 /*GetMsgVpnClientProfileDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnClientProfileDefault struct {
 	_statusCode int

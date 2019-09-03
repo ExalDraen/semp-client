@@ -21,7 +21,7 @@ type MsgVpnQueueSubscription struct {
 	// The name of the Queue.
 	QueueName string `json:"queueName,omitempty"`
 
-	// The Topic of the Subscription.
+	// The topic of the Subscription.
 	SubscriptionTopic string `json:"subscriptionTopic,omitempty"`
 }
 

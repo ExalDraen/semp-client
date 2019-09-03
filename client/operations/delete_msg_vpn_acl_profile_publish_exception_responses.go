@@ -82,7 +82,7 @@ func NewDeleteMsgVpnACLProfilePublishExceptionDefault(code int) *DeleteMsgVpnACL
 
 /*DeleteMsgVpnACLProfilePublishExceptionDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnACLProfilePublishExceptionDefault struct {
 	_statusCode int

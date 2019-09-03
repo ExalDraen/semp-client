@@ -51,7 +51,7 @@ func NewGetSystemInformationOK() *GetSystemInformationOK {
 
 /*GetSystemInformationOK handles this case with default header values.
 
-SEMP API version and platform information.
+The System Information object's attributes, and the request metadata.
 */
 type GetSystemInformationOK struct {
 	Payload *models.SystemInformationResponse
@@ -82,7 +82,7 @@ func NewGetSystemInformationDefault(code int) *GetSystemInformationDefault {
 
 /*GetSystemInformationDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetSystemInformationDefault struct {
 	_statusCode int

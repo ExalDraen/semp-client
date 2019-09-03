@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnJndiTopicLinks
 type MsgVpnJndiTopicLinks struct {
 
-	// The URI of this MsgVpnJndiTopic object.
+	// The URI of this JNDI Topic object.
 	URI string `json:"uri,omitempty"`
 }
 

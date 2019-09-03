@@ -22,11 +22,11 @@ type MsgVpnMqttSessionSubscription struct {
 	// The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 	MqttSessionClientID string `json:"mqttSessionClientId,omitempty"`
 
-	// The Virtual Router of the MQTT Session. The allowed values and their meaning are:
+	// The virtual router of the MQTT Session. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "primary" - The MQTT Session belongs to the primary Virtual Router.
-	// "backup" - The MQTT Session belongs to the backup Virtual Router.
+	// "primary" - The MQTT Session belongs to the primary virtual router.
+	// "backup" - The MQTT Session belongs to the backup virtual router.
 	// </pre>
 	//
 	// Enum: [primary backup]

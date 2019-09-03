@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnJndiConnectionFactoryLinks
 type MsgVpnJndiConnectionFactoryLinks struct {
 
-	// The URI of this MsgVpnJndiConnectionFactory object.
+	// The URI of this JNDI Connection Factory object.
 	URI string `json:"uri,omitempty"`
 }
 

@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnTopicEndpointLinks
 type MsgVpnTopicEndpointLinks struct {
 
-	// The URI of this MsgVpnTopicEndpoint object.
+	// The URI of this Topic Endpoint object.
 	URI string `json:"uri,omitempty"`
 }
 

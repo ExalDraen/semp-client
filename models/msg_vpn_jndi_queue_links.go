@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnJndiQueueLinks
 type MsgVpnJndiQueueLinks struct {
 
-	// The URI of this MsgVpnJndiQueue object.
+	// The URI of this JNDI Queue object.
 	URI string `json:"uri,omitempty"`
 }
 

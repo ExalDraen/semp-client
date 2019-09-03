@@ -22,7 +22,7 @@ type MsgVpnACLProfile struct {
 	// The name of the ACL Profile.
 	ACLProfileName string `json:"aclProfileName,omitempty"`
 
-	// The default action when a Client connects to the Message VPN. The default value is `"disallow"`. The allowed values and their meaning are:
+	// The default action to take when a client using the ACL Profile connects to the Message VPN. The default value is `"disallow"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "allow" - Allow client connection unless an exception is found for it.
@@ -35,7 +35,7 @@ type MsgVpnACLProfile struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The default action to take when a Client publishes to a Topic in the Message VPN. The default value is `"disallow"`. The allowed values and their meaning are:
+	// The default action to take when a client using the ACL Profile publishes to a topic in the Message VPN. The default value is `"disallow"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "allow" - Allow topic unless an exception is found for it.
@@ -45,7 +45,7 @@ type MsgVpnACLProfile struct {
 	// Enum: [allow disallow]
 	PublishTopicDefaultAction string `json:"publishTopicDefaultAction,omitempty"`
 
-	// The default action to take when a Client subscribes to a Topic. The default value is `"disallow"`. The allowed values and their meaning are:
+	// The default action to take when a client using the ACL Profile subscribes to a topic in the Message VPN. The default value is `"disallow"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "allow" - Allow topic unless an exception is found for it.

@@ -63,12 +63,12 @@ for the delete msg vpn jndi connection factory operation typically these are wri
 type DeleteMsgVpnJndiConnectionFactoryParams struct {
 
 	/*ConnectionFactoryName
-	  The connectionFactoryName of the JNDI Connection Factory.
+	  The name of the JMS Connection Factory.
 
 	*/
 	ConnectionFactoryName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

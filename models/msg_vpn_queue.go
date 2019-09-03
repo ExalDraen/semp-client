@@ -19,23 +19,23 @@ import (
 // swagger:model MsgVpnQueue
 type MsgVpnQueue struct {
 
-	// The Queue access type of either "exclusive" or "non-exclusive". The default value is `"exclusive"`. The allowed values and their meaning are:
+	// The access type for delivering messages to consumer flows bound to the Queue. The default value is `"exclusive"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "exclusive" - Exclusive delivery of messages to first bound client.
-	// "non-exclusive" - Non-exclusive delivery of messages to all bound clients.
+	// "exclusive" - Exclusive delivery of messages to the first bound consumer flow.
+	// "non-exclusive" - Non-exclusive delivery of messages to all bound consumer flows in a round-robin fashion.
 	// </pre>
 	//
 	// Enum: [exclusive non-exclusive]
 	AccessType string `json:"accessType,omitempty"`
 
-	// Enable or disable the propagation of Consumer ACKs received on the active replication Message VPN to the standby replication Message VPN. The default value is `true`.
+	// Enable or disable the propagation of consumer acknowledgements (ACKs) received on the active replication Message VPN to the standby replication Message VPN. The default value is `true`.
 	ConsumerAckPropagationEnabled bool `json:"consumerAckPropagationEnabled,omitempty"`
 
-	// The name of the Dead Message Queue (DMQ) used by the Queue. The default value is `"#DEAD_MSG_QUEUE"`.
+	// The name of the Dead Message Queue (DMQ) used by the Queue. The default value is `"#DEAD_MSG_QUEUE"`. Available since 2.2.
 	DeadMsgQueue string `json:"deadMsgQueue,omitempty"`
 
-	// Enable or disable the egress flow of messages from the Queue. The default value is `false`.
+	// Enable or disable the transmission of messages from the Queue. The default value is `false`.
 	EgressEnabled bool `json:"egressEnabled,omitempty"`
 
 	// event bind count threshold
@@ -47,41 +47,41 @@ type MsgVpnQueue struct {
 	// event reject low priority msg limit threshold
 	EventRejectLowPriorityMsgLimitThreshold *EventThreshold `json:"eventRejectLowPriorityMsgLimitThreshold,omitempty"`
 
-	// Enable or disable the ingress flow of messages to the Queue. The default value is `false`.
+	// Enable or disable the reception of messages to the Queue. The default value is `false`.
 	IngressEnabled bool `json:"ingressEnabled,omitempty"`
 
-	// The maximum number of simultaneous clients that can bind to the Queue. The default value is `1000`.
+	// The maximum number of consumer flows that can bind to the Queue. The default value is `1000`.
 	MaxBindCount int64 `json:"maxBindCount,omitempty"`
 
-	// The maximum allowed number of messages delivered but not acknowledged per flow for the Queue. The default is the maximum value supported by the hardware. The default is the max value supported by the hardware.
+	// The maximum number of messages delivered but not acknowledged per flow for the Queue. The default is the max value supported by the platform.
 	MaxDeliveredUnackedMsgsPerFlow int64 `json:"maxDeliveredUnackedMsgsPerFlow,omitempty"`
 
-	// The maximum message size allowed in the Queue, in bytes. The default value is `10000000`.
+	// The maximum message size allowed in the Queue, in bytes (B). The default value is `10000000`.
 	MaxMsgSize int32 `json:"maxMsgSize,omitempty"`
 
-	// The maximum Message Spool usage by the Queue (quota), in megabytes. Setting the value to zero enables the "last-value-queue" feature and disables quota checking. The default varies by platform. The default varies by platform.
+	// The maximum message spool usage allowed by the Queue, in megabytes (MB). A value of 0 only allows spooling of the last message received and disables quota checking. The default varies by platform.
 	MaxMsgSpoolUsage int64 `json:"maxMsgSpoolUsage,omitempty"`
 
-	// The maximum number of times the Queue will attempt redelivery of a given message prior to it being discarded or moved to the #DEAD_MSG_QUEUE. A value of 0 means to retry forever. The default value is `0`.
+	// The maximum number of times the Queue will attempt redelivery of a message prior to it being discarded or moved to the DMQ. A value of 0 means to retry forever. The default value is `0`.
 	MaxRedeliveryCount int64 `json:"maxRedeliveryCount,omitempty"`
 
-	// The maximum number of seconds that a message can stay in the Queue when "respectTtlEnabled" is "true". A message will expire according to the lesser of the TTL in the message (assigned by the Publisher) and the "maxTtl" configured in the Queue. "maxTtl" is a 32-bit integer value from 1 to 4294967295 representing the expiry time in seconds. A "maxTtl" of "0" disables this feature. The default value is `0`.
+	// The maximum time in seconds a message can stay in the Queue when `respectTtlEnabled` is `"true"`. A message expires when the lesser of the sender assigned time-to-live (TTL) in the message and the `maxTtl` configured for the Queue, is exceeded. A value of 0 disables expiry. The default value is `0`.
 	MaxTTL int64 `json:"maxTtl,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The Client Username which owns the Queue. The default value is `""`.
+	// The Client Username that owns the Queue and has permission equivalent to `"delete"`. The default value is `""`.
 	Owner string `json:"owner,omitempty"`
 
-	// Permission level for users of the Queue, excluding the owner. The default value is `"no-access"`. The allowed values and their meaning are:
+	// The permission level for all consumers of the Queue, excluding the owner. The default value is `"no-access"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "no-access" - Disallows all access.
-	// "read-only" - Read-only access to the messages in the Queue.
-	// "consume" - Consume (read and remove) messages in the Queue.
-	// "modify-topic" - Consume messages or modify the topic/selector of the Queue.
-	// "delete" - Consume messages, modify the topic/selector or delete the Queue altogether.
+	// "read-only" - Read-only access to the messages.
+	// "consume" - Consume (read and remove) messages.
+	// "modify-topic" - Consume messages or modify the topic/selector.
+	// "delete" - Consume messages, modify the topic/selector or delete the Client created endpoint altogether.
 	// </pre>
 	//
 	// Enum: [no-access read-only consume modify-topic delete]
@@ -90,27 +90,27 @@ type MsgVpnQueue struct {
 	// The name of the Queue.
 	QueueName string `json:"queueName,omitempty"`
 
-	// Enable or disable if low priority messages are subject to "rejectLowPriorityMsgLimit" checking. This may only be enabled if "rejectMsgToSenderOnDiscardBehavior" does not have a value of "never". The default value is `false`.
+	// Enable or disable the checking of low priority messages against the `rejectLowPriorityMsgLimit`. This may only be enabled if `rejectMsgToSenderOnDiscardBehavior` does not have a value of `"never"`. The default value is `false`.
 	RejectLowPriorityMsgEnabled bool `json:"rejectLowPriorityMsgEnabled,omitempty"`
 
 	// The number of messages of any priority in the Queue above which low priority messages are not admitted but higher priority messages are allowed. The default value is `0`.
 	RejectLowPriorityMsgLimit int64 `json:"rejectLowPriorityMsgLimit,omitempty"`
 
-	// Assign the message discard behavior, that is the circumstances under which a negative acknowledgement (NACK) is sent to the client on discards. Note that NACKs cause the message to not be delivered to any destination and transacted-session commits to fail. This attribute may only have a value of "never" if "rejectLowPriorityMsgEnabled" is disabled. The default value is `"when-queue-enabled"`. The allowed values and their meaning are:
+	// Determines when to return negative acknowledgements (NACKs) to sending clients on message discards. Note that NACKs cause the message to not be delivered to any destination and Transacted Session commits to fail. The default value is `"when-queue-enabled"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "always" - Message discards always result in negative acknowledgments (NACKs) being returned to the sending client, even if the discard reason is that the Queue is disabled.
-	// "when-queue-enabled" - Message discards result in negative acknowledgments (NACKs) being returned to the sending client, except if the discard reason is that the Queue is disabled.
-	// "never" - Message discards never result in negative acknowledgments (NACKs) being returned to the sending client.
+	// "always" - Always return a negative acknowledgment (NACK) to the sending client on message discard.
+	// "when-queue-enabled" - Only return a negative acknowledgment (NACK) to the sending client on message discard when the Queue is enabled.
+	// "never" - Never return a negative acknowledgment (NACK) to the sending client on message discard.
 	// </pre>
-	//
+	//  Available since 2.1.
 	// Enum: [always when-queue-enabled never]
 	RejectMsgToSenderOnDiscardBehavior string `json:"rejectMsgToSenderOnDiscardBehavior,omitempty"`
 
-	// Enable or disable the respecting of message priority. If enabled, messages contained in the Queue are delivered in priority order, from 9 (highest) to 0 (lowest). MQTT queues do not support enabling message priority. The default value is `false`. Available since 2.8.
+	// Enable or disable the respecting of message priority. When enabled, messages contained in the Queue are delivered in priority order, from 9 (highest) to 0 (lowest). MQTT queues do not support enabling message priority. The default value is `false`. Available since 2.8.
 	RespectMsgPriorityEnabled bool `json:"respectMsgPriorityEnabled,omitempty"`
 
-	// Enable or disable the respecting of the "time to live" (TTL). If enabled, then messages contained in the Queue are checked for expiry. If expired, the message is removed from the Queue and either discarded or a copy of the message placed in the #DEAD_MSG_QUEUE. The default value is `false`.
+	// Enable or disable the respecting of the time-to-live (TTL) for messages in the Queue. When enabled, expired messages are discarded or moved to the DMQ. The default value is `false`.
 	RespectTTLEnabled bool `json:"respectTtlEnabled,omitempty"`
 }
 

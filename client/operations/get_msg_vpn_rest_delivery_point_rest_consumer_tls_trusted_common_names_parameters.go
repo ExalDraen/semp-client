@@ -64,27 +64,27 @@ for the get msg vpn rest delivery point rest consumer Tls trusted common names o
 type GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*RestConsumerName
-	  The restConsumerName of the REST Consumer.
+	  The name of the REST Consumer.
 
 	*/
 	RestConsumerName string
 	/*RestDeliveryPointName
-	  The restDeliveryPointName of the REST Delivery Point.
+	  The name of the REST Delivery Point.
 
 	*/
 	RestDeliveryPointName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*Where
-	  Include in the response only objects where certain conditions are true. See [Where](#where "Description of the syntax of the `where` parameter").
+	  Include in the response only objects where certain conditions are true. See the the documentation for the `where` parameter.
 
 	*/
 	Where []string

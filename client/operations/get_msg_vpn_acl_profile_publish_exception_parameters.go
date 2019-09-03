@@ -64,27 +64,27 @@ for the get msg vpn Acl profile publish exception operation typically these are 
 type GetMsgVpnACLProfilePublishExceptionParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*PublishExceptionTopic
-	  The publishExceptionTopic of the Publish Topic Exception.
+	  The topic for the exception to the default action taken. May include wildcard characters.
 
 	*/
 	PublishExceptionTopic string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*TopicSyntax
-	  The topicSyntax of the Publish Topic Exception.
+	  The syntax of the topic for the exception to the default action taken.
 
 	*/
 	TopicSyntax string

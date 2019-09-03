@@ -27,7 +27,9 @@ type Client struct {
 /*
 CreateMsgVpn creates a message v p n object
 
-Creates a Message VPN object. Any attribute missing from the request will be set to its default value.
+Create a Message VPN object. Any attribute missing from the request will be set to its default value.
+
+Message VPNs (Virtual Private Networks) allow for the segregation of topic space and clients. They also group clients connecting to a network of message brokers, such that messages published within a particular group are only visible to that group's clients.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -62,7 +64,7 @@ MsgVpn|replicationEnabledQueueBehavior|replicationEnabled|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -95,7 +97,7 @@ func (a *Client) CreateMsgVpn(params *CreateMsgVpnParams, authInfo runtime.Clien
 /*
 CreateMsgVpnSequencedTopic creates a sequenced topic object
 
-Creates a Sequenced Topic object. Any attribute missing from the request will be set to its default value.
+Create a Sequenced Topic object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -105,7 +107,7 @@ sequencedTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -138,9 +140,11 @@ func (a *Client) CreateMsgVpnSequencedTopic(params *CreateMsgVpnSequencedTopicPa
 /*
 DeleteMsgVpn deletes a message v p n object
 
-Deletes a Message VPN object.
+Delete a Message VPN object.
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+Message VPNs (Virtual Private Networks) allow for the segregation of topic space and clients. They also group clients connecting to a network of message brokers, such that messages published within a particular group are only visible to that group's clients.
+
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -173,9 +177,9 @@ func (a *Client) DeleteMsgVpn(params *DeleteMsgVpnParams, authInfo runtime.Clien
 /*
 DeleteMsgVpnSequencedTopic deletes a sequenced topic object
 
-Deletes a Sequenced Topic object.
+Delete a Sequenced Topic object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -208,7 +212,9 @@ func (a *Client) DeleteMsgVpnSequencedTopic(params *DeleteMsgVpnSequencedTopicPa
 /*
 GetMsgVpn gets a message v p n object
 
-Gets a Message VPN object.
+Get a Message VPN object.
+
+Message VPNs (Virtual Private Networks) allow for the segregation of topic space and clients. They also group clients connecting to a network of message brokers, such that messages published within a particular group are only visible to that group's clients.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -221,7 +227,7 @@ replicationEnabledQueueBehavior||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -254,7 +260,7 @@ func (a *Client) GetMsgVpn(params *GetMsgVpnParams, authInfo runtime.ClientAuthI
 /*
 GetMsgVpnSequencedTopic gets a sequenced topic object
 
-Gets a Sequenced Topic object.
+Get a Sequenced Topic object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -264,7 +270,7 @@ sequencedTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -297,7 +303,7 @@ func (a *Client) GetMsgVpnSequencedTopic(params *GetMsgVpnSequencedTopicParams, 
 /*
 GetMsgVpnSequencedTopics gets a list of sequenced topic objects
 
-Gets a list of Sequenced Topic objects.
+Get a list of Sequenced Topic objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -307,7 +313,7 @@ sequencedTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -340,7 +346,9 @@ func (a *Client) GetMsgVpnSequencedTopics(params *GetMsgVpnSequencedTopicsParams
 /*
 GetMsgVpns gets a list of message v p n objects
 
-Gets a list of Message VPN objects.
+Get a list of Message VPN objects.
+
+Message VPNs (Virtual Private Networks) allow for the segregation of topic space and clients. They also group clients connecting to a network of message brokers, such that messages published within a particular group are only visible to that group's clients.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -353,7 +361,7 @@ replicationEnabledQueueBehavior||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -386,7 +394,9 @@ func (a *Client) GetMsgVpns(params *GetMsgVpnsParams, authInfo runtime.ClientAut
 /*
 ReplaceMsgVpn replaces a message v p n object
 
-Replaces a Message VPN object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Message VPN object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+Message VPNs (Virtual Private Networks) allow for the segregation of topic space and clients. They also group clients connecting to a network of message brokers, such that messages published within a particular group are only visible to that group's clients.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -421,64 +431,67 @@ MsgVpn|replicationEnabledQueueBehavior|replicationEnabled|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation. Requests which include the following attributes require greater access scope/level:
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation. Requests which include the following attributes require greater access scope/level:
 
 
 Attribute|Access Scope/Level
 :---|:---:
-authenticationBasicEnabled|global/readwrite
-authenticationBasicProfileName|global/readwrite
-authenticationBasicRadiusDomain|global/readwrite
-authenticationBasicType|global/readwrite
-authenticationClientCertAllowApiProvidedUsernameEnabled|global/readwrite
-authenticationClientCertEnabled|global/readwrite
-authenticationClientCertMaxChainDepth|global/readwrite
-authenticationClientCertRevocationCheckMode|global/readwrite
-authenticationClientCertUsernameSource|global/readwrite
-authenticationClientCertValidateDateEnabled|global/readwrite
-authenticationKerberosAllowApiProvidedUsernameEnabled|global/readwrite
-authenticationKerberosEnabled|global/readwrite
-bridgingTlsServerCertEnforceTrustedCommonNameEnabled|global/readwrite
-bridgingTlsServerCertMaxChainDepth|global/readwrite
-bridgingTlsServerCertValidateDateEnabled|global/readwrite
-exportSubscriptionsEnabled|global/readwrite
-maxConnectionCount|global/readwrite
-maxEgressFlowCount|global/readwrite
-maxEndpointCount|global/readwrite
-maxIngressFlowCount|global/readwrite
-maxMsgSpoolUsage|global/readwrite
-maxSubscriptionCount|global/readwrite
-maxTransactedSessionCount|global/readwrite
-maxTransactionCount|global/readwrite
-replicationBridgeAuthenticationBasicClientUsername|global/readwrite
-replicationBridgeAuthenticationBasicPassword|global/readwrite
-replicationBridgeAuthenticationClientCertContent|global/readwrite
-replicationBridgeAuthenticationClientCertPassword|global/readwrite
-replicationBridgeAuthenticationScheme|global/readwrite
-replicationBridgeCompressedDataEnabled|global/readwrite
-replicationBridgeEgressFlowWindowSize|global/readwrite
-replicationBridgeRetryDelay|global/readwrite
-replicationBridgeTlsEnabled|global/readwrite
-replicationBridgeUnidirectionalClientProfileName|global/readwrite
-replicationEnabled|global/readwrite
-replicationEnabledQueueBehavior|global/readwrite
-replicationQueueMaxMsgSpoolUsage|global/readwrite
-replicationRole|global/readwrite
-restTlsServerCertEnforceTrustedCommonNameEnabled|global/readwrite
-restTlsServerCertMaxChainDepth|global/readwrite
-restTlsServerCertValidateDateEnabled|global/readwrite
-sempOverMsgBusAdminClientEnabled|global/readwrite
-sempOverMsgBusAdminDistributedCacheEnabled|global/readwrite
-sempOverMsgBusAdminEnabled|global/readwrite
-sempOverMsgBusEnabled|global/readwrite
-sempOverMsgBusLegacyShowClearEnabled|global/readwrite
-sempOverMsgBusShowEnabled|global/readwrite
-serviceRestIncomingMaxConnectionCount|global/readwrite
-serviceRestIncomingPlainTextListenPort|global/readwrite
-serviceRestIncomingTlsListenPort|global/readwrite
-serviceRestOutgoingMaxConnectionCount|global/readwrite
-serviceSmfMaxConnectionCount|global/readwrite
-serviceWebMaxConnectionCount|global/readwrite
+authenticationBasicEnabled|global/read-write
+authenticationBasicProfileName|global/read-write
+authenticationBasicRadiusDomain|global/read-write
+authenticationBasicType|global/read-write
+authenticationClientCertAllowApiProvidedUsernameEnabled|global/read-write
+authenticationClientCertEnabled|global/read-write
+authenticationClientCertMaxChainDepth|global/read-write
+authenticationClientCertRevocationCheckMode|global/read-write
+authenticationClientCertUsernameSource|global/read-write
+authenticationClientCertValidateDateEnabled|global/read-write
+authenticationKerberosAllowApiProvidedUsernameEnabled|global/read-write
+authenticationKerberosEnabled|global/read-write
+bridgingTlsServerCertEnforceTrustedCommonNameEnabled|global/read-write
+bridgingTlsServerCertMaxChainDepth|global/read-write
+bridgingTlsServerCertValidateDateEnabled|global/read-write
+dmrEnabled|global/read-write
+exportSubscriptionsEnabled|global/read-write
+maxConnectionCount|global/read-write
+maxEgressFlowCount|global/read-write
+maxEndpointCount|global/read-write
+maxIngressFlowCount|global/read-write
+maxMsgSpoolUsage|global/read-write
+maxSubscriptionCount|global/read-write
+maxTransactedSessionCount|global/read-write
+maxTransactionCount|global/read-write
+mqttRetainMaxMemory|global/read-write
+replicationBridgeAuthenticationBasicClientUsername|global/read-write
+replicationBridgeAuthenticationBasicPassword|global/read-write
+replicationBridgeAuthenticationClientCertContent|global/read-write
+replicationBridgeAuthenticationClientCertPassword|global/read-write
+replicationBridgeAuthenticationScheme|global/read-write
+replicationBridgeCompressedDataEnabled|global/read-write
+replicationBridgeEgressFlowWindowSize|global/read-write
+replicationBridgeRetryDelay|global/read-write
+replicationBridgeTlsEnabled|global/read-write
+replicationBridgeUnidirectionalClientProfileName|global/read-write
+replicationEnabled|global/read-write
+replicationEnabledQueueBehavior|global/read-write
+replicationQueueMaxMsgSpoolUsage|global/read-write
+replicationRole|global/read-write
+restTlsServerCertEnforceTrustedCommonNameEnabled|global/read-write
+restTlsServerCertMaxChainDepth|global/read-write
+restTlsServerCertValidateDateEnabled|global/read-write
+sempOverMsgBusAdminClientEnabled|global/read-write
+sempOverMsgBusAdminDistributedCacheEnabled|global/read-write
+sempOverMsgBusAdminEnabled|global/read-write
+sempOverMsgBusEnabled|global/read-write
+sempOverMsgBusShowEnabled|global/read-write
+serviceAmqpMaxConnectionCount|global/read-write
+serviceMqttMaxConnectionCount|global/read-write
+serviceRestIncomingMaxConnectionCount|global/read-write
+serviceRestIncomingPlainTextListenPort|global/read-write
+serviceRestIncomingTlsListenPort|global/read-write
+serviceRestOutgoingMaxConnectionCount|global/read-write
+serviceSmfMaxConnectionCount|global/read-write
+serviceWebMaxConnectionCount|global/read-write
 
 
 
@@ -513,7 +526,9 @@ func (a *Client) ReplaceMsgVpn(params *ReplaceMsgVpnParams, authInfo runtime.Cli
 /*
 UpdateMsgVpn updates a message v p n object
 
-Updates a Message VPN object. Any attribute missing from the request will be left unchanged.
+Update a Message VPN object. Any attribute missing from the request will be left unchanged.
+
+Message VPNs (Virtual Private Networks) allow for the segregation of topic space and clients. They also group clients connecting to a network of message brokers, such that messages published within a particular group are only visible to that group's clients.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -548,64 +563,67 @@ MsgVpn|replicationEnabledQueueBehavior|replicationEnabled|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation. Requests which include the following attributes require greater access scope/level:
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation. Requests which include the following attributes require greater access scope/level:
 
 
 Attribute|Access Scope/Level
 :---|:---:
-authenticationBasicEnabled|global/readwrite
-authenticationBasicProfileName|global/readwrite
-authenticationBasicRadiusDomain|global/readwrite
-authenticationBasicType|global/readwrite
-authenticationClientCertAllowApiProvidedUsernameEnabled|global/readwrite
-authenticationClientCertEnabled|global/readwrite
-authenticationClientCertMaxChainDepth|global/readwrite
-authenticationClientCertRevocationCheckMode|global/readwrite
-authenticationClientCertUsernameSource|global/readwrite
-authenticationClientCertValidateDateEnabled|global/readwrite
-authenticationKerberosAllowApiProvidedUsernameEnabled|global/readwrite
-authenticationKerberosEnabled|global/readwrite
-bridgingTlsServerCertEnforceTrustedCommonNameEnabled|global/readwrite
-bridgingTlsServerCertMaxChainDepth|global/readwrite
-bridgingTlsServerCertValidateDateEnabled|global/readwrite
-exportSubscriptionsEnabled|global/readwrite
-maxConnectionCount|global/readwrite
-maxEgressFlowCount|global/readwrite
-maxEndpointCount|global/readwrite
-maxIngressFlowCount|global/readwrite
-maxMsgSpoolUsage|global/readwrite
-maxSubscriptionCount|global/readwrite
-maxTransactedSessionCount|global/readwrite
-maxTransactionCount|global/readwrite
-replicationBridgeAuthenticationBasicClientUsername|global/readwrite
-replicationBridgeAuthenticationBasicPassword|global/readwrite
-replicationBridgeAuthenticationClientCertContent|global/readwrite
-replicationBridgeAuthenticationClientCertPassword|global/readwrite
-replicationBridgeAuthenticationScheme|global/readwrite
-replicationBridgeCompressedDataEnabled|global/readwrite
-replicationBridgeEgressFlowWindowSize|global/readwrite
-replicationBridgeRetryDelay|global/readwrite
-replicationBridgeTlsEnabled|global/readwrite
-replicationBridgeUnidirectionalClientProfileName|global/readwrite
-replicationEnabled|global/readwrite
-replicationEnabledQueueBehavior|global/readwrite
-replicationQueueMaxMsgSpoolUsage|global/readwrite
-replicationRole|global/readwrite
-restTlsServerCertEnforceTrustedCommonNameEnabled|global/readwrite
-restTlsServerCertMaxChainDepth|global/readwrite
-restTlsServerCertValidateDateEnabled|global/readwrite
-sempOverMsgBusAdminClientEnabled|global/readwrite
-sempOverMsgBusAdminDistributedCacheEnabled|global/readwrite
-sempOverMsgBusAdminEnabled|global/readwrite
-sempOverMsgBusEnabled|global/readwrite
-sempOverMsgBusLegacyShowClearEnabled|global/readwrite
-sempOverMsgBusShowEnabled|global/readwrite
-serviceRestIncomingMaxConnectionCount|global/readwrite
-serviceRestIncomingPlainTextListenPort|global/readwrite
-serviceRestIncomingTlsListenPort|global/readwrite
-serviceRestOutgoingMaxConnectionCount|global/readwrite
-serviceSmfMaxConnectionCount|global/readwrite
-serviceWebMaxConnectionCount|global/readwrite
+authenticationBasicEnabled|global/read-write
+authenticationBasicProfileName|global/read-write
+authenticationBasicRadiusDomain|global/read-write
+authenticationBasicType|global/read-write
+authenticationClientCertAllowApiProvidedUsernameEnabled|global/read-write
+authenticationClientCertEnabled|global/read-write
+authenticationClientCertMaxChainDepth|global/read-write
+authenticationClientCertRevocationCheckMode|global/read-write
+authenticationClientCertUsernameSource|global/read-write
+authenticationClientCertValidateDateEnabled|global/read-write
+authenticationKerberosAllowApiProvidedUsernameEnabled|global/read-write
+authenticationKerberosEnabled|global/read-write
+bridgingTlsServerCertEnforceTrustedCommonNameEnabled|global/read-write
+bridgingTlsServerCertMaxChainDepth|global/read-write
+bridgingTlsServerCertValidateDateEnabled|global/read-write
+dmrEnabled|global/read-write
+exportSubscriptionsEnabled|global/read-write
+maxConnectionCount|global/read-write
+maxEgressFlowCount|global/read-write
+maxEndpointCount|global/read-write
+maxIngressFlowCount|global/read-write
+maxMsgSpoolUsage|global/read-write
+maxSubscriptionCount|global/read-write
+maxTransactedSessionCount|global/read-write
+maxTransactionCount|global/read-write
+mqttRetainMaxMemory|global/read-write
+replicationBridgeAuthenticationBasicClientUsername|global/read-write
+replicationBridgeAuthenticationBasicPassword|global/read-write
+replicationBridgeAuthenticationClientCertContent|global/read-write
+replicationBridgeAuthenticationClientCertPassword|global/read-write
+replicationBridgeAuthenticationScheme|global/read-write
+replicationBridgeCompressedDataEnabled|global/read-write
+replicationBridgeEgressFlowWindowSize|global/read-write
+replicationBridgeRetryDelay|global/read-write
+replicationBridgeTlsEnabled|global/read-write
+replicationBridgeUnidirectionalClientProfileName|global/read-write
+replicationEnabled|global/read-write
+replicationEnabledQueueBehavior|global/read-write
+replicationQueueMaxMsgSpoolUsage|global/read-write
+replicationRole|global/read-write
+restTlsServerCertEnforceTrustedCommonNameEnabled|global/read-write
+restTlsServerCertMaxChainDepth|global/read-write
+restTlsServerCertValidateDateEnabled|global/read-write
+sempOverMsgBusAdminClientEnabled|global/read-write
+sempOverMsgBusAdminDistributedCacheEnabled|global/read-write
+sempOverMsgBusAdminEnabled|global/read-write
+sempOverMsgBusEnabled|global/read-write
+sempOverMsgBusShowEnabled|global/read-write
+serviceAmqpMaxConnectionCount|global/read-write
+serviceMqttMaxConnectionCount|global/read-write
+serviceRestIncomingMaxConnectionCount|global/read-write
+serviceRestIncomingPlainTextListenPort|global/read-write
+serviceRestIncomingTlsListenPort|global/read-write
+serviceRestOutgoingMaxConnectionCount|global/read-write
+serviceSmfMaxConnectionCount|global/read-write
+serviceWebMaxConnectionCount|global/read-write
 
 
 

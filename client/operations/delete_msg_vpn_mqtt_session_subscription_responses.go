@@ -82,7 +82,7 @@ func NewDeleteMsgVpnMqttSessionSubscriptionDefault(code int) *DeleteMsgVpnMqttSe
 
 /*DeleteMsgVpnMqttSessionSubscriptionDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnMqttSessionSubscriptionDefault struct {
 	_statusCode int

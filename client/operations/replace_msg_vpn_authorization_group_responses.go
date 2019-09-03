@@ -82,7 +82,7 @@ func NewReplaceMsgVpnAuthorizationGroupDefault(code int) *ReplaceMsgVpnAuthoriza
 
 /*ReplaceMsgVpnAuthorizationGroupDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type ReplaceMsgVpnAuthorizationGroupDefault struct {
 	_statusCode int

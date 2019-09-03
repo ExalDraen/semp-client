@@ -27,7 +27,7 @@ type Client struct {
 /*
 GetAboutAPI gets an API description object
 
-Gets an API Description object.
+Get an API Description object.
 
 A SEMP client authorized with a minimum access scope/level of "global/none" is required to perform this operation.
 
@@ -60,9 +60,9 @@ func (a *Client) GetAboutAPI(params *GetAboutAPIParams, authInfo runtime.ClientA
 }
 
 /*
-GetAboutUser gets a current user object
+GetAboutUser gets a user object
 
-Gets a Current User object.
+Get a User object.
 
 
 
@@ -97,9 +97,9 @@ func (a *Client) GetAboutUser(params *GetAboutUserParams, authInfo runtime.Clien
 }
 
 /*
-GetAboutUserMsgVpn gets a current user message v p n object
+GetAboutUserMsgVpn gets a user message v p n object
 
-Gets a Current User Message VPN object.
+Get a User Message VPN object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -139,9 +139,9 @@ func (a *Client) GetAboutUserMsgVpn(params *GetAboutUserMsgVpnParams, authInfo r
 }
 
 /*
-GetAboutUserMsgVpns gets a list of current user message v p n objects
+GetAboutUserMsgVpns gets a list of user message v p n objects
 
-Gets a list of Current User Message VPN objects.
+Get a list of User Message VPN objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated

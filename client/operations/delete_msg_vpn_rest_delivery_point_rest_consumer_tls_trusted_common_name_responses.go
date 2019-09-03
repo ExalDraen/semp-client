@@ -82,7 +82,7 @@ func NewDeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameDefault(cod
 
 /*DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameDefault struct {
 	_statusCode int

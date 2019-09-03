@@ -27,7 +27,9 @@ type Client struct {
 /*
 CreateMsgVpnACLProfile creates an ACL profile object
 
-Creates an ACL Profile object. Any attribute missing from the request will be set to its default value.
+Create an ACL Profile object. Any attribute missing from the request will be set to its default value.
+
+An ACL Profile controls whether an authenticated client is permitted to establish a connection with the message broker or permitted to publish and subscribe to specific topics.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -37,7 +39,7 @@ msgVpnName|x||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -70,7 +72,9 @@ func (a *Client) CreateMsgVpnACLProfile(params *CreateMsgVpnACLProfileParams, au
 /*
 CreateMsgVpnACLProfileClientConnectException creates a client connect exception object
 
-Creates a Client Connect Exception object. Any attribute missing from the request will be set to its default value.
+Create a Client Connect Exception object. Any attribute missing from the request will be set to its default value.
+
+A Client Connect Exception is an exception to the default action to take when a client using the ACL Profile connects to the Message VPN. Exceptions must be expressed as an IP address/netmask in CIDR form.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -81,7 +85,7 @@ msgVpnName|x||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -114,7 +118,9 @@ func (a *Client) CreateMsgVpnACLProfileClientConnectException(params *CreateMsgV
 /*
 CreateMsgVpnACLProfilePublishException creates a publish topic exception object
 
-Creates a Publish Topic Exception object. Any attribute missing from the request will be set to its default value.
+Create a Publish Topic Exception object. Any attribute missing from the request will be set to its default value.
+
+A Publish Topic Exception is an exception to the default action to take when a client using the ACL Profile publishes to a topic in the Message VPN. Exceptions must be expressed as a topic.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -126,7 +132,7 @@ topicSyntax|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -159,7 +165,9 @@ func (a *Client) CreateMsgVpnACLProfilePublishException(params *CreateMsgVpnACLP
 /*
 CreateMsgVpnACLProfileSubscribeException creates a subscribe topic exception object
 
-Creates a Subscribe Topic Exception object. Any attribute missing from the request will be set to its default value.
+Create a Subscribe Topic Exception object. Any attribute missing from the request will be set to its default value.
+
+A Subscribe Topic Exception is an exception to the default action to take when a client using the ACL Profile subscribes to a topic in the Message VPN. Exceptions must be expressed as a topic.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -171,7 +179,7 @@ topicSyntax|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -204,7 +212,7 @@ func (a *Client) CreateMsgVpnACLProfileSubscribeException(params *CreateMsgVpnAC
 /*
 CreateMsgVpnAuthorizationGroup creates an l d a p authorization group object
 
-Creates an LDAP Authorization Group object. Any attribute missing from the request will be set to its default value.
+Create an LDAP Authorization Group object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -226,7 +234,7 @@ MsgVpnAuthorizationGroup|orderBeforeAuthorizationGroupName||orderAfterAuthorizat
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -259,7 +267,7 @@ func (a *Client) CreateMsgVpnAuthorizationGroup(params *CreateMsgVpnAuthorizatio
 /*
 CreateMsgVpnBridge creates a bridge object
 
-Creates a Bridge object. Any attribute missing from the request will be set to its default value.
+Create a Bridge object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -284,7 +292,7 @@ MsgVpnBridge|remoteAuthenticationClientCertPassword|remoteAuthenticationClientCe
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -317,7 +325,7 @@ func (a *Client) CreateMsgVpnBridge(params *CreateMsgVpnBridgeParams, authInfo r
 /*
 CreateMsgVpnBridgeRemoteMsgVpn creates a remote message v p n object
 
-Creates a Remote Message VPN object. Any attribute missing from the request will be set to its default value.
+Create a Remote Message VPN object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -342,7 +350,7 @@ MsgVpnBridgeRemoteMsgVpn|password|clientUsername|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -375,7 +383,7 @@ func (a *Client) CreateMsgVpnBridgeRemoteMsgVpn(params *CreateMsgVpnBridgeRemote
 /*
 CreateMsgVpnBridgeRemoteSubscription creates a remote subscription object
 
-Creates a Remote Subscription object. Any attribute missing from the request will be set to its default value.
+Create a Remote Subscription object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -388,7 +396,7 @@ remoteSubscriptionTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -421,7 +429,7 @@ func (a *Client) CreateMsgVpnBridgeRemoteSubscription(params *CreateMsgVpnBridge
 /*
 CreateMsgVpnBridgeTLSTrustedCommonName creates a trusted common name object
 
-Creates a Trusted Common Name object. Any attribute missing from the request will be set to its default value.
+Create a Trusted Common Name object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -433,7 +441,7 @@ tlsTrustedCommonName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -466,7 +474,9 @@ func (a *Client) CreateMsgVpnBridgeTLSTrustedCommonName(params *CreateMsgVpnBrid
 /*
 CreateMsgVpnClientProfile creates a client profile object
 
-Creates a Client Profile object. Any attribute missing from the request will be set to its default value.
+Create a Client Profile object. Any attribute missing from the request will be set to its default value.
+
+Client Profiles are used to assign common configuration properties to clients that have been successfully authorized.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -490,7 +500,7 @@ EventThresholdByPercent|setPercent|clearPercent|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -523,7 +533,7 @@ func (a *Client) CreateMsgVpnClientProfile(params *CreateMsgVpnClientProfilePara
 /*
 CreateMsgVpnClientUsername creates a client username object
 
-Creates a Client Username object. Any attribute missing from the request will be set to its default value.
+Create a Client Username object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -534,7 +544,7 @@ password||||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -565,9 +575,342 @@ func (a *Client) CreateMsgVpnClientUsername(params *CreateMsgVpnClientUsernamePa
 }
 
 /*
+CreateMsgVpnDistributedCache creates a distributed cache object
+
+Create a Distributed Cache object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+msgVpnName|x||x||
+
+
+
+The following attributes in the request may only be provided in certain combinations with other attributes:
+
+
+Class|Attribute|Requires|Conflicts
+:---|:---|:---|:---
+MsgVpnDistributedCache|scheduledDeleteMsgDayList|scheduledDeleteMsgTimeList|
+MsgVpnDistributedCache|scheduledDeleteMsgTimeList|scheduledDeleteMsgDayList|
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDistributedCache(params *CreateMsgVpnDistributedCacheParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDistributedCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDistributedCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDistributedCache",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDistributedCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDistributedCacheOK), nil
+
+}
+
+/*
+CreateMsgVpnDistributedCacheCluster creates a cache cluster object
+
+Create a Cache Cluster object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x||x||
+clusterName|x|x|||
+msgVpnName|x||x||
+
+
+
+The following attributes in the request may only be provided in certain combinations with other attributes:
+
+
+Class|Attribute|Requires|Conflicts
+:---|:---|:---|:---
+EventThresholdByPercent|clearPercent|setPercent|
+EventThresholdByPercent|setPercent|clearPercent|
+EventThresholdByValue|clearValue|setValue|
+EventThresholdByValue|setValue|clearValue|
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDistributedCacheCluster(params *CreateMsgVpnDistributedCacheClusterParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDistributedCacheClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDistributedCacheClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDistributedCacheCluster",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDistributedCacheClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDistributedCacheClusterOK), nil
+
+}
+
+/*
+CreateMsgVpnDistributedCacheClusterGlobalCachingHomeCluster creates a home cache cluster object
+
+Create a Home Cache Cluster object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x||x||
+clusterName|x||x||
+homeClusterName|x|x|||
+msgVpnName|x||x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDistributedCacheClusterGlobalCachingHomeCluster(params *CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDistributedCacheClusterGlobalCachingHomeCluster",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterOK), nil
+
+}
+
+/*
+CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix creates a topic prefix object
+
+Create a Topic Prefix object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x||x||
+clusterName|x||x||
+homeClusterName|x||x||
+msgVpnName|x||x||
+topicPrefix|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix(params *CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters/{homeClusterName}/topicPrefixes",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixOK), nil
+
+}
+
+/*
+CreateMsgVpnDistributedCacheClusterInstance creates a cache instance object
+
+Create a Cache Instance object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x||x||
+clusterName|x||x||
+instanceName|x|x|||
+msgVpnName|x||x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDistributedCacheClusterInstance(params *CreateMsgVpnDistributedCacheClusterInstanceParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDistributedCacheClusterInstanceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDistributedCacheClusterInstanceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDistributedCacheClusterInstance",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/instances",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDistributedCacheClusterInstanceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDistributedCacheClusterInstanceOK), nil
+
+}
+
+/*
+CreateMsgVpnDistributedCacheClusterTopic creates a topic object
+
+Create a Topic object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x||x||
+clusterName|x||x||
+msgVpnName|x||x||
+topic|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDistributedCacheClusterTopic(params *CreateMsgVpnDistributedCacheClusterTopicParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDistributedCacheClusterTopicOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDistributedCacheClusterTopicParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDistributedCacheClusterTopic",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/topics",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDistributedCacheClusterTopicReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDistributedCacheClusterTopicOK), nil
+
+}
+
+/*
+CreateMsgVpnDmrBridge creates a d m r bridge object
+
+Create a DMR Bridge object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+msgVpnName|x||x||
+remoteNodeName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnDmrBridge(params *CreateMsgVpnDmrBridgeParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnDmrBridgeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnDmrBridgeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnDmrBridge",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/dmrBridges",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnDmrBridgeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnDmrBridgeOK), nil
+
+}
+
+/*
 CreateMsgVpnJndiConnectionFactory creates a j n d i connection factory object
 
-Creates a JNDI Connection Factory object. Any attribute missing from the request will be set to its default value.
+Create a JNDI Connection Factory object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -577,7 +920,7 @@ msgVpnName|x||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -610,7 +953,7 @@ func (a *Client) CreateMsgVpnJndiConnectionFactory(params *CreateMsgVpnJndiConne
 /*
 CreateMsgVpnJndiQueue creates a j n d i queue object
 
-Creates a JNDI Queue object. Any attribute missing from the request will be set to its default value.
+Create a JNDI Queue object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -620,7 +963,7 @@ queueName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -653,7 +996,7 @@ func (a *Client) CreateMsgVpnJndiQueue(params *CreateMsgVpnJndiQueueParams, auth
 /*
 CreateMsgVpnJndiTopic creates a j n d i topic object
 
-Creates a JNDI Topic object. Any attribute missing from the request will be set to its default value.
+Create a JNDI Topic object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -663,7 +1006,7 @@ topicName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -694,9 +1037,52 @@ func (a *Client) CreateMsgVpnJndiTopic(params *CreateMsgVpnJndiTopicParams, auth
 }
 
 /*
+CreateMsgVpnMqttRetainCache creates an m q t t retain cache object
+
+Create an MQTT Retain Cache object. Any attribute missing from the request will be set to its default value.
+
+
+Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+msgVpnName|x||x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) CreateMsgVpnMqttRetainCache(params *CreateMsgVpnMqttRetainCacheParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnMqttRetainCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateMsgVpnMqttRetainCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "createMsgVpnMqttRetainCache",
+		Method:             "POST",
+		PathPattern:        "/msgVpns/{msgVpnName}/mqttRetainCaches",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &CreateMsgVpnMqttRetainCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*CreateMsgVpnMqttRetainCacheOK), nil
+
+}
+
+/*
 CreateMsgVpnMqttSession creates an m q t t session object
 
-Creates an MQTT Session object. Any attribute missing from the request will be set to its default value.
+Create an MQTT Session object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -707,7 +1093,7 @@ msgVpnName|x||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -738,9 +1124,9 @@ func (a *Client) CreateMsgVpnMqttSession(params *CreateMsgVpnMqttSessionParams, 
 }
 
 /*
-CreateMsgVpnMqttSessionSubscription creates an m q t t session subscription object
+CreateMsgVpnMqttSessionSubscription creates a subscription object
 
-Creates an MQTT Session Subscription object. Any attribute missing from the request will be set to its default value.
+Create a Subscription object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -752,7 +1138,7 @@ subscriptionTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -785,7 +1171,7 @@ func (a *Client) CreateMsgVpnMqttSessionSubscription(params *CreateMsgVpnMqttSes
 /*
 CreateMsgVpnQueue creates a queue object
 
-Creates a Queue object. Any attribute missing from the request will be set to its default value.
+Create a Queue object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -807,7 +1193,7 @@ EventThreshold|setValue|clearValue|clearPercent, setPercent
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -840,7 +1226,7 @@ func (a *Client) CreateMsgVpnQueue(params *CreateMsgVpnQueueParams, authInfo run
 /*
 CreateMsgVpnQueueSubscription creates a queue subscription object
 
-Creates a Queue Subscription object. Any attribute missing from the request will be set to its default value.
+Create a Queue Subscription object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -851,7 +1237,7 @@ subscriptionTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -884,7 +1270,7 @@ func (a *Client) CreateMsgVpnQueueSubscription(params *CreateMsgVpnQueueSubscrip
 /*
 CreateMsgVpnReplayLog creates a replay log object
 
-Creates a ReplayLog object. Any attribute missing from the request will be set to its default value.
+Create a Replay Log object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -894,7 +1280,7 @@ replayLogName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.10.
 */
@@ -927,7 +1313,7 @@ func (a *Client) CreateMsgVpnReplayLog(params *CreateMsgVpnReplayLogParams, auth
 /*
 CreateMsgVpnReplicatedTopic creates a replicated topic object
 
-Creates a Replicated Topic object. Any attribute missing from the request will be set to its default value.
+Create a Replicated Topic object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -937,7 +1323,7 @@ replicatedTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.9.
 */
@@ -970,7 +1356,7 @@ func (a *Client) CreateMsgVpnReplicatedTopic(params *CreateMsgVpnReplicatedTopic
 /*
 CreateMsgVpnRestDeliveryPoint creates a r e s t delivery point object
 
-Creates a REST Delivery Point object. Any attribute missing from the request will be set to its default value.
+Create a REST Delivery Point object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -980,7 +1366,7 @@ restDeliveryPointName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1013,7 +1399,7 @@ func (a *Client) CreateMsgVpnRestDeliveryPoint(params *CreateMsgVpnRestDeliveryP
 /*
 CreateMsgVpnRestDeliveryPointQueueBinding creates a queue binding object
 
-Creates a Queue Binding object. Any attribute missing from the request will be set to its default value.
+Create a Queue Binding object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -1024,7 +1410,7 @@ restDeliveryPointName|x||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1057,7 +1443,7 @@ func (a *Client) CreateMsgVpnRestDeliveryPointQueueBinding(params *CreateMsgVpnR
 /*
 CreateMsgVpnRestDeliveryPointRestConsumer creates a r e s t consumer object
 
-Creates a REST Consumer object. Any attribute missing from the request will be set to its default value.
+Create a REST Consumer object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -1084,7 +1470,7 @@ MsgVpnRestDeliveryPointRestConsumer|tlsEnabled|remotePort|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1117,7 +1503,7 @@ func (a *Client) CreateMsgVpnRestDeliveryPointRestConsumer(params *CreateMsgVpnR
 /*
 CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName creates a trusted common name object
 
-Creates a Trusted Common Name object. Any attribute missing from the request will be set to its default value.
+Create a Trusted Common Name object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -1129,9 +1515,9 @@ tlsTrustedCommonName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
-This has been available since 2.0.
+This has been available since 2.7.
 */
 func (a *Client) CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(params *CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams, authInfo runtime.ClientAuthInfoWriter) (*CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameOK, error) {
 	// TODO: Validate the params before sending
@@ -1162,7 +1548,7 @@ func (a *Client) CreateMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(p
 /*
 CreateMsgVpnTopicEndpoint creates a topic endpoint object
 
-Creates a Topic Endpoint object. Any attribute missing from the request will be set to its default value.
+Create a Topic Endpoint object. Any attribute missing from the request will be set to its default value.
 
 
 Attribute|Identifying|Required|Read-Only|Write-Only|Deprecated
@@ -1184,7 +1570,7 @@ EventThreshold|setValue|clearValue|clearPercent, setPercent
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -1217,9 +1603,11 @@ func (a *Client) CreateMsgVpnTopicEndpoint(params *CreateMsgVpnTopicEndpointPara
 /*
 DeleteMsgVpnACLProfile deletes an ACL profile object
 
-Deletes an ACL Profile object.
+Delete an ACL Profile object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+An ACL Profile controls whether an authenticated client is permitted to establish a connection with the message broker or permitted to publish and subscribe to specific topics.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1252,9 +1640,11 @@ func (a *Client) DeleteMsgVpnACLProfile(params *DeleteMsgVpnACLProfileParams, au
 /*
 DeleteMsgVpnACLProfileClientConnectException deletes a client connect exception object
 
-Deletes a Client Connect Exception object.
+Delete a Client Connect Exception object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A Client Connect Exception is an exception to the default action to take when a client using the ACL Profile connects to the Message VPN. Exceptions must be expressed as an IP address/netmask in CIDR form.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1287,9 +1677,11 @@ func (a *Client) DeleteMsgVpnACLProfileClientConnectException(params *DeleteMsgV
 /*
 DeleteMsgVpnACLProfilePublishException deletes a publish topic exception object
 
-Deletes a Publish Topic Exception object.
+Delete a Publish Topic Exception object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A Publish Topic Exception is an exception to the default action to take when a client using the ACL Profile publishes to a topic in the Message VPN. Exceptions must be expressed as a topic.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1322,9 +1714,11 @@ func (a *Client) DeleteMsgVpnACLProfilePublishException(params *DeleteMsgVpnACLP
 /*
 DeleteMsgVpnACLProfileSubscribeException deletes a subscribe topic exception object
 
-Deletes a Subscribe Topic Exception object.
+Delete a Subscribe Topic Exception object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A Subscribe Topic Exception is an exception to the default action to take when a client using the ACL Profile subscribes to a topic in the Message VPN. Exceptions must be expressed as a topic.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1357,9 +1751,9 @@ func (a *Client) DeleteMsgVpnACLProfileSubscribeException(params *DeleteMsgVpnAC
 /*
 DeleteMsgVpnAuthorizationGroup deletes an l d a p authorization group object
 
-Deletes an LDAP Authorization Group object.
+Delete an LDAP Authorization Group object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1392,9 +1786,9 @@ func (a *Client) DeleteMsgVpnAuthorizationGroup(params *DeleteMsgVpnAuthorizatio
 /*
 DeleteMsgVpnBridge deletes a bridge object
 
-Deletes a Bridge object.
+Delete a Bridge object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1427,9 +1821,9 @@ func (a *Client) DeleteMsgVpnBridge(params *DeleteMsgVpnBridgeParams, authInfo r
 /*
 DeleteMsgVpnBridgeRemoteMsgVpn deletes a remote message v p n object
 
-Deletes a Remote Message VPN object.
+Delete a Remote Message VPN object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1462,9 +1856,9 @@ func (a *Client) DeleteMsgVpnBridgeRemoteMsgVpn(params *DeleteMsgVpnBridgeRemote
 /*
 DeleteMsgVpnBridgeRemoteSubscription deletes a remote subscription object
 
-Deletes a Remote Subscription object.
+Delete a Remote Subscription object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1497,9 +1891,9 @@ func (a *Client) DeleteMsgVpnBridgeRemoteSubscription(params *DeleteMsgVpnBridge
 /*
 DeleteMsgVpnBridgeTLSTrustedCommonName deletes a trusted common name object
 
-Deletes a Trusted Common Name object.
+Delete a Trusted Common Name object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1532,9 +1926,11 @@ func (a *Client) DeleteMsgVpnBridgeTLSTrustedCommonName(params *DeleteMsgVpnBrid
 /*
 DeleteMsgVpnClientProfile deletes a client profile object
 
-Deletes a Client Profile object.
+Delete a Client Profile object.
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+Client Profiles are used to assign common configuration properties to clients that have been successfully authorized.
+
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1567,9 +1963,9 @@ func (a *Client) DeleteMsgVpnClientProfile(params *DeleteMsgVpnClientProfilePara
 /*
 DeleteMsgVpnClientUsername deletes a client username object
 
-Deletes a Client Username object.
+Delete a Client Username object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1600,11 +1996,256 @@ func (a *Client) DeleteMsgVpnClientUsername(params *DeleteMsgVpnClientUsernamePa
 }
 
 /*
+DeleteMsgVpnDistributedCache deletes a distributed cache object
+
+Delete a Distributed Cache object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDistributedCache(params *DeleteMsgVpnDistributedCacheParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDistributedCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDistributedCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDistributedCache",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDistributedCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDistributedCacheOK), nil
+
+}
+
+/*
+DeleteMsgVpnDistributedCacheCluster deletes a cache cluster object
+
+Delete a Cache Cluster object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDistributedCacheCluster(params *DeleteMsgVpnDistributedCacheClusterParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDistributedCacheClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDistributedCacheClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDistributedCacheCluster",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDistributedCacheClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDistributedCacheClusterOK), nil
+
+}
+
+/*
+DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeCluster deletes a home cache cluster object
+
+Delete a Home Cache Cluster object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeCluster(params *DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDistributedCacheClusterGlobalCachingHomeCluster",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters/{homeClusterName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterOK), nil
+
+}
+
+/*
+DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix deletes a topic prefix object
+
+Delete a Topic Prefix object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix(params *DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters/{homeClusterName}/topicPrefixes/{topicPrefix}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixOK), nil
+
+}
+
+/*
+DeleteMsgVpnDistributedCacheClusterInstance deletes a cache instance object
+
+Delete a Cache Instance object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDistributedCacheClusterInstance(params *DeleteMsgVpnDistributedCacheClusterInstanceParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDistributedCacheClusterInstanceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDistributedCacheClusterInstanceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDistributedCacheClusterInstance",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/instances/{instanceName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDistributedCacheClusterInstanceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDistributedCacheClusterInstanceOK), nil
+
+}
+
+/*
+DeleteMsgVpnDistributedCacheClusterTopic deletes a topic object
+
+Delete a Topic object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDistributedCacheClusterTopic(params *DeleteMsgVpnDistributedCacheClusterTopicParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDistributedCacheClusterTopicOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDistributedCacheClusterTopicParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDistributedCacheClusterTopic",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/topics/{topic}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDistributedCacheClusterTopicReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDistributedCacheClusterTopicOK), nil
+
+}
+
+/*
+DeleteMsgVpnDmrBridge deletes a d m r bridge object
+
+Delete a DMR Bridge object.
+
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnDmrBridge(params *DeleteMsgVpnDmrBridgeParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnDmrBridgeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnDmrBridgeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnDmrBridge",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/dmrBridges/{remoteNodeName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnDmrBridgeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnDmrBridgeOK), nil
+
+}
+
+/*
 DeleteMsgVpnJndiConnectionFactory deletes a j n d i connection factory object
 
-Deletes a JNDI Connection Factory object.
+Delete a JNDI Connection Factory object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -1637,9 +2278,9 @@ func (a *Client) DeleteMsgVpnJndiConnectionFactory(params *DeleteMsgVpnJndiConne
 /*
 DeleteMsgVpnJndiQueue deletes a j n d i queue object
 
-Deletes a JNDI Queue object.
+Delete a JNDI Queue object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -1672,9 +2313,9 @@ func (a *Client) DeleteMsgVpnJndiQueue(params *DeleteMsgVpnJndiQueueParams, auth
 /*
 DeleteMsgVpnJndiTopic deletes a j n d i topic object
 
-Deletes a JNDI Topic object.
+Delete a JNDI Topic object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -1705,11 +2346,46 @@ func (a *Client) DeleteMsgVpnJndiTopic(params *DeleteMsgVpnJndiTopicParams, auth
 }
 
 /*
+DeleteMsgVpnMqttRetainCache deletes an m q t t retain cache object
+
+Delete an MQTT Retain Cache object.
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) DeleteMsgVpnMqttRetainCache(params *DeleteMsgVpnMqttRetainCacheParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnMqttRetainCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteMsgVpnMqttRetainCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "deleteMsgVpnMqttRetainCache",
+		Method:             "DELETE",
+		PathPattern:        "/msgVpns/{msgVpnName}/mqttRetainCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &DeleteMsgVpnMqttRetainCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DeleteMsgVpnMqttRetainCacheOK), nil
+
+}
+
+/*
 DeleteMsgVpnMqttSession deletes an m q t t session object
 
-Deletes an MQTT Session object.
+Delete an MQTT Session object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -1740,11 +2416,11 @@ func (a *Client) DeleteMsgVpnMqttSession(params *DeleteMsgVpnMqttSessionParams, 
 }
 
 /*
-DeleteMsgVpnMqttSessionSubscription deletes an m q t t session subscription object
+DeleteMsgVpnMqttSessionSubscription deletes a subscription object
 
-Deletes an MQTT Session Subscription object.
+Delete a Subscription object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -1777,9 +2453,9 @@ func (a *Client) DeleteMsgVpnMqttSessionSubscription(params *DeleteMsgVpnMqttSes
 /*
 DeleteMsgVpnQueue deletes a queue object
 
-Deletes a Queue object.
+Delete a Queue object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1812,9 +2488,9 @@ func (a *Client) DeleteMsgVpnQueue(params *DeleteMsgVpnQueueParams, authInfo run
 /*
 DeleteMsgVpnQueueSubscription deletes a queue subscription object
 
-Deletes a Queue Subscription object.
+Delete a Queue Subscription object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1847,9 +2523,9 @@ func (a *Client) DeleteMsgVpnQueueSubscription(params *DeleteMsgVpnQueueSubscrip
 /*
 DeleteMsgVpnReplayLog deletes a replay log object
 
-Deletes a ReplayLog object.
+Delete a Replay Log object.
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.10.
 */
@@ -1882,9 +2558,9 @@ func (a *Client) DeleteMsgVpnReplayLog(params *DeleteMsgVpnReplayLogParams, auth
 /*
 DeleteMsgVpnReplicatedTopic deletes a replicated topic object
 
-Deletes a Replicated Topic object.
+Delete a Replicated Topic object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.9.
 */
@@ -1917,9 +2593,9 @@ func (a *Client) DeleteMsgVpnReplicatedTopic(params *DeleteMsgVpnReplicatedTopic
 /*
 DeleteMsgVpnRestDeliveryPoint deletes a r e s t delivery point object
 
-Deletes a REST Delivery Point object.
+Delete a REST Delivery Point object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1952,9 +2628,9 @@ func (a *Client) DeleteMsgVpnRestDeliveryPoint(params *DeleteMsgVpnRestDeliveryP
 /*
 DeleteMsgVpnRestDeliveryPointQueueBinding deletes a queue binding object
 
-Deletes a Queue Binding object.
+Delete a Queue Binding object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -1987,9 +2663,9 @@ func (a *Client) DeleteMsgVpnRestDeliveryPointQueueBinding(params *DeleteMsgVpnR
 /*
 DeleteMsgVpnRestDeliveryPointRestConsumer deletes a r e s t consumer object
 
-Deletes a REST Consumer object.
+Delete a REST Consumer object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2022,11 +2698,11 @@ func (a *Client) DeleteMsgVpnRestDeliveryPointRestConsumer(params *DeleteMsgVpnR
 /*
 DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName deletes a trusted common name object
 
-Deletes a Trusted Common Name object.
+Delete a Trusted Common Name object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
-This has been available since 2.0.
+This has been available since 2.7.
 */
 func (a *Client) DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(params *DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameOK, error) {
 	// TODO: Validate the params before sending
@@ -2057,9 +2733,9 @@ func (a *Client) DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(p
 /*
 DeleteMsgVpnTopicEndpoint deletes a topic endpoint object
 
-Deletes a Topic Endpoint object.
+Delete a Topic Endpoint object.
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -2092,7 +2768,9 @@ func (a *Client) DeleteMsgVpnTopicEndpoint(params *DeleteMsgVpnTopicEndpointPara
 /*
 GetMsgVpnACLProfile gets an ACL profile object
 
-Gets an ACL Profile object.
+Get an ACL Profile object.
+
+An ACL Profile controls whether an authenticated client is permitted to establish a connection with the message broker or permitted to publish and subscribe to specific topics.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2102,7 +2780,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2135,7 +2813,9 @@ func (a *Client) GetMsgVpnACLProfile(params *GetMsgVpnACLProfileParams, authInfo
 /*
 GetMsgVpnACLProfileClientConnectException gets a client connect exception object
 
-Gets a Client Connect Exception object.
+Get a Client Connect Exception object.
+
+A Client Connect Exception is an exception to the default action to take when a client using the ACL Profile connects to the Message VPN. Exceptions must be expressed as an IP address/netmask in CIDR form.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2146,7 +2826,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2179,7 +2859,9 @@ func (a *Client) GetMsgVpnACLProfileClientConnectException(params *GetMsgVpnACLP
 /*
 GetMsgVpnACLProfileClientConnectExceptions gets a list of client connect exception objects
 
-Gets a list of Client Connect Exception objects.
+Get a list of Client Connect Exception objects.
+
+A Client Connect Exception is an exception to the default action to take when a client using the ACL Profile connects to the Message VPN. Exceptions must be expressed as an IP address/netmask in CIDR form.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2190,7 +2872,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2223,7 +2905,9 @@ func (a *Client) GetMsgVpnACLProfileClientConnectExceptions(params *GetMsgVpnACL
 /*
 GetMsgVpnACLProfilePublishException gets a publish topic exception object
 
-Gets a Publish Topic Exception object.
+Get a Publish Topic Exception object.
+
+A Publish Topic Exception is an exception to the default action to take when a client using the ACL Profile publishes to a topic in the Message VPN. Exceptions must be expressed as a topic.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2235,7 +2919,7 @@ topicSyntax|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2268,7 +2952,9 @@ func (a *Client) GetMsgVpnACLProfilePublishException(params *GetMsgVpnACLProfile
 /*
 GetMsgVpnACLProfilePublishExceptions gets a list of publish topic exception objects
 
-Gets a list of Publish Topic Exception objects.
+Get a list of Publish Topic Exception objects.
+
+A Publish Topic Exception is an exception to the default action to take when a client using the ACL Profile publishes to a topic in the Message VPN. Exceptions must be expressed as a topic.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2280,7 +2966,7 @@ topicSyntax|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2313,7 +2999,9 @@ func (a *Client) GetMsgVpnACLProfilePublishExceptions(params *GetMsgVpnACLProfil
 /*
 GetMsgVpnACLProfileSubscribeException gets a subscribe topic exception object
 
-Gets a Subscribe Topic Exception object.
+Get a Subscribe Topic Exception object.
+
+A Subscribe Topic Exception is an exception to the default action to take when a client using the ACL Profile subscribes to a topic in the Message VPN. Exceptions must be expressed as a topic.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2325,7 +3013,7 @@ topicSyntax|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2358,7 +3046,9 @@ func (a *Client) GetMsgVpnACLProfileSubscribeException(params *GetMsgVpnACLProfi
 /*
 GetMsgVpnACLProfileSubscribeExceptions gets a list of subscribe topic exception objects
 
-Gets a list of Subscribe Topic Exception objects.
+Get a list of Subscribe Topic Exception objects.
+
+A Subscribe Topic Exception is an exception to the default action to take when a client using the ACL Profile subscribes to a topic in the Message VPN. Exceptions must be expressed as a topic.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2370,7 +3060,7 @@ topicSyntax|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2403,7 +3093,9 @@ func (a *Client) GetMsgVpnACLProfileSubscribeExceptions(params *GetMsgVpnACLProf
 /*
 GetMsgVpnACLProfiles gets a list of ACL profile objects
 
-Gets a list of ACL Profile objects.
+Get a list of ACL Profile objects.
+
+An ACL Profile controls whether an authenticated client is permitted to establish a connection with the message broker or permitted to publish and subscribe to specific topics.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2413,7 +3105,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2446,7 +3138,7 @@ func (a *Client) GetMsgVpnACLProfiles(params *GetMsgVpnACLProfilesParams, authIn
 /*
 GetMsgVpnAuthorizationGroup gets an l d a p authorization group object
 
-Gets an LDAP Authorization Group object.
+Get an LDAP Authorization Group object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2458,7 +3150,7 @@ orderBeforeAuthorizationGroupName||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2491,7 +3183,7 @@ func (a *Client) GetMsgVpnAuthorizationGroup(params *GetMsgVpnAuthorizationGroup
 /*
 GetMsgVpnAuthorizationGroups gets a list of l d a p authorization group objects
 
-Gets a list of LDAP Authorization Group objects.
+Get a list of LDAP Authorization Group objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2503,7 +3195,7 @@ orderBeforeAuthorizationGroupName||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2536,7 +3228,7 @@ func (a *Client) GetMsgVpnAuthorizationGroups(params *GetMsgVpnAuthorizationGrou
 /*
 GetMsgVpnBridge gets a bridge object
 
-Gets a Bridge object.
+Get a Bridge object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2550,7 +3242,7 @@ remoteAuthenticationClientCertPassword||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2583,7 +3275,7 @@ func (a *Client) GetMsgVpnBridge(params *GetMsgVpnBridgeParams, authInfo runtime
 /*
 GetMsgVpnBridgeRemoteMsgVpn gets a remote message v p n object
 
-Gets a Remote Message VPN object.
+Get a Remote Message VPN object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2598,7 +3290,7 @@ remoteMsgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2631,7 +3323,7 @@ func (a *Client) GetMsgVpnBridgeRemoteMsgVpn(params *GetMsgVpnBridgeRemoteMsgVpn
 /*
 GetMsgVpnBridgeRemoteMsgVpns gets a list of remote message v p n objects
 
-Gets a list of Remote Message VPN objects.
+Get a list of Remote Message VPN objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2646,7 +3338,7 @@ remoteMsgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2679,7 +3371,7 @@ func (a *Client) GetMsgVpnBridgeRemoteMsgVpns(params *GetMsgVpnBridgeRemoteMsgVp
 /*
 GetMsgVpnBridgeRemoteSubscription gets a remote subscription object
 
-Gets a Remote Subscription object.
+Get a Remote Subscription object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2691,7 +3383,7 @@ remoteSubscriptionTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2724,7 +3416,7 @@ func (a *Client) GetMsgVpnBridgeRemoteSubscription(params *GetMsgVpnBridgeRemote
 /*
 GetMsgVpnBridgeRemoteSubscriptions gets a list of remote subscription objects
 
-Gets a list of Remote Subscription objects.
+Get a list of Remote Subscription objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2736,7 +3428,7 @@ remoteSubscriptionTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2769,7 +3461,7 @@ func (a *Client) GetMsgVpnBridgeRemoteSubscriptions(params *GetMsgVpnBridgeRemot
 /*
 GetMsgVpnBridgeTLSTrustedCommonName gets a trusted common name object
 
-Gets a Trusted Common Name object.
+Get a Trusted Common Name object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2781,7 +3473,7 @@ tlsTrustedCommonName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2814,7 +3506,7 @@ func (a *Client) GetMsgVpnBridgeTLSTrustedCommonName(params *GetMsgVpnBridgeTLST
 /*
 GetMsgVpnBridgeTLSTrustedCommonNames gets a list of trusted common name objects
 
-Gets a list of Trusted Common Name objects.
+Get a list of Trusted Common Name objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2826,7 +3518,7 @@ tlsTrustedCommonName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2859,7 +3551,7 @@ func (a *Client) GetMsgVpnBridgeTLSTrustedCommonNames(params *GetMsgVpnBridgeTLS
 /*
 GetMsgVpnBridges gets a list of bridge objects
 
-Gets a list of Bridge objects.
+Get a list of Bridge objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2873,7 +3565,7 @@ remoteAuthenticationClientCertPassword||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2906,7 +3598,9 @@ func (a *Client) GetMsgVpnBridges(params *GetMsgVpnBridgesParams, authInfo runti
 /*
 GetMsgVpnClientProfile gets a client profile object
 
-Gets a Client Profile object.
+Get a Client Profile object.
+
+Client Profiles are used to assign common configuration properties to clients that have been successfully authorized.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2916,7 +3610,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2949,7 +3643,9 @@ func (a *Client) GetMsgVpnClientProfile(params *GetMsgVpnClientProfileParams, au
 /*
 GetMsgVpnClientProfiles gets a list of client profile objects
 
-Gets a list of Client Profile objects.
+Get a list of Client Profile objects.
+
+Client Profiles are used to assign common configuration properties to clients that have been successfully authorized.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -2959,7 +3655,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -2992,7 +3688,7 @@ func (a *Client) GetMsgVpnClientProfiles(params *GetMsgVpnClientProfilesParams, 
 /*
 GetMsgVpnClientUsername gets a client username object
 
-Gets a Client Username object.
+Get a Client Username object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3003,7 +3699,7 @@ password||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3036,7 +3732,7 @@ func (a *Client) GetMsgVpnClientUsername(params *GetMsgVpnClientUsernameParams, 
 /*
 GetMsgVpnClientUsernames gets a list of client username objects
 
-Gets a list of Client Username objects.
+Get a list of Client Username objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3047,7 +3743,7 @@ password||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3078,9 +3774,631 @@ func (a *Client) GetMsgVpnClientUsernames(params *GetMsgVpnClientUsernamesParams
 }
 
 /*
+GetMsgVpnDistributedCache gets a distributed cache object
+
+Get a Distributed Cache object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCache(params *GetMsgVpnDistributedCacheParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCache",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheCluster gets a cache cluster object
+
+Get a Cache Cluster object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheCluster(params *GetMsgVpnDistributedCacheClusterParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheCluster",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterGlobalCachingHomeCluster gets a home cache cluster object
+
+Get a Home Cache Cluster object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+homeClusterName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterGlobalCachingHomeCluster(params *GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterGlobalCachingHomeCluster",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters/{homeClusterName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix gets a topic prefix object
+
+Get a Topic Prefix object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+homeClusterName|x||
+msgVpnName|x||
+topicPrefix|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix(params *GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefix",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters/{homeClusterName}/topicPrefixes/{topicPrefix}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixes gets a list of topic prefix objects
+
+Get a list of Topic Prefix objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+homeClusterName|x||
+msgVpnName|x||
+topicPrefix|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixes(params *GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixes",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters/{homeClusterName}/topicPrefixes",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusterTopicPrefixesOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusters gets a list of home cache cluster objects
+
+Get a list of Home Cache Cluster objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+homeClusterName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterGlobalCachingHomeClusters(params *GetMsgVpnDistributedCacheClusterGlobalCachingHomeClustersParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClustersOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterGlobalCachingHomeClustersParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterGlobalCachingHomeClusters",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/globalCachingHomeClusters",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterGlobalCachingHomeClustersReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterGlobalCachingHomeClustersOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterInstance gets a cache instance object
+
+Get a Cache Instance object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+instanceName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterInstance(params *GetMsgVpnDistributedCacheClusterInstanceParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterInstanceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterInstanceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterInstance",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/instances/{instanceName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterInstanceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterInstanceOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterInstances gets a list of cache instance objects
+
+Get a list of Cache Instance objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+instanceName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterInstances(params *GetMsgVpnDistributedCacheClusterInstancesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterInstancesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterInstancesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterInstances",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/instances",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterInstancesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterInstancesOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterTopic gets a topic object
+
+Get a Topic object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+msgVpnName|x||
+topic|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterTopic(params *GetMsgVpnDistributedCacheClusterTopicParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterTopicOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterTopicParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterTopic",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/topics/{topic}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterTopicReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterTopicOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusterTopics gets a list of topic objects
+
+Get a list of Topic objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+msgVpnName|x||
+topic|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusterTopics(params *GetMsgVpnDistributedCacheClusterTopicsParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClusterTopicsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClusterTopicsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusterTopics",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/topics",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClusterTopicsReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClusterTopicsOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCacheClusters gets a list of cache cluster objects
+
+Get a list of Cache Cluster objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+clusterName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCacheClusters(params *GetMsgVpnDistributedCacheClustersParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCacheClustersOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCacheClustersParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCacheClusters",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCacheClustersReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCacheClustersOK), nil
+
+}
+
+/*
+GetMsgVpnDistributedCaches gets a list of distributed cache objects
+
+Get a list of Distributed Cache objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDistributedCaches(params *GetMsgVpnDistributedCachesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDistributedCachesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDistributedCachesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDistributedCaches",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDistributedCachesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDistributedCachesOK), nil
+
+}
+
+/*
+GetMsgVpnDmrBridge gets a d m r bridge object
+
+Get a DMR Bridge object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+msgVpnName|x||
+remoteNodeName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDmrBridge(params *GetMsgVpnDmrBridgeParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDmrBridgeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDmrBridgeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDmrBridge",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/dmrBridges/{remoteNodeName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDmrBridgeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDmrBridgeOK), nil
+
+}
+
+/*
+GetMsgVpnDmrBridges gets a list of d m r bridge objects
+
+Get a list of DMR Bridge objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+msgVpnName|x||
+remoteNodeName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnDmrBridges(params *GetMsgVpnDmrBridgesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnDmrBridgesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnDmrBridgesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnDmrBridges",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/dmrBridges",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnDmrBridgesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnDmrBridgesOK), nil
+
+}
+
+/*
 GetMsgVpnJndiConnectionFactories gets a list of j n d i connection factory objects
 
-Gets a list of JNDI Connection Factory objects.
+Get a list of JNDI Connection Factory objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3090,7 +4408,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -3123,7 +4441,7 @@ func (a *Client) GetMsgVpnJndiConnectionFactories(params *GetMsgVpnJndiConnectio
 /*
 GetMsgVpnJndiConnectionFactory gets a j n d i connection factory object
 
-Gets a JNDI Connection Factory object.
+Get a JNDI Connection Factory object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3133,7 +4451,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -3166,7 +4484,7 @@ func (a *Client) GetMsgVpnJndiConnectionFactory(params *GetMsgVpnJndiConnectionF
 /*
 GetMsgVpnJndiQueue gets a j n d i queue object
 
-Gets a JNDI Queue object.
+Get a JNDI Queue object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3176,7 +4494,7 @@ queueName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -3209,7 +4527,7 @@ func (a *Client) GetMsgVpnJndiQueue(params *GetMsgVpnJndiQueueParams, authInfo r
 /*
 GetMsgVpnJndiQueues gets a list of j n d i queue objects
 
-Gets a list of JNDI Queue objects.
+Get a list of JNDI Queue objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3219,7 +4537,7 @@ queueName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -3252,7 +4570,7 @@ func (a *Client) GetMsgVpnJndiQueues(params *GetMsgVpnJndiQueuesParams, authInfo
 /*
 GetMsgVpnJndiTopic gets a j n d i topic object
 
-Gets a JNDI Topic object.
+Get a JNDI Topic object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3262,7 +4580,7 @@ topicName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -3295,7 +4613,7 @@ func (a *Client) GetMsgVpnJndiTopic(params *GetMsgVpnJndiTopicParams, authInfo r
 /*
 GetMsgVpnJndiTopics gets a list of j n d i topic objects
 
-Gets a list of JNDI Topic objects.
+Get a list of JNDI Topic objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3305,7 +4623,7 @@ topicName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -3336,9 +4654,95 @@ func (a *Client) GetMsgVpnJndiTopics(params *GetMsgVpnJndiTopicsParams, authInfo
 }
 
 /*
+GetMsgVpnMqttRetainCache gets an m q t t retain cache object
+
+Get an MQTT Retain Cache object.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnMqttRetainCache(params *GetMsgVpnMqttRetainCacheParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnMqttRetainCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnMqttRetainCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnMqttRetainCache",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/mqttRetainCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnMqttRetainCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnMqttRetainCacheOK), nil
+
+}
+
+/*
+GetMsgVpnMqttRetainCaches gets a list of m q t t retain cache objects
+
+Get a list of MQTT Retain Cache objects.
+
+
+Attribute|Identifying|Write-Only|Deprecated
+:---|:---:|:---:|:---:
+cacheName|x||
+msgVpnName|x||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) GetMsgVpnMqttRetainCaches(params *GetMsgVpnMqttRetainCachesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnMqttRetainCachesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetMsgVpnMqttRetainCachesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getMsgVpnMqttRetainCaches",
+		Method:             "GET",
+		PathPattern:        "/msgVpns/{msgVpnName}/mqttRetainCaches",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetMsgVpnMqttRetainCachesReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*GetMsgVpnMqttRetainCachesOK), nil
+
+}
+
+/*
 GetMsgVpnMqttSession gets an m q t t session object
 
-Gets an MQTT Session object.
+Get an MQTT Session object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3349,7 +4753,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -3380,9 +4784,9 @@ func (a *Client) GetMsgVpnMqttSession(params *GetMsgVpnMqttSessionParams, authIn
 }
 
 /*
-GetMsgVpnMqttSessionSubscription gets an m q t t session subscription object
+GetMsgVpnMqttSessionSubscription gets a subscription object
 
-Gets an MQTT Session Subscription object.
+Get a Subscription object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3394,7 +4798,7 @@ subscriptionTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -3425,9 +4829,9 @@ func (a *Client) GetMsgVpnMqttSessionSubscription(params *GetMsgVpnMqttSessionSu
 }
 
 /*
-GetMsgVpnMqttSessionSubscriptions gets a list of m q t t session subscription objects
+GetMsgVpnMqttSessionSubscriptions gets a list of subscription objects
 
-Gets a list of MQTT Session Subscription objects.
+Get a list of Subscription objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3439,7 +4843,7 @@ subscriptionTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -3472,7 +4876,7 @@ func (a *Client) GetMsgVpnMqttSessionSubscriptions(params *GetMsgVpnMqttSessionS
 /*
 GetMsgVpnMqttSessions gets a list of m q t t session objects
 
-Gets a list of MQTT Session objects.
+Get a list of MQTT Session objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3483,7 +4887,7 @@ msgVpnName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -3516,7 +4920,7 @@ func (a *Client) GetMsgVpnMqttSessions(params *GetMsgVpnMqttSessionsParams, auth
 /*
 GetMsgVpnQueue gets a queue object
 
-Gets a Queue object.
+Get a Queue object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3526,7 +4930,7 @@ queueName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3559,7 +4963,7 @@ func (a *Client) GetMsgVpnQueue(params *GetMsgVpnQueueParams, authInfo runtime.C
 /*
 GetMsgVpnQueueSubscription gets a queue subscription object
 
-Gets a Queue Subscription object.
+Get a Queue Subscription object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3570,7 +4974,7 @@ subscriptionTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3603,7 +5007,7 @@ func (a *Client) GetMsgVpnQueueSubscription(params *GetMsgVpnQueueSubscriptionPa
 /*
 GetMsgVpnQueueSubscriptions gets a list of queue subscription objects
 
-Gets a list of Queue Subscription objects.
+Get a list of Queue Subscription objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3614,7 +5018,7 @@ subscriptionTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3647,7 +5051,7 @@ func (a *Client) GetMsgVpnQueueSubscriptions(params *GetMsgVpnQueueSubscriptions
 /*
 GetMsgVpnQueues gets a list of queue objects
 
-Gets a list of Queue objects.
+Get a list of Queue objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3657,7 +5061,7 @@ queueName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3690,7 +5094,7 @@ func (a *Client) GetMsgVpnQueues(params *GetMsgVpnQueuesParams, authInfo runtime
 /*
 GetMsgVpnReplayLog gets a replay log object
 
-Gets a ReplayLog object.
+Get a Replay Log object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3700,7 +5104,7 @@ replayLogName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.10.
 */
@@ -3733,7 +5137,7 @@ func (a *Client) GetMsgVpnReplayLog(params *GetMsgVpnReplayLogParams, authInfo r
 /*
 GetMsgVpnReplayLogs gets a list of replay log objects
 
-Gets a list of ReplayLog objects.
+Get a list of Replay Log objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3743,7 +5147,7 @@ replayLogName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.10.
 */
@@ -3776,7 +5180,7 @@ func (a *Client) GetMsgVpnReplayLogs(params *GetMsgVpnReplayLogsParams, authInfo
 /*
 GetMsgVpnReplicatedTopic gets a replicated topic object
 
-Gets a Replicated Topic object.
+Get a Replicated Topic object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3786,7 +5190,7 @@ replicatedTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.9.
 */
@@ -3819,7 +5223,7 @@ func (a *Client) GetMsgVpnReplicatedTopic(params *GetMsgVpnReplicatedTopicParams
 /*
 GetMsgVpnReplicatedTopics gets a list of replicated topic objects
 
-Gets a list of Replicated Topic objects.
+Get a list of Replicated Topic objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3829,7 +5233,7 @@ replicatedTopic|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.9.
 */
@@ -3862,7 +5266,7 @@ func (a *Client) GetMsgVpnReplicatedTopics(params *GetMsgVpnReplicatedTopicsPara
 /*
 GetMsgVpnRestDeliveryPoint gets a r e s t delivery point object
 
-Gets a REST Delivery Point object.
+Get a REST Delivery Point object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3872,7 +5276,7 @@ restDeliveryPointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3905,7 +5309,7 @@ func (a *Client) GetMsgVpnRestDeliveryPoint(params *GetMsgVpnRestDeliveryPointPa
 /*
 GetMsgVpnRestDeliveryPointQueueBinding gets a queue binding object
 
-Gets a Queue Binding object.
+Get a Queue Binding object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3916,7 +5320,7 @@ restDeliveryPointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3949,7 +5353,7 @@ func (a *Client) GetMsgVpnRestDeliveryPointQueueBinding(params *GetMsgVpnRestDel
 /*
 GetMsgVpnRestDeliveryPointQueueBindings gets a list of queue binding objects
 
-Gets a list of Queue Binding objects.
+Get a list of Queue Binding objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -3960,7 +5364,7 @@ restDeliveryPointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -3993,7 +5397,7 @@ func (a *Client) GetMsgVpnRestDeliveryPointQueueBindings(params *GetMsgVpnRestDe
 /*
 GetMsgVpnRestDeliveryPointRestConsumer gets a r e s t consumer object
 
-Gets a REST Consumer object.
+Get a REST Consumer object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4007,7 +5411,7 @@ restDeliveryPointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4040,7 +5444,7 @@ func (a *Client) GetMsgVpnRestDeliveryPointRestConsumer(params *GetMsgVpnRestDel
 /*
 GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName gets a trusted common name object
 
-Gets a Trusted Common Name object.
+Get a Trusted Common Name object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4052,9 +5456,9 @@ tlsTrustedCommonName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
-This has been available since 2.0.
+This has been available since 2.7.
 */
 func (a *Client) GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(params *GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameOK, error) {
 	// TODO: Validate the params before sending
@@ -4085,7 +5489,7 @@ func (a *Client) GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonName(para
 /*
 GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNames gets a list of trusted common name objects
 
-Gets a list of Trusted Common Name objects.
+Get a list of Trusted Common Name objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4097,9 +5501,9 @@ tlsTrustedCommonName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
-This has been available since 2.0.
+This has been available since 2.7.
 */
 func (a *Client) GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNames(params *GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesParams, authInfo runtime.ClientAuthInfoWriter) (*GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNamesOK, error) {
 	// TODO: Validate the params before sending
@@ -4130,7 +5534,7 @@ func (a *Client) GetMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNames(par
 /*
 GetMsgVpnRestDeliveryPointRestConsumers gets a list of r e s t consumer objects
 
-Gets a list of REST Consumer objects.
+Get a list of REST Consumer objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4144,7 +5548,7 @@ restDeliveryPointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4177,7 +5581,7 @@ func (a *Client) GetMsgVpnRestDeliveryPointRestConsumers(params *GetMsgVpnRestDe
 /*
 GetMsgVpnRestDeliveryPoints gets a list of r e s t delivery point objects
 
-Gets a list of REST Delivery Point objects.
+Get a list of REST Delivery Point objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4187,7 +5591,7 @@ restDeliveryPointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4220,7 +5624,7 @@ func (a *Client) GetMsgVpnRestDeliveryPoints(params *GetMsgVpnRestDeliveryPoints
 /*
 GetMsgVpnTopicEndpoint gets a topic endpoint object
 
-Gets a Topic Endpoint object.
+Get a Topic Endpoint object.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4230,7 +5634,7 @@ topicEndpointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -4263,7 +5667,7 @@ func (a *Client) GetMsgVpnTopicEndpoint(params *GetMsgVpnTopicEndpointParams, au
 /*
 GetMsgVpnTopicEndpoints gets a list of topic endpoint objects
 
-Gets a list of Topic Endpoint objects.
+Get a list of Topic Endpoint objects.
 
 
 Attribute|Identifying|Write-Only|Deprecated
@@ -4273,7 +5677,7 @@ topicEndpointName|x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readonly" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-only" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -4306,7 +5710,9 @@ func (a *Client) GetMsgVpnTopicEndpoints(params *GetMsgVpnTopicEndpointsParams, 
 /*
 ReplaceMsgVpnACLProfile replaces an ACL profile object
 
-Replaces an ACL Profile object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace an ACL Profile object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+An ACL Profile controls whether an authenticated client is permitted to establish a connection with the message broker or permitted to publish and subscribe to specific topics.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4316,7 +5722,7 @@ msgVpnName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4349,7 +5755,7 @@ func (a *Client) ReplaceMsgVpnACLProfile(params *ReplaceMsgVpnACLProfileParams, 
 /*
 ReplaceMsgVpnAuthorizationGroup replaces an l d a p authorization group object
 
-Replaces an LDAP Authorization Group object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace an LDAP Authorization Group object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4373,7 +5779,7 @@ MsgVpnAuthorizationGroup|orderBeforeAuthorizationGroupName||orderAfterAuthorizat
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4406,7 +5812,7 @@ func (a *Client) ReplaceMsgVpnAuthorizationGroup(params *ReplaceMsgVpnAuthorizat
 /*
 ReplaceMsgVpnBridge replaces a bridge object
 
-Replaces a Bridge object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Bridge object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4435,7 +5841,7 @@ MsgVpnBridge|remoteAuthenticationClientCertPassword|remoteAuthenticationClientCe
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4468,7 +5874,7 @@ func (a *Client) ReplaceMsgVpnBridge(params *ReplaceMsgVpnBridgeParams, authInfo
 /*
 ReplaceMsgVpnBridgeRemoteMsgVpn replaces a remote message v p n object
 
-Replaces a Remote Message VPN object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Remote Message VPN object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4497,7 +5903,7 @@ MsgVpnBridgeRemoteMsgVpn|password|clientUsername|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4530,7 +5936,9 @@ func (a *Client) ReplaceMsgVpnBridgeRemoteMsgVpn(params *ReplaceMsgVpnBridgeRemo
 /*
 ReplaceMsgVpnClientProfile replaces a client profile object
 
-Replaces a Client Profile object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Client Profile object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+Client Profiles are used to assign common configuration properties to clients that have been successfully authorized.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4554,7 +5962,7 @@ EventThresholdByPercent|setPercent|clearPercent|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4587,7 +5995,7 @@ func (a *Client) ReplaceMsgVpnClientProfile(params *ReplaceMsgVpnClientProfilePa
 /*
 ReplaceMsgVpnClientUsername replaces a client username object
 
-Replaces a Client Username object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Client Username object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4600,7 +6008,7 @@ password|||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4631,9 +6039,206 @@ func (a *Client) ReplaceMsgVpnClientUsername(params *ReplaceMsgVpnClientUsername
 }
 
 /*
+ReplaceMsgVpnDistributedCache replaces a distributed cache object
+
+Replace a Distributed Cache object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+msgVpnName|x|x|||
+
+
+
+The following attributes in the request may only be provided in certain combinations with other attributes:
+
+
+Class|Attribute|Requires|Conflicts
+:---|:---|:---|:---
+MsgVpnDistributedCache|scheduledDeleteMsgDayList|scheduledDeleteMsgTimeList|
+MsgVpnDistributedCache|scheduledDeleteMsgTimeList|scheduledDeleteMsgDayList|
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) ReplaceMsgVpnDistributedCache(params *ReplaceMsgVpnDistributedCacheParams, authInfo runtime.ClientAuthInfoWriter) (*ReplaceMsgVpnDistributedCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReplaceMsgVpnDistributedCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "replaceMsgVpnDistributedCache",
+		Method:             "PUT",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &ReplaceMsgVpnDistributedCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ReplaceMsgVpnDistributedCacheOK), nil
+
+}
+
+/*
+ReplaceMsgVpnDistributedCacheCluster replaces a cache cluster object
+
+Replace a Cache Cluster object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+clusterName|x|x|||
+msgVpnName|x|x|||
+
+
+
+The following attributes in the request may only be provided in certain combinations with other attributes:
+
+
+Class|Attribute|Requires|Conflicts
+:---|:---|:---|:---
+EventThresholdByPercent|clearPercent|setPercent|
+EventThresholdByPercent|setPercent|clearPercent|
+EventThresholdByValue|clearValue|setValue|
+EventThresholdByValue|setValue|clearValue|
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) ReplaceMsgVpnDistributedCacheCluster(params *ReplaceMsgVpnDistributedCacheClusterParams, authInfo runtime.ClientAuthInfoWriter) (*ReplaceMsgVpnDistributedCacheClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReplaceMsgVpnDistributedCacheClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "replaceMsgVpnDistributedCacheCluster",
+		Method:             "PUT",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &ReplaceMsgVpnDistributedCacheClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ReplaceMsgVpnDistributedCacheClusterOK), nil
+
+}
+
+/*
+ReplaceMsgVpnDistributedCacheClusterInstance replaces a cache instance object
+
+Replace a Cache Instance object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+clusterName|x|x|||
+instanceName|x|x|||
+msgVpnName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) ReplaceMsgVpnDistributedCacheClusterInstance(params *ReplaceMsgVpnDistributedCacheClusterInstanceParams, authInfo runtime.ClientAuthInfoWriter) (*ReplaceMsgVpnDistributedCacheClusterInstanceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReplaceMsgVpnDistributedCacheClusterInstanceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "replaceMsgVpnDistributedCacheClusterInstance",
+		Method:             "PUT",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/instances/{instanceName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &ReplaceMsgVpnDistributedCacheClusterInstanceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ReplaceMsgVpnDistributedCacheClusterInstanceOK), nil
+
+}
+
+/*
+ReplaceMsgVpnDmrBridge replaces a d m r bridge object
+
+Replace a DMR Bridge object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+msgVpnName|x|x|||
+remoteNodeName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) ReplaceMsgVpnDmrBridge(params *ReplaceMsgVpnDmrBridgeParams, authInfo runtime.ClientAuthInfoWriter) (*ReplaceMsgVpnDmrBridgeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReplaceMsgVpnDmrBridgeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "replaceMsgVpnDmrBridge",
+		Method:             "PUT",
+		PathPattern:        "/msgVpns/{msgVpnName}/dmrBridges/{remoteNodeName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &ReplaceMsgVpnDmrBridgeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ReplaceMsgVpnDmrBridgeOK), nil
+
+}
+
+/*
 ReplaceMsgVpnJndiConnectionFactory replaces a j n d i connection factory object
 
-Replaces a JNDI Connection Factory object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a JNDI Connection Factory object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4643,7 +6248,7 @@ msgVpnName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -4676,7 +6281,7 @@ func (a *Client) ReplaceMsgVpnJndiConnectionFactory(params *ReplaceMsgVpnJndiCon
 /*
 ReplaceMsgVpnJndiQueue replaces a j n d i queue object
 
-Replaces a JNDI Queue object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a JNDI Queue object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4686,7 +6291,7 @@ queueName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -4719,7 +6324,7 @@ func (a *Client) ReplaceMsgVpnJndiQueue(params *ReplaceMsgVpnJndiQueueParams, au
 /*
 ReplaceMsgVpnJndiTopic replaces a j n d i topic object
 
-Replaces a JNDI Topic object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a JNDI Topic object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4729,7 +6334,7 @@ topicName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -4760,9 +6365,52 @@ func (a *Client) ReplaceMsgVpnJndiTopic(params *ReplaceMsgVpnJndiTopicParams, au
 }
 
 /*
+ReplaceMsgVpnMqttRetainCache replaces an m q t t retain cache object
+
+Replace an MQTT Retain Cache object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+msgVpnName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) ReplaceMsgVpnMqttRetainCache(params *ReplaceMsgVpnMqttRetainCacheParams, authInfo runtime.ClientAuthInfoWriter) (*ReplaceMsgVpnMqttRetainCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewReplaceMsgVpnMqttRetainCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "replaceMsgVpnMqttRetainCache",
+		Method:             "PUT",
+		PathPattern:        "/msgVpns/{msgVpnName}/mqttRetainCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &ReplaceMsgVpnMqttRetainCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ReplaceMsgVpnMqttRetainCacheOK), nil
+
+}
+
+/*
 ReplaceMsgVpnMqttSession replaces an m q t t session object
 
-Replaces an MQTT Session object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace an MQTT Session object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4774,7 +6422,7 @@ owner||||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -4805,9 +6453,9 @@ func (a *Client) ReplaceMsgVpnMqttSession(params *ReplaceMsgVpnMqttSessionParams
 }
 
 /*
-ReplaceMsgVpnMqttSessionSubscription replaces an m q t t session subscription object
+ReplaceMsgVpnMqttSessionSubscription replaces a subscription object
 
-Replaces an MQTT Session Subscription object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Subscription object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4819,7 +6467,7 @@ subscriptionTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -4852,7 +6500,7 @@ func (a *Client) ReplaceMsgVpnMqttSessionSubscription(params *ReplaceMsgVpnMqttS
 /*
 ReplaceMsgVpnQueue replaces a queue object
 
-Replaces a Queue object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Queue object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4878,7 +6526,7 @@ EventThreshold|setValue|clearValue|clearPercent, setPercent
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -4911,7 +6559,7 @@ func (a *Client) ReplaceMsgVpnQueue(params *ReplaceMsgVpnQueueParams, authInfo r
 /*
 ReplaceMsgVpnReplayLog replaces a replay log object
 
-Replaces a ReplayLog object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Replay Log object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4921,7 +6569,7 @@ replayLogName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.10.
 */
@@ -4954,7 +6602,7 @@ func (a *Client) ReplaceMsgVpnReplayLog(params *ReplaceMsgVpnReplayLogParams, au
 /*
 ReplaceMsgVpnReplicatedTopic replaces a replicated topic object
 
-Replaces a Replicated Topic object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Replicated Topic object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -4964,7 +6612,7 @@ replicatedTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.9.
 */
@@ -4997,7 +6645,7 @@ func (a *Client) ReplaceMsgVpnReplicatedTopic(params *ReplaceMsgVpnReplicatedTop
 /*
 ReplaceMsgVpnRestDeliveryPoint replaces a r e s t delivery point object
 
-Replaces a REST Delivery Point object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a REST Delivery Point object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5008,7 +6656,7 @@ restDeliveryPointName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5041,7 +6689,7 @@ func (a *Client) ReplaceMsgVpnRestDeliveryPoint(params *ReplaceMsgVpnRestDeliver
 /*
 ReplaceMsgVpnRestDeliveryPointQueueBinding replaces a queue binding object
 
-Replaces a Queue Binding object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Queue Binding object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5052,7 +6700,7 @@ restDeliveryPointName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5085,7 +6733,7 @@ func (a *Client) ReplaceMsgVpnRestDeliveryPointQueueBinding(params *ReplaceMsgVp
 /*
 ReplaceMsgVpnRestDeliveryPointRestConsumer replaces a r e s t consumer object
 
-Replaces a REST Consumer object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a REST Consumer object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5119,7 +6767,7 @@ MsgVpnRestDeliveryPointRestConsumer|tlsEnabled|remotePort|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5152,7 +6800,7 @@ func (a *Client) ReplaceMsgVpnRestDeliveryPointRestConsumer(params *ReplaceMsgVp
 /*
 ReplaceMsgVpnTopicEndpoint replaces a topic endpoint object
 
-Replaces a Topic Endpoint object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
+Replace a Topic Endpoint object. Any attribute missing from the request will be set to its default value, unless the user is not authorized to change its value in which case the missing attribute will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5178,7 +6826,7 @@ EventThreshold|setValue|clearValue|clearPercent, setPercent
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -5211,7 +6859,9 @@ func (a *Client) ReplaceMsgVpnTopicEndpoint(params *ReplaceMsgVpnTopicEndpointPa
 /*
 UpdateMsgVpnACLProfile updates an ACL profile object
 
-Updates an ACL Profile object. Any attribute missing from the request will be left unchanged.
+Update an ACL Profile object. Any attribute missing from the request will be left unchanged.
+
+An ACL Profile controls whether an authenticated client is permitted to establish a connection with the message broker or permitted to publish and subscribe to specific topics.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5221,7 +6871,7 @@ msgVpnName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5254,7 +6904,7 @@ func (a *Client) UpdateMsgVpnACLProfile(params *UpdateMsgVpnACLProfileParams, au
 /*
 UpdateMsgVpnAuthorizationGroup updates an l d a p authorization group object
 
-Updates an LDAP Authorization Group object. Any attribute missing from the request will be left unchanged.
+Update an LDAP Authorization Group object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5278,7 +6928,7 @@ MsgVpnAuthorizationGroup|orderBeforeAuthorizationGroupName||orderAfterAuthorizat
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5311,7 +6961,7 @@ func (a *Client) UpdateMsgVpnAuthorizationGroup(params *UpdateMsgVpnAuthorizatio
 /*
 UpdateMsgVpnBridge updates a bridge object
 
-Updates a Bridge object. Any attribute missing from the request will be left unchanged.
+Update a Bridge object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5340,7 +6990,7 @@ MsgVpnBridge|remoteAuthenticationClientCertPassword|remoteAuthenticationClientCe
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5373,7 +7023,7 @@ func (a *Client) UpdateMsgVpnBridge(params *UpdateMsgVpnBridgeParams, authInfo r
 /*
 UpdateMsgVpnBridgeRemoteMsgVpn updates a remote message v p n object
 
-Updates a Remote Message VPN object. Any attribute missing from the request will be left unchanged.
+Update a Remote Message VPN object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5402,7 +7052,7 @@ MsgVpnBridgeRemoteMsgVpn|password|clientUsername|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5435,7 +7085,9 @@ func (a *Client) UpdateMsgVpnBridgeRemoteMsgVpn(params *UpdateMsgVpnBridgeRemote
 /*
 UpdateMsgVpnClientProfile updates a client profile object
 
-Updates a Client Profile object. Any attribute missing from the request will be left unchanged.
+Update a Client Profile object. Any attribute missing from the request will be left unchanged.
+
+Client Profiles are used to assign common configuration properties to clients that have been successfully authorized.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5459,7 +7111,7 @@ EventThresholdByPercent|setPercent|clearPercent|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "global/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5492,7 +7144,7 @@ func (a *Client) UpdateMsgVpnClientProfile(params *UpdateMsgVpnClientProfilePara
 /*
 UpdateMsgVpnClientUsername updates a client username object
 
-Updates a Client Username object. Any attribute missing from the request will be left unchanged.
+Update a Client Username object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5505,7 +7157,7 @@ password|||x||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5536,9 +7188,206 @@ func (a *Client) UpdateMsgVpnClientUsername(params *UpdateMsgVpnClientUsernamePa
 }
 
 /*
+UpdateMsgVpnDistributedCache updates a distributed cache object
+
+Update a Distributed Cache object. Any attribute missing from the request will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+msgVpnName|x|x|||
+
+
+
+The following attributes in the request may only be provided in certain combinations with other attributes:
+
+
+Class|Attribute|Requires|Conflicts
+:---|:---|:---|:---
+MsgVpnDistributedCache|scheduledDeleteMsgDayList|scheduledDeleteMsgTimeList|
+MsgVpnDistributedCache|scheduledDeleteMsgTimeList|scheduledDeleteMsgDayList|
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) UpdateMsgVpnDistributedCache(params *UpdateMsgVpnDistributedCacheParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateMsgVpnDistributedCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateMsgVpnDistributedCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "updateMsgVpnDistributedCache",
+		Method:             "PATCH",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &UpdateMsgVpnDistributedCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*UpdateMsgVpnDistributedCacheOK), nil
+
+}
+
+/*
+UpdateMsgVpnDistributedCacheCluster updates a cache cluster object
+
+Update a Cache Cluster object. Any attribute missing from the request will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+clusterName|x|x|||
+msgVpnName|x|x|||
+
+
+
+The following attributes in the request may only be provided in certain combinations with other attributes:
+
+
+Class|Attribute|Requires|Conflicts
+:---|:---|:---|:---
+EventThresholdByPercent|clearPercent|setPercent|
+EventThresholdByPercent|setPercent|clearPercent|
+EventThresholdByValue|clearValue|setValue|
+EventThresholdByValue|setValue|clearValue|
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) UpdateMsgVpnDistributedCacheCluster(params *UpdateMsgVpnDistributedCacheClusterParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateMsgVpnDistributedCacheClusterOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateMsgVpnDistributedCacheClusterParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "updateMsgVpnDistributedCacheCluster",
+		Method:             "PATCH",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &UpdateMsgVpnDistributedCacheClusterReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*UpdateMsgVpnDistributedCacheClusterOK), nil
+
+}
+
+/*
+UpdateMsgVpnDistributedCacheClusterInstance updates a cache instance object
+
+Update a Cache Instance object. Any attribute missing from the request will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+clusterName|x|x|||
+instanceName|x|x|||
+msgVpnName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) UpdateMsgVpnDistributedCacheClusterInstance(params *UpdateMsgVpnDistributedCacheClusterInstanceParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateMsgVpnDistributedCacheClusterInstanceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateMsgVpnDistributedCacheClusterInstanceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "updateMsgVpnDistributedCacheClusterInstance",
+		Method:             "PATCH",
+		PathPattern:        "/msgVpns/{msgVpnName}/distributedCaches/{cacheName}/clusters/{clusterName}/instances/{instanceName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &UpdateMsgVpnDistributedCacheClusterInstanceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*UpdateMsgVpnDistributedCacheClusterInstanceOK), nil
+
+}
+
+/*
+UpdateMsgVpnDmrBridge updates a d m r bridge object
+
+Update a DMR Bridge object. Any attribute missing from the request will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+msgVpnName|x|x|||
+remoteNodeName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "global/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) UpdateMsgVpnDmrBridge(params *UpdateMsgVpnDmrBridgeParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateMsgVpnDmrBridgeOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateMsgVpnDmrBridgeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "updateMsgVpnDmrBridge",
+		Method:             "PATCH",
+		PathPattern:        "/msgVpns/{msgVpnName}/dmrBridges/{remoteNodeName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &UpdateMsgVpnDmrBridgeReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*UpdateMsgVpnDmrBridgeOK), nil
+
+}
+
+/*
 UpdateMsgVpnJndiConnectionFactory updates a j n d i connection factory object
 
-Updates a JNDI Connection Factory object. Any attribute missing from the request will be left unchanged.
+Update a JNDI Connection Factory object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5548,7 +7397,7 @@ msgVpnName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -5581,7 +7430,7 @@ func (a *Client) UpdateMsgVpnJndiConnectionFactory(params *UpdateMsgVpnJndiConne
 /*
 UpdateMsgVpnJndiQueue updates a j n d i queue object
 
-Updates a JNDI Queue object. Any attribute missing from the request will be left unchanged.
+Update a JNDI Queue object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5591,7 +7440,7 @@ queueName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -5624,7 +7473,7 @@ func (a *Client) UpdateMsgVpnJndiQueue(params *UpdateMsgVpnJndiQueueParams, auth
 /*
 UpdateMsgVpnJndiTopic updates a j n d i topic object
 
-Updates a JNDI Topic object. Any attribute missing from the request will be left unchanged.
+Update a JNDI Topic object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5634,7 +7483,7 @@ topicName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.2.
 */
@@ -5665,9 +7514,52 @@ func (a *Client) UpdateMsgVpnJndiTopic(params *UpdateMsgVpnJndiTopicParams, auth
 }
 
 /*
+UpdateMsgVpnMqttRetainCache updates an m q t t retain cache object
+
+Update an MQTT Retain Cache object. Any attribute missing from the request will be left unchanged.
+
+
+Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
+:---|:---:|:---:|:---:|:---:|:---:
+cacheName|x|x|||
+msgVpnName|x|x|||
+
+
+
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
+
+This has been available since 2.11.
+*/
+func (a *Client) UpdateMsgVpnMqttRetainCache(params *UpdateMsgVpnMqttRetainCacheParams, authInfo runtime.ClientAuthInfoWriter) (*UpdateMsgVpnMqttRetainCacheOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateMsgVpnMqttRetainCacheParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "updateMsgVpnMqttRetainCache",
+		Method:             "PATCH",
+		PathPattern:        "/msgVpns/{msgVpnName}/mqttRetainCaches/{cacheName}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &UpdateMsgVpnMqttRetainCacheReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*UpdateMsgVpnMqttRetainCacheOK), nil
+
+}
+
+/*
 UpdateMsgVpnMqttSession updates an m q t t session object
 
-Updates an MQTT Session object. Any attribute missing from the request will be left unchanged.
+Update an MQTT Session object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5679,7 +7571,7 @@ owner||||x|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -5710,9 +7602,9 @@ func (a *Client) UpdateMsgVpnMqttSession(params *UpdateMsgVpnMqttSessionParams, 
 }
 
 /*
-UpdateMsgVpnMqttSessionSubscription updates an m q t t session subscription object
+UpdateMsgVpnMqttSessionSubscription updates a subscription object
 
-Updates an MQTT Session Subscription object. Any attribute missing from the request will be left unchanged.
+Update a Subscription object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5724,7 +7616,7 @@ subscriptionTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */
@@ -5757,7 +7649,7 @@ func (a *Client) UpdateMsgVpnMqttSessionSubscription(params *UpdateMsgVpnMqttSes
 /*
 UpdateMsgVpnQueue updates a queue object
 
-Updates a Queue object. Any attribute missing from the request will be left unchanged.
+Update a Queue object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5783,7 +7675,7 @@ EventThreshold|setValue|clearValue|clearPercent, setPercent
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5816,7 +7708,7 @@ func (a *Client) UpdateMsgVpnQueue(params *UpdateMsgVpnQueueParams, authInfo run
 /*
 UpdateMsgVpnReplayLog updates a replay log object
 
-Updates a ReplayLog object. Any attribute missing from the request will be left unchanged.
+Update a Replay Log object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5826,7 +7718,7 @@ replayLogName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.10.
 */
@@ -5859,7 +7751,7 @@ func (a *Client) UpdateMsgVpnReplayLog(params *UpdateMsgVpnReplayLogParams, auth
 /*
 UpdateMsgVpnReplicatedTopic updates a replicated topic object
 
-Updates a Replicated Topic object. Any attribute missing from the request will be left unchanged.
+Update a Replicated Topic object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5869,7 +7761,7 @@ replicatedTopic|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.9.
 */
@@ -5902,7 +7794,7 @@ func (a *Client) UpdateMsgVpnReplicatedTopic(params *UpdateMsgVpnReplicatedTopic
 /*
 UpdateMsgVpnRestDeliveryPoint updates a r e s t delivery point object
 
-Updates a REST Delivery Point object. Any attribute missing from the request will be left unchanged.
+Update a REST Delivery Point object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5913,7 +7805,7 @@ restDeliveryPointName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5946,7 +7838,7 @@ func (a *Client) UpdateMsgVpnRestDeliveryPoint(params *UpdateMsgVpnRestDeliveryP
 /*
 UpdateMsgVpnRestDeliveryPointQueueBinding updates a queue binding object
 
-Updates a Queue Binding object. Any attribute missing from the request will be left unchanged.
+Update a Queue Binding object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -5957,7 +7849,7 @@ restDeliveryPointName|x|x|||
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -5990,7 +7882,7 @@ func (a *Client) UpdateMsgVpnRestDeliveryPointQueueBinding(params *UpdateMsgVpnR
 /*
 UpdateMsgVpnRestDeliveryPointRestConsumer updates a r e s t consumer object
 
-Updates a REST Consumer object. Any attribute missing from the request will be left unchanged.
+Update a REST Consumer object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -6024,7 +7916,7 @@ MsgVpnRestDeliveryPointRestConsumer|tlsEnabled|remotePort|
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.0.
 */
@@ -6057,7 +7949,7 @@ func (a *Client) UpdateMsgVpnRestDeliveryPointRestConsumer(params *UpdateMsgVpnR
 /*
 UpdateMsgVpnTopicEndpoint updates a topic endpoint object
 
-Updates a Topic Endpoint object. Any attribute missing from the request will be left unchanged.
+Update a Topic Endpoint object. Any attribute missing from the request will be left unchanged.
 
 
 Attribute|Identifying|Read-Only|Write-Only|Requires-Disable|Deprecated
@@ -6083,7 +7975,7 @@ EventThreshold|setValue|clearValue|clearPercent, setPercent
 
 
 
-A SEMP client authorized with a minimum access scope/level of "vpn/readwrite" is required to perform this operation.
+A SEMP client authorized with a minimum access scope/level of "vpn/read-write" is required to perform this operation.
 
 This has been available since 2.1.
 */

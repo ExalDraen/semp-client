@@ -63,12 +63,12 @@ for the delete msg vpn sequenced topic operation typically these are written to 
 type DeleteMsgVpnSequencedTopicParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*SequencedTopic
-	  The sequencedTopic of the Sequenced Topic.
+	  Topic for applying sequence numbers.
 
 	*/
 	SequencedTopic string

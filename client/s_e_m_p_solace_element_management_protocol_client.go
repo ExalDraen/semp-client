@@ -12,9 +12,11 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/ExalDraen/semp-client/client/about"
+	"github.com/ExalDraen/semp-client/client/dmr_cluster"
 	"github.com/ExalDraen/semp-client/client/msg_vpn"
 	"github.com/ExalDraen/semp-client/client/operations"
 	"github.com/ExalDraen/semp-client/client/system_information"
+	"github.com/ExalDraen/semp-client/client/username"
 )
 
 // Default s e m p solace element management protocol HTTP client.
@@ -62,11 +64,15 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *SEMPSolace
 
 	cli.About = about.New(transport, formats)
 
+	cli.DmrCluster = dmr_cluster.New(transport, formats)
+
 	cli.MsgVpn = msg_vpn.New(transport, formats)
 
 	cli.Operations = operations.New(transport, formats)
 
 	cli.SystemInformation = system_information.New(transport, formats)
+
+	cli.Username = username.New(transport, formats)
 
 	return cli
 }
@@ -114,11 +120,15 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 type SEMPSolaceElementManagementProtocol struct {
 	About *about.Client
 
+	DmrCluster *dmr_cluster.Client
+
 	MsgVpn *msg_vpn.Client
 
 	Operations *operations.Client
 
 	SystemInformation *system_information.Client
+
+	Username *username.Client
 
 	Transport runtime.ClientTransport
 }
@@ -129,10 +139,14 @@ func (c *SEMPSolaceElementManagementProtocol) SetTransport(transport runtime.Cli
 
 	c.About.SetTransport(transport)
 
+	c.DmrCluster.SetTransport(transport)
+
 	c.MsgVpn.SetTransport(transport)
 
 	c.Operations.SetTransport(transport)
 
 	c.SystemInformation.SetTransport(transport)
+
+	c.Username.SetTransport(transport)
 
 }

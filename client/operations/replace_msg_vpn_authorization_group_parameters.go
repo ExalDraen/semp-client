@@ -66,7 +66,7 @@ for the replace msg vpn authorization group operation typically these are writte
 type ReplaceMsgVpnAuthorizationGroupParams struct {
 
 	/*AuthorizationGroupName
-	  The authorizationGroupName of the LDAP Authorization Group.
+	  The name of the LDAP Authorization Group.
 
 	*/
 	AuthorizationGroupName string
@@ -76,12 +76,12 @@ type ReplaceMsgVpnAuthorizationGroupParams struct {
 	*/
 	Body *models.MsgVpnAuthorizationGroup
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

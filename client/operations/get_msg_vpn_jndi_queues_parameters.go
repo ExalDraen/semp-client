@@ -22,8 +22,11 @@ import (
 // NewGetMsgVpnJndiQueuesParams creates a new GetMsgVpnJndiQueuesParams object
 // with the default values initialized.
 func NewGetMsgVpnJndiQueuesParams() *GetMsgVpnJndiQueuesParams {
-	var ()
+	var (
+		countDefault = int64(10)
+	)
 	return &GetMsgVpnJndiQueuesParams{
+		Count: &countDefault,
 
 		timeout: cr.DefaultTimeout,
 	}
@@ -32,8 +35,11 @@ func NewGetMsgVpnJndiQueuesParams() *GetMsgVpnJndiQueuesParams {
 // NewGetMsgVpnJndiQueuesParamsWithTimeout creates a new GetMsgVpnJndiQueuesParams object
 // with the default values initialized, and the ability to set a timeout on a request
 func NewGetMsgVpnJndiQueuesParamsWithTimeout(timeout time.Duration) *GetMsgVpnJndiQueuesParams {
-	var ()
+	var (
+		countDefault = int64(10)
+	)
 	return &GetMsgVpnJndiQueuesParams{
+		Count: &countDefault,
 
 		timeout: timeout,
 	}
@@ -42,8 +48,11 @@ func NewGetMsgVpnJndiQueuesParamsWithTimeout(timeout time.Duration) *GetMsgVpnJn
 // NewGetMsgVpnJndiQueuesParamsWithContext creates a new GetMsgVpnJndiQueuesParams object
 // with the default values initialized, and the ability to set a context for a request
 func NewGetMsgVpnJndiQueuesParamsWithContext(ctx context.Context) *GetMsgVpnJndiQueuesParams {
-	var ()
+	var (
+		countDefault = int64(10)
+	)
 	return &GetMsgVpnJndiQueuesParams{
+		Count: &countDefault,
 
 		Context: ctx,
 	}
@@ -52,8 +61,11 @@ func NewGetMsgVpnJndiQueuesParamsWithContext(ctx context.Context) *GetMsgVpnJndi
 // NewGetMsgVpnJndiQueuesParamsWithHTTPClient creates a new GetMsgVpnJndiQueuesParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewGetMsgVpnJndiQueuesParamsWithHTTPClient(client *http.Client) *GetMsgVpnJndiQueuesParams {
-	var ()
+	var (
+		countDefault = int64(10)
+	)
 	return &GetMsgVpnJndiQueuesParams{
+		Count:      &countDefault,
 		HTTPClient: client,
 	}
 }
@@ -63,18 +75,28 @@ for the get msg vpn jndi queues operation typically these are written to a http.
 */
 type GetMsgVpnJndiQueuesParams struct {
 
+	/*Count
+	  Limit the count of objects in the response. See the documentation for the `count` parameter.
+
+	*/
+	Count *int64
+	/*Cursor
+	  The cursor, or position, for the next page of objects. See the documentation for the `cursor` parameter.
+
+	*/
+	Cursor *string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*Where
-	  Include in the response only objects where certain conditions are true. See [Where](#where "Description of the syntax of the `where` parameter").
+	  Include in the response only objects where certain conditions are true. See the the documentation for the `where` parameter.
 
 	*/
 	Where []string
@@ -117,6 +139,28 @@ func (o *GetMsgVpnJndiQueuesParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCount adds the count to the get msg vpn jndi queues params
+func (o *GetMsgVpnJndiQueuesParams) WithCount(count *int64) *GetMsgVpnJndiQueuesParams {
+	o.SetCount(count)
+	return o
+}
+
+// SetCount adds the count to the get msg vpn jndi queues params
+func (o *GetMsgVpnJndiQueuesParams) SetCount(count *int64) {
+	o.Count = count
+}
+
+// WithCursor adds the cursor to the get msg vpn jndi queues params
+func (o *GetMsgVpnJndiQueuesParams) WithCursor(cursor *string) *GetMsgVpnJndiQueuesParams {
+	o.SetCursor(cursor)
+	return o
+}
+
+// SetCursor adds the cursor to the get msg vpn jndi queues params
+func (o *GetMsgVpnJndiQueuesParams) SetCursor(cursor *string) {
+	o.Cursor = cursor
+}
+
 // WithMsgVpnName adds the msgVpnName to the get msg vpn jndi queues params
 func (o *GetMsgVpnJndiQueuesParams) WithMsgVpnName(msgVpnName string) *GetMsgVpnJndiQueuesParams {
 	o.SetMsgVpnName(msgVpnName)
@@ -157,6 +201,38 @@ func (o *GetMsgVpnJndiQueuesParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
+
+	if o.Count != nil {
+
+		// query param count
+		var qrCount int64
+		if o.Count != nil {
+			qrCount = *o.Count
+		}
+		qCount := swag.FormatInt64(qrCount)
+		if qCount != "" {
+			if err := r.SetQueryParam("count", qCount); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Cursor != nil {
+
+		// query param cursor
+		var qrCursor string
+		if o.Cursor != nil {
+			qrCursor = *o.Cursor
+		}
+		qCursor := qrCursor
+		if qCursor != "" {
+			if err := r.SetQueryParam("cursor", qCursor); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	// path param msgVpnName
 	if err := r.SetPathParam("msgVpnName", o.MsgVpnName); err != nil {

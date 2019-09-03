@@ -66,17 +66,17 @@ for the create msg vpn replay log operation typically these are written to a htt
 type CreateMsgVpnReplayLogParams struct {
 
 	/*Body
-	  The ReplayLog object's attributes.
+	  The Replay Log object's attributes.
 
 	*/
 	Body *models.MsgVpnReplayLog
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

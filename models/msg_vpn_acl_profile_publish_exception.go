@@ -25,10 +25,10 @@ type MsgVpnACLProfilePublishException struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The name of the Topic for the Exception to the default action taken. May include wildcard characters.
+	// The topic for the exception to the default action taken. May include wildcard characters.
 	PublishExceptionTopic string `json:"publishExceptionTopic,omitempty"`
 
-	// The syntax of the Topic for the Exception to the default action taken. The allowed values and their meaning are:
+	// The syntax of the topic for the exception to the default action taken. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "smf" - Topic uses SMF syntax.

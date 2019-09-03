@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnRestDeliveryPointQueueBindingLinks
 type MsgVpnRestDeliveryPointQueueBindingLinks struct {
 
-	// The URI of this MsgVpnRestDeliveryPointQueueBinding object.
+	// The URI of this Queue Binding object.
 	URI string `json:"uri,omitempty"`
 }
 

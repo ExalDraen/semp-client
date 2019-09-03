@@ -15,16 +15,16 @@ import (
 // swagger:model MsgVpnAclProfileLinks
 type MsgVpnACLProfileLinks struct {
 
-	// The URI of this MsgVpnAclProfile's clientConnectExceptions collection.
+	// The URI of this ACL Profile's collection of Client Connect Exception objects.
 	ClientConnectExceptionsURI string `json:"clientConnectExceptionsUri,omitempty"`
 
-	// The URI of this MsgVpnAclProfile's publishExceptions collection.
+	// The URI of this ACL Profile's collection of Publish Topic Exception objects.
 	PublishExceptionsURI string `json:"publishExceptionsUri,omitempty"`
 
-	// The URI of this MsgVpnAclProfile's subscribeExceptions collection.
+	// The URI of this ACL Profile's collection of Subscribe Topic Exception objects.
 	SubscribeExceptionsURI string `json:"subscribeExceptionsUri,omitempty"`
 
-	// The URI of this MsgVpnAclProfile object.
+	// The URI of this ACL Profile object.
 	URI string `json:"uri,omitempty"`
 }
 

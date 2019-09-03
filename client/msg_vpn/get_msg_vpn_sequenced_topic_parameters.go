@@ -64,17 +64,17 @@ for the get msg vpn sequenced topic operation typically these are written to a h
 type GetMsgVpnSequencedTopicParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*SequencedTopic
-	  The sequencedTopic of the Sequenced Topic.
+	  Topic for applying sequence numbers.
 
 	*/
 	SequencedTopic string

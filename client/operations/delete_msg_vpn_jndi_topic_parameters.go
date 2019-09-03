@@ -63,12 +63,12 @@ for the delete msg vpn jndi topic operation typically these are written to a htt
 type DeleteMsgVpnJndiTopicParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*TopicName
-	  The topicName of the JNDI Topic.
+	  The JNDI name of the JMS Topic.
 
 	*/
 	TopicName string

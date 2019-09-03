@@ -24,7 +24,7 @@ type MsgVpnClientUsername struct {
 	// The value of the Client Username.
 	ClientUsername string `json:"clientUsername,omitempty"`
 
-	// Enables or disables the Client Username. When disabled all clients currently connected as the Client Username are disconnected. The default value is `false`.
+	// Enables or disables the Client Username. When disabled, all clients currently connected as the Client Username are disconnected. The default value is `false`.
 	Enabled *bool `json:"enabled,omitempty"`
 
 	// Enables or disables guaranteed endpoint permission override for the Client Username. When enabled all guaranteed endpoints may be accessed, modified or deleted with the same permission as the owner. The default value is `false`.
@@ -33,7 +33,7 @@ type MsgVpnClientUsername struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The password of this Client Username for internal Authentication. The default is to have no password. The default is to have no `password`.
+	// The password for the Client Username. The default is to have no `password`.
 	Password *string `json:"password,omitempty"`
 
 	// Enables or disables the subscription management capability of the Client Username. This is the ability to manage subscriptions on behalf of other Client Usernames. The default value is `false`.

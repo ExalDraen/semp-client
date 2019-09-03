@@ -82,7 +82,7 @@ func NewGetMsgVpnMqttSessionsDefault(code int) *GetMsgVpnMqttSessionsDefault {
 
 /*GetMsgVpnMqttSessionsDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnMqttSessionsDefault struct {
 	_statusCode int

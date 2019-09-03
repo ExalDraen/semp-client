@@ -22,54 +22,54 @@ type MsgVpnBridgeRemoteMsgVpn struct {
 	// The name of the Bridge.
 	BridgeName string `json:"bridgeName,omitempty"`
 
-	// Specify whether the Bridge is configured for the primary or backup Virtual Router or auto configured. The allowed values and their meaning are:
+	// The virtual router of the Bridge. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "primary" - The Bridge is used for the primary Virtual Router.
-	// "backup" - The Bridge is used for the backup Virtual Router.
-	// "auto" - The Bridge is automatically assigned a Router.
+	// "primary" - The Bridge is used for the primary virtual router.
+	// "backup" - The Bridge is used for the backup virtual router.
+	// "auto" - The Bridge is automatically assigned a router.
 	// </pre>
 	//
 	// Enum: [primary backup auto]
 	BridgeVirtualRouter string `json:"bridgeVirtualRouter,omitempty"`
 
-	// The Client Username the Bridge uses to login to the Remote Message VPN. This per Remote Message VPN value overrides the value provided for the bridge overall. The default value is `""`.
+	// The Client Username the Bridge uses to login to the remote Message VPN. This per remote Message VPN value overrides the value provided for the Bridge overall. The default value is `""`.
 	ClientUsername string `json:"clientUsername,omitempty"`
 
-	// Enable or disable data compression for the Remote Message VPN. The default value is `false`.
+	// Enable or disable data compression for the remote Message VPN connection. The default value is `false`.
 	CompressedDataEnabled bool `json:"compressedDataEnabled,omitempty"`
 
-	// The order in which attempts to connect to different Message VPN hosts are attempted, or the preference given to incoming connections from remote routers, from 1 (highest priority) to 4 (lowest priority). The default value is `4`.
+	// The preference given to incoming connections from remote Message VPN hosts, from 1 (highest priority) to 4 (lowest priority). The default value is `4`.
 	ConnectOrder int32 `json:"connectOrder,omitempty"`
 
-	// Indicates how many outstanding guaranteed messages can be sent over the Remote Message VPN connection before acknowledgement is received by the sender. The default value is `255`.
+	// The number of outstanding guaranteed messages that can be transmitted over the remote Message VPN connection before an acknowledgement is received. The default value is `255`.
 	EgressFlowWindowSize int64 `json:"egressFlowWindowSize,omitempty"`
 
-	// Enable or disable the Remote Message VPN. The default value is `false`.
+	// Enable or disable the remote Message VPN. The default value is `false`.
 	Enabled bool `json:"enabled,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The password for the Client Username that the Bridge uses to login to the Remote Message VPN. The default is to have no `password`.
+	// The password for the Client Username. The default is to have no `password`.
 	Password string `json:"password,omitempty"`
 
-	// The queue binding of the Bridge for the Remote Message VPN. The Bridge attempts to bind to that queue over the Bridge link once the link has been established, or immediately if it already is established. The queue must be configured on the remote router when the Bridge connection is established. If the bind fails an event log is generated which includes the reason for the failure. The default value is `""`.
+	// The queue binding of the Bridge in the remote Message VPN. The default value is `""`.
 	QueueBinding string `json:"queueBinding,omitempty"`
 
-	// The interface on the local router through which to access the Remote Message VPN. If not provided (recommended) then an interface will be chosen automatically based on routing tables. If an interface is provided, "remoteMsgVpnLocation" must be either a hostname or IP Address, not a virtual router-name.
+	// The physical interface on the local Message VPN host for connecting to the remote Message VPN. By default, an interface is chosen automatically (recommended), but if specified, `remoteMsgVpnLocation` must not be a virtual router name.
 	RemoteMsgVpnInterface string `json:"remoteMsgVpnInterface,omitempty"`
 
-	// The location of the Remote Message VPN. This may be given as either an FQDN (resolvable via DNS), IP Address, or virtual router-name (starts with 'v:'). If specified as a FQDN or IP Address, a port must be specified as well.
+	// The location of the remote Message VPN as either an FQDN with port, IP address with port, or virtual router name (starting with "v:").
 	RemoteMsgVpnLocation string `json:"remoteMsgVpnLocation,omitempty"`
 
-	// The name of the Remote Message VPN.
+	// The name of the remote Message VPN.
 	RemoteMsgVpnName string `json:"remoteMsgVpnName,omitempty"`
 
-	// Enable or disable TLS for the Remote Message VPN. The default value is `false`.
+	// Enable or disable TLS encryption for the remote Message VPN connection. The default value is `false`.
 	TLSEnabled bool `json:"tlsEnabled,omitempty"`
 
-	// The Client Profile for the unidirectional Bridge for the Remote Message VPN. The Client Profile must exist in the local Message VPN, and it is used only for the TCP parameters. The default value is `"#client-profile"`.
+	// The Client Profile for the unidirectional Bridge of the remote Message VPN. The Client Profile must exist in the local Message VPN, and it is used only for the TCP parameters. The default value is `"#client-profile"`.
 	UnidirectionalClientProfile string `json:"unidirectionalClientProfile,omitempty"`
 }
 

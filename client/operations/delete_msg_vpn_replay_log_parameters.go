@@ -63,12 +63,12 @@ for the delete msg vpn replay log operation typically these are written to a htt
 type DeleteMsgVpnReplayLogParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*ReplayLogName
-	  The replayLogName of the ReplayLog.
+	  The name of the Replay Log.
 
 	*/
 	ReplayLogName string

@@ -15,7 +15,7 @@ import (
 // swagger:model AboutApiLinks
 type AboutAPILinks struct {
 
-	// The URI of this AboutApi object.
+	// The URI of this API Description object.
 	URI string `json:"uri,omitempty"`
 }
 

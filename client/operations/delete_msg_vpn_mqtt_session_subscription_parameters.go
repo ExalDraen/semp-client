@@ -63,22 +63,22 @@ for the delete msg vpn mqtt session subscription operation typically these are w
 type DeleteMsgVpnMqttSessionSubscriptionParams struct {
 
 	/*MqttSessionClientID
-	  The mqttSessionClientId of the MQTT Session.
+	  The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 
 	*/
 	MqttSessionClientID string
 	/*MqttSessionVirtualRouter
-	  The mqttSessionVirtualRouter of the MQTT Session.
+	  The virtual router of the MQTT Session.
 
 	*/
 	MqttSessionVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*SubscriptionTopic
-	  The subscriptionTopic of the MQTT Session Subscription.
+	  The MQTT subscription topic.
 
 	*/
 	SubscriptionTopic string

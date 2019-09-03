@@ -63,12 +63,12 @@ for the delete msg vpn authorization group operation typically these are written
 type DeleteMsgVpnAuthorizationGroupParams struct {
 
 	/*AuthorizationGroupName
-	  The authorizationGroupName of the LDAP Authorization Group.
+	  The name of the LDAP Authorization Group.
 
 	*/
 	AuthorizationGroupName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

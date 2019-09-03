@@ -22,12 +22,12 @@ type MsgVpnBridge struct {
 	// The name of the Bridge.
 	BridgeName string `json:"bridgeName,omitempty"`
 
-	// Specify whether the Bridge is configured for the primary or backup Virtual Router or auto configured. The allowed values and their meaning are:
+	// The virtual router of the Bridge. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "primary" - The Bridge is used for the primary Virtual Router.
-	// "backup" - The Bridge is used for the backup Virtual Router.
-	// "auto" - The Bridge is automatically assigned a Router.
+	// "primary" - The Bridge is used for the primary virtual router.
+	// "backup" - The Bridge is used for the backup virtual router.
+	// "auto" - The Bridge is automatically assigned a router.
 	// </pre>
 	//
 	// Enum: [primary backup auto]
@@ -36,25 +36,25 @@ type MsgVpnBridge struct {
 	// Enable or disable the Bridge. The default value is `false`.
 	Enabled bool `json:"enabled,omitempty"`
 
-	// The maximum number of hops (intermediate routers through which data must pass between source and destination) that can occur before the message is discarded. When the Bridge sends a message to the remote router, the message TTL value is assigned to the lower of the message current TTL or this value. The default value is `8`.
+	// The maximum time-to-live (TTL) in hops. Messages are discarded if their TTL exceeds this value. The default value is `8`.
 	MaxTTL int64 `json:"maxTtl,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The Client Username that the Bridge uses to login to the Remote Message VPN. The default value is `""`.
+	// The Client Username the Bridge uses to login to the remote Message VPN. The default value is `""`.
 	RemoteAuthenticationBasicClientUsername string `json:"remoteAuthenticationBasicClientUsername,omitempty"`
 
-	// The password the Message VPN Bridge uses to login to the Remote Message VPN. The default is to have no `remoteAuthenticationBasicPassword`.
+	// The password for the Client Username. The default is to have no `remoteAuthenticationBasicPassword`.
 	RemoteAuthenticationBasicPassword string `json:"remoteAuthenticationBasicPassword,omitempty"`
 
-	// The PEM formatted content for the client certificate used by this bridge to login to the Remote Message VPN. It must consist of a private key and between one and three certificates comprising the certificate trust chain. The default value is `""`. Available since 2.9.
+	// The PEM formatted content for the client certificate used by the Bridge to login to the remote Message VPN. It must consist of a private key and between one and three certificates comprising the certificate trust chain. Changing this attribute requires an HTTPS connection. The default value is `""`. Available since 2.9.
 	RemoteAuthenticationClientCertContent string `json:"remoteAuthenticationClientCertContent,omitempty"`
 
-	// The password for the client certificate used by this bridge to login to the Remote Message VPN. The default value is `""`. Available since 2.9.
+	// The password for the client certificate. Changing this attribute requires an HTTPS connection. The default value is `""`. Available since 2.9.
 	RemoteAuthenticationClientCertPassword string `json:"remoteAuthenticationClientCertPassword,omitempty"`
 
-	// The authentication scheme for the Remote Message VPN. The default value is `"basic"`. The allowed values and their meaning are:
+	// The authentication scheme for the remote Message VPN. The default value is `"basic"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "basic" - Basic Authentication Scheme (via username and password).
@@ -64,26 +64,26 @@ type MsgVpnBridge struct {
 	// Enum: [basic client-certificate]
 	RemoteAuthenticationScheme string `json:"remoteAuthenticationScheme,omitempty"`
 
-	// The maximum number of attempts to establish a connection to the Remote Message VPN. The default value is `0`.
+	// The maximum number of retry attempts to establish a connection to the remote Message VPN. A value of 0 means to retry forever. The default value is `0`.
 	RemoteConnectionRetryCount int64 `json:"remoteConnectionRetryCount,omitempty"`
 
-	// The amount of time before making another attempt to connect to the Remote Message VPN after a failed one, in seconds. The default value is `3`.
+	// The number of seconds to delay before retrying to connect to the remote Message VPN. The default value is `3`.
 	RemoteConnectionRetryDelay int64 `json:"remoteConnectionRetryDelay,omitempty"`
 
-	// The priority for deliver-to-one (DTO) messages sent from the Remote Message VPN to the Message VPN Bridge. The default value is `"p1"`. The allowed values and their meaning are:
+	// The priority for deliver-to-one (DTO) messages transmitted from the remote Message VPN. The default value is `"p1"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "p1" - Priority 1 (highest).
-	// "p2" - Priority 2.
-	// "p3" - Priority 3.
-	// "p4" - Priority 4 (lowest).
-	// "da" - Deliver Always.
+	// "p1" - The 1st or highest priority.
+	// "p2" - The 2nd highest priority.
+	// "p3" - The 3rd highest priority.
+	// "p4" - The 4th highest priority.
+	// "da" - Ignore priority and deliver always.
 	// </pre>
 	//
 	// Enum: [p1 p2 p3 p4 da]
 	RemoteDeliverToOnePriority string `json:"remoteDeliverToOnePriority,omitempty"`
 
-	// The list of cipher suites supported for TLS connections to the Remote Message VPN. The default value is `"default"`.
+	// The colon-separated list of cipher-suites supported for TLS connections to the remote Message VPN. The value "default" implies all supported suites ordered from most secure to least secure. The default value is `"default"`.
 	TLSCipherSuiteList string `json:"tlsCipherSuiteList,omitempty"`
 }
 

@@ -63,22 +63,22 @@ for the delete msg vpn Acl profile subscribe exception operation typically these
 type DeleteMsgVpnACLProfileSubscribeExceptionParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*SubscribeExceptionTopic
-	  The subscribeExceptionTopic of the Subscribe Topic Exception.
+	  The topic for the exception to the default action taken. May include wildcard characters.
 
 	*/
 	SubscribeExceptionTopic string
 	/*TopicSyntax
-	  The topicSyntax of the Subscribe Topic Exception.
+	  The syntax of the topic for the exception to the default action taken.
 
 	*/
 	TopicSyntax string

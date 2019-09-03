@@ -82,7 +82,7 @@ func NewReplaceMsgVpnRestDeliveryPointQueueBindingDefault(code int) *ReplaceMsgV
 
 /*ReplaceMsgVpnRestDeliveryPointQueueBindingDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type ReplaceMsgVpnRestDeliveryPointQueueBindingDefault struct {
 	_statusCode int

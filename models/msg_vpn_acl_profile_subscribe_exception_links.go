@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnAclProfileSubscribeExceptionLinks
 type MsgVpnACLProfileSubscribeExceptionLinks struct {
 
-	// The URI of this MsgVpnAclProfileSubscribeException object.
+	// The URI of this Subscribe Topic Exception object.
 	URI string `json:"uri,omitempty"`
 }
 

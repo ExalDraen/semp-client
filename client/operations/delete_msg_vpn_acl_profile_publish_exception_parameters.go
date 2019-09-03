@@ -63,22 +63,22 @@ for the delete msg vpn Acl profile publish exception operation typically these a
 type DeleteMsgVpnACLProfilePublishExceptionParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*PublishExceptionTopic
-	  The publishExceptionTopic of the Publish Topic Exception.
+	  The topic for the exception to the default action taken. May include wildcard characters.
 
 	*/
 	PublishExceptionTopic string
 	/*TopicSyntax
-	  The topicSyntax of the Publish Topic Exception.
+	  The syntax of the topic for the exception to the default action taken.
 
 	*/
 	TopicSyntax string

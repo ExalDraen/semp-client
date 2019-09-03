@@ -82,7 +82,7 @@ func NewDeleteMsgVpnReplicatedTopicDefault(code int) *DeleteMsgVpnReplicatedTopi
 
 /*DeleteMsgVpnReplicatedTopicDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnReplicatedTopicDefault struct {
 	_statusCode int

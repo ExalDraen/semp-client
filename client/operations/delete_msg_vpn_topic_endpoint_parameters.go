@@ -63,12 +63,12 @@ for the delete msg vpn topic endpoint operation typically these are written to a
 type DeleteMsgVpnTopicEndpointParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*TopicEndpointName
-	  The topicEndpointName of the Topic Endpoint.
+	  The name of the Topic Endpoint.
 
 	*/
 	TopicEndpointName string

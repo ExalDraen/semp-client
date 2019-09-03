@@ -82,7 +82,7 @@ func NewGetMsgVpnJndiConnectionFactoriesDefault(code int) *GetMsgVpnJndiConnecti
 
 /*GetMsgVpnJndiConnectionFactoriesDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnJndiConnectionFactoriesDefault struct {
 	_statusCode int

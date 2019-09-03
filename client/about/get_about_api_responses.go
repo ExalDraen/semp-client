@@ -82,7 +82,7 @@ func NewGetAboutAPIDefault(code int) *GetAboutAPIDefault {
 
 /*GetAboutAPIDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetAboutAPIDefault struct {
 	_statusCode int

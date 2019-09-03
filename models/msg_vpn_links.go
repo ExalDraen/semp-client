@@ -15,52 +15,61 @@ import (
 // swagger:model MsgVpnLinks
 type MsgVpnLinks struct {
 
-	// The URI of this MsgVpn's aclProfiles collection.
+	// The URI of this Message VPN's collection of ACL Profile objects.
 	ACLProfilesURI string `json:"aclProfilesUri,omitempty"`
 
-	// The URI of this MsgVpn's authorizationGroups collection.
+	// The URI of this Message VPN's collection of LDAP Authorization Group objects.
 	AuthorizationGroupsURI string `json:"authorizationGroupsUri,omitempty"`
 
-	// The URI of this MsgVpn's bridges collection.
+	// The URI of this Message VPN's collection of Bridge objects.
 	BridgesURI string `json:"bridgesUri,omitempty"`
 
-	// The URI of this MsgVpn's clientProfiles collection.
+	// The URI of this Message VPN's collection of Client Profile objects.
 	ClientProfilesURI string `json:"clientProfilesUri,omitempty"`
 
-	// The URI of this MsgVpn's clientUsernames collection.
+	// The URI of this Message VPN's collection of Client Username objects.
 	ClientUsernamesURI string `json:"clientUsernamesUri,omitempty"`
 
-	// The URI of this MsgVpn's jndiConnectionFactories collection. Available since 2.2.
+	// The URI of this Message VPN's collection of Distributed Cache objects. Available since 2.11.
+	DistributedCachesURI string `json:"distributedCachesUri,omitempty"`
+
+	// The URI of this Message VPN's collection of DMR Bridge objects. Available since 2.11.
+	DmrBridgesURI string `json:"dmrBridgesUri,omitempty"`
+
+	// The URI of this Message VPN's collection of JNDI Connection Factory objects. Available since 2.2.
 	JndiConnectionFactoriesURI string `json:"jndiConnectionFactoriesUri,omitempty"`
 
-	// The URI of this MsgVpn's jndiQueues collection. Available since 2.2.
+	// The URI of this Message VPN's collection of JNDI Queue objects. Available since 2.2.
 	JndiQueuesURI string `json:"jndiQueuesUri,omitempty"`
 
-	// The URI of this MsgVpn's jndiTopics collection. Available since 2.2.
+	// The URI of this Message VPN's collection of JNDI Topic objects. Available since 2.2.
 	JndiTopicsURI string `json:"jndiTopicsUri,omitempty"`
 
-	// The URI of this MsgVpn's mqttSessions collection. Available since 2.1.
+	// The URI of this Message VPN's collection of MQTT Retain Cache objects. Available since 2.11.
+	MqttRetainCachesURI string `json:"mqttRetainCachesUri,omitempty"`
+
+	// The URI of this Message VPN's collection of MQTT Session objects. Available since 2.1.
 	MqttSessionsURI string `json:"mqttSessionsUri,omitempty"`
 
-	// The URI of this MsgVpn's queues collection.
+	// The URI of this Message VPN's collection of Queue objects.
 	QueuesURI string `json:"queuesUri,omitempty"`
 
-	// The URI of this MsgVpn's replayLogs collection. Available since 2.10.
+	// The URI of this Message VPN's collection of Replay Log objects. Available since 2.10.
 	ReplayLogsURI string `json:"replayLogsUri,omitempty"`
 
-	// The URI of this MsgVpn's replicatedTopics collection. Available since 2.9.
+	// The URI of this Message VPN's collection of Replicated Topic objects. Available since 2.9.
 	ReplicatedTopicsURI string `json:"replicatedTopicsUri,omitempty"`
 
-	// The URI of this MsgVpn's restDeliveryPoints collection.
+	// The URI of this Message VPN's collection of REST Delivery Point objects.
 	RestDeliveryPointsURI string `json:"restDeliveryPointsUri,omitempty"`
 
-	// The URI of this MsgVpn's sequencedTopics collection.
+	// The URI of this Message VPN's collection of Sequenced Topic objects.
 	SequencedTopicsURI string `json:"sequencedTopicsUri,omitempty"`
 
-	// The URI of this MsgVpn's topicEndpoints collection. Available since 2.1.
+	// The URI of this Message VPN's collection of Topic Endpoint objects. Available since 2.1.
 	TopicEndpointsURI string `json:"topicEndpointsUri,omitempty"`
 
-	// The URI of this MsgVpn object.
+	// The URI of this Message VPN object.
 	URI string `json:"uri,omitempty"`
 }
 

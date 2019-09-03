@@ -82,7 +82,7 @@ func NewDeleteMsgVpnClientUsernameDefault(code int) *DeleteMsgVpnClientUsernameD
 
 /*DeleteMsgVpnClientUsernameDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnClientUsernameDefault struct {
 	_statusCode int

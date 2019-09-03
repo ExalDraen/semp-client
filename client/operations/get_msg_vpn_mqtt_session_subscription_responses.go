@@ -51,7 +51,7 @@ func NewGetMsgVpnMqttSessionSubscriptionOK() *GetMsgVpnMqttSessionSubscriptionOK
 
 /*GetMsgVpnMqttSessionSubscriptionOK handles this case with default header values.
 
-The MQTT Session Subscription object's attributes, and the request metadata.
+The Subscription object's attributes, and the request metadata.
 */
 type GetMsgVpnMqttSessionSubscriptionOK struct {
 	Payload *models.MsgVpnMqttSessionSubscriptionResponse
@@ -82,7 +82,7 @@ func NewGetMsgVpnMqttSessionSubscriptionDefault(code int) *GetMsgVpnMqttSessionS
 
 /*GetMsgVpnMqttSessionSubscriptionDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnMqttSessionSubscriptionDefault struct {
 	_statusCode int

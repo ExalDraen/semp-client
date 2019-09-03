@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnReplicatedTopicLinks
 type MsgVpnReplicatedTopicLinks struct {
 
-	// The URI of this MsgVpnReplicatedTopic object.
+	// The URI of this Replicated Topic object.
 	URI string `json:"uri,omitempty"`
 }
 

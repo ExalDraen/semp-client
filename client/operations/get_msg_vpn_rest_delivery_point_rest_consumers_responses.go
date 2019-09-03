@@ -82,7 +82,7 @@ func NewGetMsgVpnRestDeliveryPointRestConsumersDefault(code int) *GetMsgVpnRestD
 
 /*GetMsgVpnRestDeliveryPointRestConsumersDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnRestDeliveryPointRestConsumersDefault struct {
 	_statusCode int

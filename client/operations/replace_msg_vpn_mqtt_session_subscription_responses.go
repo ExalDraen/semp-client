@@ -51,7 +51,7 @@ func NewReplaceMsgVpnMqttSessionSubscriptionOK() *ReplaceMsgVpnMqttSessionSubscr
 
 /*ReplaceMsgVpnMqttSessionSubscriptionOK handles this case with default header values.
 
-The MQTT Session Subscription object's attributes after being replaced, and the request metadata.
+The Subscription object's attributes after being replaced, and the request metadata.
 */
 type ReplaceMsgVpnMqttSessionSubscriptionOK struct {
 	Payload *models.MsgVpnMqttSessionSubscriptionResponse
@@ -82,7 +82,7 @@ func NewReplaceMsgVpnMqttSessionSubscriptionDefault(code int) *ReplaceMsgVpnMqtt
 
 /*ReplaceMsgVpnMqttSessionSubscriptionDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type ReplaceMsgVpnMqttSessionSubscriptionDefault struct {
 	_statusCode int

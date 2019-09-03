@@ -15,10 +15,10 @@ import (
 // swagger:model MsgVpnMqttSessionLinks
 type MsgVpnMqttSessionLinks struct {
 
-	// The URI of this MsgVpnMqttSession's subscriptions collection.
+	// The URI of this MQTT Session's collection of Subscription objects.
 	SubscriptionsURI string `json:"subscriptionsUri,omitempty"`
 
-	// The URI of this MsgVpnMqttSession object.
+	// The URI of this MQTT Session object.
 	URI string `json:"uri,omitempty"`
 }
 

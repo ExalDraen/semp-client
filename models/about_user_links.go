@@ -15,10 +15,10 @@ import (
 // swagger:model AboutUserLinks
 type AboutUserLinks struct {
 
-	// The URI of this AboutUser's msgVpns collection.
+	// The URI of this User's collection of User Message VPN objects.
 	MsgVpnsURI string `json:"msgVpnsUri,omitempty"`
 
-	// The URI of this AboutUser object.
+	// The URI of this User object.
 	URI string `json:"uri,omitempty"`
 }
 

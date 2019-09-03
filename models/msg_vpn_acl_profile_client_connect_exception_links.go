@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnAclProfileClientConnectExceptionLinks
 type MsgVpnACLProfileClientConnectExceptionLinks struct {
 
-	// The URI of this MsgVpnAclProfileClientConnectException object.
+	// The URI of this Client Connect Exception object.
 	URI string `json:"uri,omitempty"`
 }
 

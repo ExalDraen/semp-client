@@ -71,17 +71,17 @@ type UpdateMsgVpnJndiTopicParams struct {
 	*/
 	Body *models.MsgVpnJndiTopic
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*TopicName
-	  The topicName of the JNDI Topic.
+	  The JNDI name of the JMS Topic.
 
 	*/
 	TopicName string

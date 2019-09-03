@@ -82,7 +82,7 @@ func NewGetMsgVpnBridgeTLSTrustedCommonNameDefault(code int) *GetMsgVpnBridgeTLS
 
 /*GetMsgVpnBridgeTLSTrustedCommonNameDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnBridgeTLSTrustedCommonNameDefault struct {
 	_statusCode int

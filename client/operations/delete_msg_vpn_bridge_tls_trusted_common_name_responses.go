@@ -82,7 +82,7 @@ func NewDeleteMsgVpnBridgeTLSTrustedCommonNameDefault(code int) *DeleteMsgVpnBri
 
 /*DeleteMsgVpnBridgeTLSTrustedCommonNameDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnBridgeTLSTrustedCommonNameDefault struct {
 	_statusCode int

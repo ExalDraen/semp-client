@@ -19,23 +19,23 @@ import (
 // swagger:model MsgVpnTopicEndpoint
 type MsgVpnTopicEndpoint struct {
 
-	// The Topic Endpoint access type of either "exclusive" or "non-exclusive". The default value is `"exclusive"`. The allowed values and their meaning are:
+	// The access type for delivering messages to consumer flows bound to the Topic Endpoint. The default value is `"exclusive"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "exclusive" - Exclusive delivery of messages to first bound client.
-	// "non-exclusive" - Non-exclusive delivery of messages to all bound clients.
+	// "exclusive" - Exclusive delivery of messages to the first bound consumer flow.
+	// "non-exclusive" - Non-exclusive delivery of messages to all bound consumer flows in a round-robin fashion.
 	// </pre>
 	//  Available since 2.4.
 	// Enum: [exclusive non-exclusive]
 	AccessType string `json:"accessType,omitempty"`
 
-	// Enable or disable the propagation of Consumer ACKs received on the active replication Message VPN to the standby replication Message VPN. The default value is `true`.
+	// Enable or disable the propagation of consumer acknowledgements (ACKs) received on the active replication Message VPN to the standby replication Message VPN. The default value is `true`.
 	ConsumerAckPropagationEnabled bool `json:"consumerAckPropagationEnabled,omitempty"`
 
-	// The name of the Dead Message Queue (DMQ) used by the Topic Endpoint. The default value is `"#DEAD_MSG_QUEUE"`.
+	// The name of the Dead Message Queue (DMQ) used by the Topic Endpoint. The default value is `"#DEAD_MSG_QUEUE"`. Available since 2.2.
 	DeadMsgQueue string `json:"deadMsgQueue,omitempty"`
 
-	// Enable or disable the egress flow of messages from the Topic Endpoint. The default value is `false`.
+	// Enable or disable the transmission of messages from the Topic Endpoint. The default value is `false`.
 	EgressEnabled bool `json:"egressEnabled,omitempty"`
 
 	// event bind count threshold
@@ -47,67 +47,67 @@ type MsgVpnTopicEndpoint struct {
 	// event spool usage threshold
 	EventSpoolUsageThreshold *EventThreshold `json:"eventSpoolUsageThreshold,omitempty"`
 
-	// Enable or disable the ingress flow of messages to the Topic Endpoint. The default value is `false`.
+	// Enable or disable the reception of messages to the Topic Endpoint. The default value is `false`.
 	IngressEnabled bool `json:"ingressEnabled,omitempty"`
 
-	// The maximum number of simultaneous Consumers of the Topic Endpoint. The default value is `1`. Available since 2.4.
+	// The maximum number of consumer flows that can bind to the Topic Endpoint. The default value is `1`. Available since 2.4.
 	MaxBindCount int64 `json:"maxBindCount,omitempty"`
 
-	// The maximum allowed number of messages delivered but not acknowledged per flow for the Topic Endpoint. The default is the maximum value supported by the hardware. The default value is `10000`.
+	// The maximum number of messages delivered but not acknowledged per flow for the Topic Endpoint. The default is the max value supported by the platform.
 	MaxDeliveredUnackedMsgsPerFlow int64 `json:"maxDeliveredUnackedMsgsPerFlow,omitempty"`
 
-	// The maximum message size allowed in the Topic Endpoint, in bytes. The default value is `10000000`.
+	// The maximum message size allowed in the Topic Endpoint, in bytes (B). The default value is `10000000`.
 	MaxMsgSize int32 `json:"maxMsgSize,omitempty"`
 
-	// The maximum number of times the Topic Endpoint will attempt redelivery of a given message prior to it being discarded or moved to the #DEAD_MSG_QUEUE. A value of 0 means to retry forever. The default value is `0`.
+	// The maximum number of times the Topic Endpoint will attempt redelivery of a message prior to it being discarded or moved to the DMQ. A value of 0 means to retry forever. The default value is `0`.
 	MaxRedeliveryCount int64 `json:"maxRedeliveryCount,omitempty"`
 
-	// The maximum Message Spool usage by the Topic Endpoint (quota), in megabytes. Setting the value to zero enables the "last-value-queue" feature and disables quota checking. The default varies by platform. The default varies by platform.
+	// The maximum message spool usage allowed by the Topic Endpoint, in megabytes (MB). A value of 0 only allows spooling of the last message received and disables quota checking. The default varies by platform.
 	MaxSpoolUsage int64 `json:"maxSpoolUsage,omitempty"`
 
-	// The maximum number of seconds that a message can stay in the Topic Endpoint when "respectTtlEnabled" is "true". A message will expire according to the lesser of the TTL in the message (assigned by the Publisher) and the "maxTtl" configured on the Topic Endpoint. "maxTtl" is a 32-bit integer value from 1 to 4294967295 representing the expiry time in seconds. A "maxTtl" of "0" disables this feature. The default value is `0`.
+	// The maximum time in seconds a message can stay in the Topic Endpoint when `respectTtlEnabled` is `"true"`. A message expires when the lesser of the sender assigned time-to-live (TTL) in the message and the `maxTtl` configured for the Topic Endpoint, is exceeded. A value of 0 disables expiry. The default value is `0`.
 	MaxTTL int64 `json:"maxTtl,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// The Client Username which owns the Topic Endpoint. The default value is `""`.
+	// The Client Username that owns the Topic Endpoint and has permission equivalent to `"delete"`. The default value is `""`.
 	Owner string `json:"owner,omitempty"`
 
-	// Permission level for users of the Topic Endpoint, excluding the owner. The default value is `"no-access"`. The allowed values and their meaning are:
+	// The permission level for all consumers of the Topic Endpoint, excluding the owner. The default value is `"no-access"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "no-access" - Disallows all access.
-	// "read-only" - Read-only access to the messages in the Topic Endpoint.
-	// "consume" - Consume (read and remove) messages in the Topic Endpoint.
-	// "modify-topic" - Consume messages or modify the topic/selector of the Topic Endpoint.
-	// "delete" - Consume messages, modify the topic/selector or delete the Topic Endpoint altogether.
+	// "read-only" - Read-only access to the messages.
+	// "consume" - Consume (read and remove) messages.
+	// "modify-topic" - Consume messages or modify the topic/selector.
+	// "delete" - Consume messages, modify the topic/selector or delete the Client created endpoint altogether.
 	// </pre>
 	//
 	// Enum: [no-access read-only consume modify-topic delete]
 	Permission string `json:"permission,omitempty"`
 
-	// Enable or disable if low priority messages are subject to "rejectLowPriorityMsgLimit" checking. This may only be enabled if "rejectMsgToSenderOnDiscardBehavior" does not have a value of "never". The default value is `false`.
+	// Enable or disable the checking of low priority messages against the `rejectLowPriorityMsgLimit`. This may only be enabled if `rejectMsgToSenderOnDiscardBehavior` does not have a value of `"never"`. The default value is `false`.
 	RejectLowPriorityMsgEnabled bool `json:"rejectLowPriorityMsgEnabled,omitempty"`
 
 	// The number of messages of any priority in the Topic Endpoint above which low priority messages are not admitted but higher priority messages are allowed. The default value is `0`.
 	RejectLowPriorityMsgLimit int64 `json:"rejectLowPriorityMsgLimit,omitempty"`
 
-	// The circumstances under which a negative acknowledgement (NACK) is sent to the client on discards. Note that NACKs cause the message to not be delivered to any destination and transacted-session commits to fail. This attribute may only have a value of "never" if "rejectLowPriorityMsgEnabled" is disabled. The default value is `"never"`. The allowed values and their meaning are:
+	// Determines when to return negative acknowledgements (NACKs) to sending clients on message discards. Note that NACKs cause the message to not be delivered to any destination and Transacted Session commits to fail. The default value is `"never"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "always" - Message discards always result in negative acknowledgments (NACKs) being returned to the sending client, even if the discard reason is that the topic-endpoint is disabled.
-	// "when-topic-endpoint-enabled" - Message discards result in negative acknowledgments (NACKs) being returned to the sending client, except if the discard reason is that the Topic Endpoint is disabled.
-	// "never" - Message discards never result in negative acknowledgments (NACKs) being returned to the sending client.
+	// "always" - Always return a negative acknowledgment (NACK) to the sending client on message discard.
+	// "when-topic-endpoint-enabled" - Only return a negative acknowledgment (NACK) to the sending client on message discard when the Topic Endpoint is enabled.
+	// "never" - Never return a negative acknowledgment (NACK) to the sending client on message discard.
 	// </pre>
 	//
 	// Enum: [always when-topic-endpoint-enabled never]
 	RejectMsgToSenderOnDiscardBehavior string `json:"rejectMsgToSenderOnDiscardBehavior,omitempty"`
 
-	// Enable or disable the respecting of message priority. If enabled, messages contained in the Topic Endpoint are delivered in priority order, from 9 (highest) to 0 (lowest). The default value is `false`. Available since 2.8.
+	// Enable or disable the respecting of message priority. When enabled, messages contained in the Topic Endpoint are delivered in priority order, from 9 (highest) to 0 (lowest). The default value is `false`. Available since 2.8.
 	RespectMsgPriorityEnabled bool `json:"respectMsgPriorityEnabled,omitempty"`
 
-	// Enable or disable the respecting of "time to live" (TTL). If enabled, then messages contained in the Topic Endpoint are checked for expiry. If expired, the message is removed from the Topic Endpoint and either discarded or a copy of the message placed in the #DEAD_MSG_QUEUE Endpoint. The default value is `false`.
+	// Enable or disable the respecting of the time-to-live (TTL) for messages in the Topic Endpoint. When enabled, expired messages are discarded or moved to the DMQ. The default value is `false`.
 	RespectTTLEnabled bool `json:"respectTtlEnabled,omitempty"`
 
 	// The name of the Topic Endpoint.

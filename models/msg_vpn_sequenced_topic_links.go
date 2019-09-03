@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnSequencedTopicLinks
 type MsgVpnSequencedTopicLinks struct {
 
-	// The URI of this MsgVpnSequencedTopic object.
+	// The URI of this Sequenced Topic object.
 	URI string `json:"uri,omitempty"`
 }
 

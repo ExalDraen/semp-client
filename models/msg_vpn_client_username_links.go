@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnClientUsernameLinks
 type MsgVpnClientUsernameLinks struct {
 
-	// The URI of this MsgVpnClientUsername object.
+	// The URI of this Client Username object.
 	URI string `json:"uri,omitempty"`
 }
 

@@ -71,22 +71,22 @@ type ReplaceMsgVpnRestDeliveryPointQueueBindingParams struct {
 	*/
 	Body *models.MsgVpnRestDeliveryPointQueueBinding
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueBindingName
-	  The queueBindingName of the Queue Binding.
+	  The name of a queue in the Message VPN.
 
 	*/
 	QueueBindingName string
 	/*RestDeliveryPointName
-	  The restDeliveryPointName of the REST Delivery Point.
+	  The name of the REST Delivery Point.
 
 	*/
 	RestDeliveryPointName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

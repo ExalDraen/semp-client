@@ -82,7 +82,7 @@ func NewDeleteMsgVpnBridgeDefault(code int) *DeleteMsgVpnBridgeDefault {
 
 /*DeleteMsgVpnBridgeDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnBridgeDefault struct {
 	_statusCode int

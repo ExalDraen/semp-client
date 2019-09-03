@@ -76,37 +76,37 @@ for the get msg vpn mqtt session subscriptions operation typically these are wri
 type GetMsgVpnMqttSessionSubscriptionsParams struct {
 
 	/*Count
-	  Limit the count of objects in the response. See [Count](#count "Description of the syntax of the `count` parameter").
+	  Limit the count of objects in the response. See the documentation for the `count` parameter.
 
 	*/
 	Count *int64
 	/*Cursor
-	  The cursor, or position, for the next page of objects. See [Cursor](#cursor "Description of the syntax of the `cursor` parameter").
+	  The cursor, or position, for the next page of objects. See the documentation for the `cursor` parameter.
 
 	*/
 	Cursor *string
 	/*MqttSessionClientID
-	  The mqttSessionClientId of the MQTT Session.
+	  The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 
 	*/
 	MqttSessionClientID string
 	/*MqttSessionVirtualRouter
-	  The mqttSessionVirtualRouter of the MQTT Session.
+	  The virtual router of the MQTT Session.
 
 	*/
 	MqttSessionVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*Where
-	  Include in the response only objects where certain conditions are true. See [Where](#where "Description of the syntax of the `where` parameter").
+	  Include in the response only objects where certain conditions are true. See the the documentation for the `where` parameter.
 
 	*/
 	Where []string

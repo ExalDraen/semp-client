@@ -63,22 +63,22 @@ for the delete msg vpn bridge remote subscription operation typically these are 
 type DeleteMsgVpnBridgeRemoteSubscriptionParams struct {
 
 	/*BridgeName
-	  The bridgeName of the Bridge.
+	  The name of the Bridge.
 
 	*/
 	BridgeName string
 	/*BridgeVirtualRouter
-	  The bridgeVirtualRouter of the Bridge.
+	  The virtual router of the Bridge.
 
 	*/
 	BridgeVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*RemoteSubscriptionTopic
-	  The remoteSubscriptionTopic of the Remote Subscription.
+	  The topic of the Bridge remote subscription.
 
 	*/
 	RemoteSubscriptionTopic string

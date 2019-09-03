@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnReplayLogLinks
 type MsgVpnReplayLogLinks struct {
 
-	// The URI of this MsgVpnReplayLog object.
+	// The URI of this Replay Log object.
 	URI string `json:"uri,omitempty"`
 }
 

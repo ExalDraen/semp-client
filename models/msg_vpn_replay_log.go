@@ -15,13 +15,13 @@ import (
 // swagger:model MsgVpnReplayLog
 type MsgVpnReplayLog struct {
 
-	// Enable or disable the egress flow of messages from the Replay Log. The default value is `false`.
+	// Enable or disable the transmission of messages from the Replay Log. The default value is `false`.
 	EgressEnabled bool `json:"egressEnabled,omitempty"`
 
-	// Enable or disable the ingress flow of messages to the Replay Log. The default value is `false`.
+	// Enable or disable the reception of messages to the Replay Log. The default value is `false`.
 	IngressEnabled bool `json:"ingressEnabled,omitempty"`
 
-	// The maximum spool usage in megabytes (MB) allowed by the Replay Log. If this limit is exceeded, old messages will be trimmed. The default value is `0`.
+	// The maximum spool usage allowed by the Replay Log, in megabytes (MB). If this limit is exceeded, old messages will be trimmed. The default value is `0`.
 	MaxSpoolUsage int64 `json:"maxSpoolUsage,omitempty"`
 
 	// The name of the Message VPN.

@@ -82,7 +82,7 @@ func NewCreateMsgVpnReplicatedTopicDefault(code int) *CreateMsgVpnReplicatedTopi
 
 /*CreateMsgVpnReplicatedTopicDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type CreateMsgVpnReplicatedTopicDefault struct {
 	_statusCode int

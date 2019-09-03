@@ -66,32 +66,32 @@ for the update msg vpn mqtt session subscription operation typically these are w
 type UpdateMsgVpnMqttSessionSubscriptionParams struct {
 
 	/*Body
-	  The MQTT Session Subscription object's attributes.
+	  The Subscription object's attributes.
 
 	*/
 	Body *models.MsgVpnMqttSessionSubscription
 	/*MqttSessionClientID
-	  The mqttSessionClientId of the MQTT Session.
+	  The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 
 	*/
 	MqttSessionClientID string
 	/*MqttSessionVirtualRouter
-	  The mqttSessionVirtualRouter of the MQTT Session.
+	  The virtual router of the MQTT Session.
 
 	*/
 	MqttSessionVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*SubscriptionTopic
-	  The subscriptionTopic of the MQTT Session Subscription.
+	  The MQTT subscription topic.
 
 	*/
 	SubscriptionTopic string

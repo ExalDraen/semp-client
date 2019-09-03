@@ -82,7 +82,7 @@ func NewCreateMsgVpnBridgeRemoteSubscriptionDefault(code int) *CreateMsgVpnBridg
 
 /*CreateMsgVpnBridgeRemoteSubscriptionDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type CreateMsgVpnBridgeRemoteSubscriptionDefault struct {
 	_statusCode int

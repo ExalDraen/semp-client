@@ -15,7 +15,7 @@ import (
 // swagger:model SystemInformationLinks
 type SystemInformationLinks struct {
 
-	// The URI of this SystemInformation object.
+	// The URI of this System Information object.
 	URI string `json:"uri,omitempty"`
 }
 

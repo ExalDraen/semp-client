@@ -22,14 +22,14 @@ type MsgVpnReplicatedTopic struct {
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// Topic for applying replication. Published messages matching this topic will be replicated to the standby site.
+	// The topic for applying replication. Published messages matching this topic will be replicated to the standby site.
 	ReplicatedTopic string `json:"replicatedTopic,omitempty"`
 
-	// Choose the replication-mode for the Replicated Topic. The default value is `"async"`. The allowed values and their meaning are:
+	// The replication mode for the Replicated Topic. The default value is `"async"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "sync" - Synchronous replication-mode. Published messages are acknowledged when they are spooled on the standby site.
-	// "async" - Asynchronous replication-mode. Published messages are acknowledged when they are spooled locally.
+	// "sync" - Messages are acknowledged when replicated (spooled remotely).
+	// "async" - Messages are acknowledged when pending replication (spooled locally).
 	// </pre>
 	//  Available since 2.1.
 	// Enum: [sync async]

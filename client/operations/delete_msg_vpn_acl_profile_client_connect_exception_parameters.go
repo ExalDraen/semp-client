@@ -63,17 +63,17 @@ for the delete msg vpn Acl profile client connect exception operation typically 
 type DeleteMsgVpnACLProfileClientConnectExceptionParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
 	/*ClientConnectExceptionAddress
-	  The clientConnectExceptionAddress of the Client Connect Exception.
+	  The IP address/netmask of the client connect exception in CIDR form.
 
 	*/
 	ClientConnectExceptionAddress string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

@@ -63,17 +63,17 @@ for the delete msg vpn bridge operation typically these are written to a http.Re
 type DeleteMsgVpnBridgeParams struct {
 
 	/*BridgeName
-	  The bridgeName of the Bridge.
+	  The name of the Bridge.
 
 	*/
 	BridgeName string
 	/*BridgeVirtualRouter
-	  The bridgeVirtualRouter of the Bridge.
+	  The virtual router of the Bridge.
 
 	*/
 	BridgeVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

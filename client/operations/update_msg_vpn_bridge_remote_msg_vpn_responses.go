@@ -82,7 +82,7 @@ func NewUpdateMsgVpnBridgeRemoteMsgVpnDefault(code int) *UpdateMsgVpnBridgeRemot
 
 /*UpdateMsgVpnBridgeRemoteMsgVpnDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type UpdateMsgVpnBridgeRemoteMsgVpnDefault struct {
 	_statusCode int

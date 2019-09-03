@@ -63,12 +63,12 @@ for the delete msg vpn client username operation typically these are written to 
 type DeleteMsgVpnClientUsernameParams struct {
 
 	/*ClientUsername
-	  The clientUsername of the Client Username.
+	  The value of the Client Username.
 
 	*/
 	ClientUsername string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

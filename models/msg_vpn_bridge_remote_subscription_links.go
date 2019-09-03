@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnBridgeRemoteSubscriptionLinks
 type MsgVpnBridgeRemoteSubscriptionLinks struct {
 
-	// The URI of this MsgVpnBridgeRemoteSubscription object.
+	// The URI of this Remote Subscription object.
 	URI string `json:"uri,omitempty"`
 }
 

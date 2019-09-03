@@ -66,7 +66,7 @@ for the create msg vpn Acl profile publish exception operation typically these a
 type CreateMsgVpnACLProfilePublishExceptionParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
@@ -76,12 +76,12 @@ type CreateMsgVpnACLProfilePublishExceptionParams struct {
 	*/
 	Body *models.MsgVpnACLProfilePublishException
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

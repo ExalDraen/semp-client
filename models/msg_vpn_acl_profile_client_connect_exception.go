@@ -18,7 +18,7 @@ type MsgVpnACLProfileClientConnectException struct {
 	// The name of the ACL Profile.
 	ACLProfileName string `json:"aclProfileName,omitempty"`
 
-	// The IP Address/Netmask of the Client Connect Exception in the Classless Inter-Domain Routing (CIDR) form.
+	// The IP address/netmask of the client connect exception in CIDR form.
 	ClientConnectExceptionAddress string `json:"clientConnectExceptionAddress,omitempty"`
 
 	// The name of the Message VPN.

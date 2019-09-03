@@ -63,22 +63,22 @@ for the delete msg vpn rest delivery point rest consumer Tls trusted common name
 type DeleteMsgVpnRestDeliveryPointRestConsumerTLSTrustedCommonNameParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*RestConsumerName
-	  The restConsumerName of the REST Consumer.
+	  The name of the REST Consumer.
 
 	*/
 	RestConsumerName string
 	/*RestDeliveryPointName
-	  The restDeliveryPointName of the REST Delivery Point.
+	  The name of the REST Delivery Point.
 
 	*/
 	RestDeliveryPointName string
 	/*TLSTrustedCommonName
-	  The tlsTrustedCommonName of the Trusted Common Name.
+	  The expected trusted common name of the remote certificate.
 
 	*/
 	TLSTrustedCommonName string

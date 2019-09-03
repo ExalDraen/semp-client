@@ -17,11 +17,11 @@ import (
 // swagger:model SystemInformation
 type SystemInformation struct {
 
-	// The platform that is running the API.
+	// The platform running the SEMP API.
 	// Required: true
 	Platform *string `json:"platform"`
 
-	// The SEMP API version.
+	// The version of the SEMP API.
 	// Required: true
 	SempVersion *string `json:"sempVersion"`
 }

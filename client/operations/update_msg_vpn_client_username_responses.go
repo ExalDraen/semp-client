@@ -82,7 +82,7 @@ func NewUpdateMsgVpnClientUsernameDefault(code int) *UpdateMsgVpnClientUsernameD
 
 /*UpdateMsgVpnClientUsernameDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type UpdateMsgVpnClientUsernameDefault struct {
 	_statusCode int

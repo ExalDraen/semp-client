@@ -71,22 +71,22 @@ type ReplaceMsgVpnMqttSessionParams struct {
 	*/
 	Body *models.MsgVpnMqttSession
 	/*MqttSessionClientID
-	  The mqttSessionClientId of the MQTT Session.
+	  The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 
 	*/
 	MqttSessionClientID string
 	/*MqttSessionVirtualRouter
-	  The mqttSessionVirtualRouter of the MQTT Session.
+	  The virtual router of the MQTT Session.
 
 	*/
 	MqttSessionVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

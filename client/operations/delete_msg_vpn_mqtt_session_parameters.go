@@ -63,17 +63,17 @@ for the delete msg vpn mqtt session operation typically these are written to a h
 type DeleteMsgVpnMqttSessionParams struct {
 
 	/*MqttSessionClientID
-	  The mqttSessionClientId of the MQTT Session.
+	  The Client ID of the MQTT Session, which corresponds to the ClientId provided in the MQTT CONNECT packet.
 
 	*/
 	MqttSessionClientID string
 	/*MqttSessionVirtualRouter
-	  The mqttSessionVirtualRouter of the MQTT Session.
+	  The virtual router of the MQTT Session.
 
 	*/
 	MqttSessionVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

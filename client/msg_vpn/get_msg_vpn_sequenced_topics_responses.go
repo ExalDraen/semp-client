@@ -82,7 +82,7 @@ func NewGetMsgVpnSequencedTopicsDefault(code int) *GetMsgVpnSequencedTopicsDefau
 
 /*GetMsgVpnSequencedTopicsDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnSequencedTopicsDefault struct {
 	_statusCode int

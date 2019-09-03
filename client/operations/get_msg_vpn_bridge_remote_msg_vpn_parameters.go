@@ -64,37 +64,37 @@ for the get msg vpn bridge remote msg vpn operation typically these are written 
 type GetMsgVpnBridgeRemoteMsgVpnParams struct {
 
 	/*BridgeName
-	  The bridgeName of the Bridge.
+	  The name of the Bridge.
 
 	*/
 	BridgeName string
 	/*BridgeVirtualRouter
-	  The bridgeVirtualRouter of the Bridge.
+	  The virtual router of the Bridge.
 
 	*/
 	BridgeVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*RemoteMsgVpnInterface
-	  The remoteMsgVpnInterface of the Remote Message VPN.
+	  The physical interface on the local Message VPN host for connecting to the remote Message VPN. By default, an interface is chosen automatically (recommended), but if specified, `remoteMsgVpnLocation` must not be a virtual router name.
 
 	*/
 	RemoteMsgVpnInterface string
 	/*RemoteMsgVpnLocation
-	  The remoteMsgVpnLocation of the Remote Message VPN.
+	  The location of the remote Message VPN as either an FQDN with port, IP address with port, or virtual router name (starting with "v:").
 
 	*/
 	RemoteMsgVpnLocation string
 	/*RemoteMsgVpnName
-	  The remoteMsgVpnName of the Remote Message VPN.
+	  The name of the remote Message VPN.
 
 	*/
 	RemoteMsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

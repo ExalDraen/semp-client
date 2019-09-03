@@ -82,7 +82,7 @@ func NewReplaceMsgVpnJndiQueueDefault(code int) *ReplaceMsgVpnJndiQueueDefault {
 
 /*ReplaceMsgVpnJndiQueueDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type ReplaceMsgVpnJndiQueueDefault struct {
 	_statusCode int

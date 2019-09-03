@@ -76,32 +76,32 @@ for the get msg vpn queue subscriptions operation typically these are written to
 type GetMsgVpnQueueSubscriptionsParams struct {
 
 	/*Count
-	  Limit the count of objects in the response. See [Count](#count "Description of the syntax of the `count` parameter").
+	  Limit the count of objects in the response. See the documentation for the `count` parameter.
 
 	*/
 	Count *int64
 	/*Cursor
-	  The cursor, or position, for the next page of objects. See [Cursor](#cursor "Description of the syntax of the `cursor` parameter").
+	  The cursor, or position, for the next page of objects. See the documentation for the `cursor` parameter.
 
 	*/
 	Cursor *string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueName
-	  The queueName of the Queue.
+	  The name of the Queue.
 
 	*/
 	QueueName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*Where
-	  Include in the response only objects where certain conditions are true. See [Where](#where "Description of the syntax of the `where` parameter").
+	  Include in the response only objects where certain conditions are true. See the the documentation for the `where` parameter.
 
 	*/
 	Where []string

@@ -15,7 +15,7 @@ import (
 // swagger:model MsgVpnAuthorizationGroupLinks
 type MsgVpnAuthorizationGroupLinks struct {
 
-	// The URI of this MsgVpnAuthorizationGroup object.
+	// The URI of this LDAP Authorization Group object.
 	URI string `json:"uri,omitempty"`
 }
 

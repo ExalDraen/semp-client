@@ -63,22 +63,22 @@ for the delete msg vpn bridge Tls trusted common name operation typically these 
 type DeleteMsgVpnBridgeTLSTrustedCommonNameParams struct {
 
 	/*BridgeName
-	  The bridgeName of the Bridge.
+	  The name of the Bridge.
 
 	*/
 	BridgeName string
 	/*BridgeVirtualRouter
-	  The bridgeVirtualRouter of the Bridge.
+	  The virtual router of the Bridge.
 
 	*/
 	BridgeVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*TLSTrustedCommonName
-	  The tlsTrustedCommonName of the Trusted Common Name.
+	  The expected trusted common name of the remote certificate.
 
 	*/
 	TLSTrustedCommonName string

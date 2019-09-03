@@ -82,7 +82,7 @@ func NewGetMsgVpnACLProfileClientConnectExceptionDefault(code int) *GetMsgVpnACL
 
 /*GetMsgVpnACLProfileClientConnectExceptionDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnACLProfileClientConnectExceptionDefault struct {
 	_statusCode int

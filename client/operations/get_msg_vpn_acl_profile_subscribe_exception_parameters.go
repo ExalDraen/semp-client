@@ -64,27 +64,27 @@ for the get msg vpn Acl profile subscribe exception operation typically these ar
 type GetMsgVpnACLProfileSubscribeExceptionParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string
 	/*SubscribeExceptionTopic
-	  The subscribeExceptionTopic of the Subscribe Topic Exception.
+	  The topic for the exception to the default action taken. May include wildcard characters.
 
 	*/
 	SubscribeExceptionTopic string
 	/*TopicSyntax
-	  The topicSyntax of the Subscribe Topic Exception.
+	  The syntax of the topic for the exception to the default action taken.
 
 	*/
 	TopicSyntax string

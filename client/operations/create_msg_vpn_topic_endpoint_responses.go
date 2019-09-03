@@ -82,7 +82,7 @@ func NewCreateMsgVpnTopicEndpointDefault(code int) *CreateMsgVpnTopicEndpointDef
 
 /*CreateMsgVpnTopicEndpointDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type CreateMsgVpnTopicEndpointDefault struct {
 	_statusCode int

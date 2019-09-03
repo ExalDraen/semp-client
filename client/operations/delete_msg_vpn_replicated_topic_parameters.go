@@ -63,12 +63,12 @@ for the delete msg vpn replicated topic operation typically these are written to
 type DeleteMsgVpnReplicatedTopicParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*ReplicatedTopic
-	  The replicatedTopic of the Replicated Topic.
+	  The topic for applying replication. Published messages matching this topic will be replicated to the standby site.
 
 	*/
 	ReplicatedTopic string

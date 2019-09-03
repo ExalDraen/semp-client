@@ -63,7 +63,7 @@ for the delete msg vpn operation typically these are written to a http.Request
 type DeleteMsgVpnParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string

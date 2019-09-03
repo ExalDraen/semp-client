@@ -82,7 +82,7 @@ func NewDeleteMsgVpnJndiQueueDefault(code int) *DeleteMsgVpnJndiQueueDefault {
 
 /*DeleteMsgVpnJndiQueueDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnJndiQueueDefault struct {
 	_statusCode int

@@ -25,9 +25,9 @@ type Client struct {
 }
 
 /*
-GetSystemInformation gets s e m p API version and platform information
+GetSystemInformation gets a system information object
 
-Gets SEMP API version and platform information.
+Get a System Information object.
 
 A SEMP client authorized with a minimum access scope/level of "global/none" is required to perform this operation.
 

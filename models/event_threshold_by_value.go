@@ -15,10 +15,10 @@ import (
 // swagger:model EventThresholdByValue
 type EventThresholdByValue struct {
 
-	// Threshold clear value.
+	// The clear threshold for the absolute value of this counter or rate. Falling below this value will trigger a corresponding event.
 	ClearValue int64 `json:"clearValue,omitempty"`
 
-	// Threshold set value.
+	// The set threshold for the absolute value of this counter or rate. Exceeding this value will trigger a corresponding event.
 	SetValue int64 `json:"setValue,omitempty"`
 }
 

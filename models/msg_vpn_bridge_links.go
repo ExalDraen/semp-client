@@ -15,16 +15,16 @@ import (
 // swagger:model MsgVpnBridgeLinks
 type MsgVpnBridgeLinks struct {
 
-	// The URI of this MsgVpnBridge's remoteMsgVpns collection.
+	// The URI of this Bridge's collection of Remote Message VPN objects.
 	RemoteMsgVpnsURI string `json:"remoteMsgVpnsUri,omitempty"`
 
-	// The URI of this MsgVpnBridge's remoteSubscriptions collection.
+	// The URI of this Bridge's collection of Remote Subscription objects.
 	RemoteSubscriptionsURI string `json:"remoteSubscriptionsUri,omitempty"`
 
-	// The URI of this MsgVpnBridge's tlsTrustedCommonNames collection.
+	// The URI of this Bridge's collection of Trusted Common Name objects.
 	TLSTrustedCommonNamesURI string `json:"tlsTrustedCommonNamesUri,omitempty"`
 
-	// The URI of this MsgVpnBridge object.
+	// The URI of this Bridge object.
 	URI string `json:"uri,omitempty"`
 }
 

@@ -66,7 +66,7 @@ for the replace msg vpn Acl profile operation typically these are written to a h
 type ReplaceMsgVpnACLProfileParams struct {
 
 	/*ACLProfileName
-	  The aclProfileName of the ACL Profile.
+	  The name of the ACL Profile.
 
 	*/
 	ACLProfileName string
@@ -76,12 +76,12 @@ type ReplaceMsgVpnACLProfileParams struct {
 	*/
 	Body *models.MsgVpnACLProfile
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

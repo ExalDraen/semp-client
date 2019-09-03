@@ -64,27 +64,27 @@ for the get msg vpn bridge remote subscription operation typically these are wri
 type GetMsgVpnBridgeRemoteSubscriptionParams struct {
 
 	/*BridgeName
-	  The bridgeName of the Bridge.
+	  The name of the Bridge.
 
 	*/
 	BridgeName string
 	/*BridgeVirtualRouter
-	  The bridgeVirtualRouter of the Bridge.
+	  The virtual router of the Bridge.
 
 	*/
 	BridgeVirtualRouter string
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*RemoteSubscriptionTopic
-	  The remoteSubscriptionTopic of the Remote Subscription.
+	  The topic of the Bridge remote subscription.
 
 	*/
 	RemoteSubscriptionTopic string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

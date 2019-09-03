@@ -19,16 +19,16 @@ import (
 // swagger:model MsgVpn
 type MsgVpn struct {
 
-	// Enable or disable Basic Authentication for clients connecting to the Message VPN. The default value is `true`.
+	// Enable or disable basic authentication for clients connecting to the Message VPN. The default value is `true`.
 	AuthenticationBasicEnabled *bool `json:"authenticationBasicEnabled,omitempty"`
 
-	// The name of the RADIUS or LDAP Profile to use when "authenticationBasicType" is "radius" or "ldap" respectively. The default value is `"default"`.
+	// The name of the RADIUS or LDAP Profile to use for basic authentication. The default value is `"default"`.
 	AuthenticationBasicProfileName *string `json:"authenticationBasicProfileName,omitempty"`
 
-	// The RADIUS domain string to use when "authenticationBasicType" is "radius". The default value is `""`.
+	// The RADIUS domain to use for basic authentication. The default value is `""`.
 	AuthenticationBasicRadiusDomain string `json:"authenticationBasicRadiusDomain,omitempty"`
 
-	// Authentication mechanism to be used for Basic Authentication of clients connecting to the Message VPN. The default value is `"radius"`. The allowed values and their meaning are:
+	// The type of basic authentication to use for clients connecting to the Message VPN. The default value is `"radius"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "internal" - Internal database. Authentication is against Client Usernames.
@@ -40,20 +40,19 @@ type MsgVpn struct {
 	// Enum: [internal ldap radius none]
 	AuthenticationBasicType string `json:"authenticationBasicType,omitempty"`
 
-	// When enabled, if the client specifies a Client Username via the API connect method, the client provided Username is used instead of the CN (Common Name) field of the certificate"s subject. When disabled, the certificate CN is always used as the Client Username. The default value is `false`.
+	// Enable or disable allowing a client to specify a Client Username via the API connect method. When disabled, the certificate CN (Common Name) is always used. The default value is `false`.
 	AuthenticationClientCertAllowAPIProvidedUsernameEnabled bool `json:"authenticationClientCertAllowApiProvidedUsernameEnabled,omitempty"`
 
-	// Enable or disable the Client Certificate client Authentication for the Message VPN. The default value is `false`.
+	// Enable or disable client certificate authentication in the Message VPN. The default value is `false`.
 	AuthenticationClientCertEnabled bool `json:"authenticationClientCertEnabled,omitempty"`
 
-	// The maximum depth for the client certificate chain. The depth of the chain is defined as the number of signing CA certificates that are present in the chain back to the trusted self-signed root CA certificate. The default value is `3`.
+	// The maximum depth for a client certificate chain. The depth of a chain is defined as the number of signing CA certificates that are present in the chain back to a trusted self-signed root CA certificate. The default value is `3`.
 	AuthenticationClientCertMaxChainDepth int64 `json:"authenticationClientCertMaxChainDepth,omitempty"`
 
-	// Define overrides for certificate revocation checking.
-	// For "allow-all" setting, the result of the client certificate revocation check is ignored. For "allow-unknown" setting, the client is authenticated even if the revocation status of his certificate cannot be determined. For "allow-valid" setting, the client is only authenticated if the revocation check returned an explicit positive response. The default value is `"allow-valid"`. The allowed values and their meaning are:
+	// The desired behavior for client certificate revocation checking. The default value is `"allow-valid"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "allow-all" - Allow the client to authenticate, the result of client certificate revocation check is ingored.
+	// "allow-all" - Allow the client to authenticate, the result of client certificate revocation check is ignored.
 	// "allow-unknown" - Allow the client to authenticate even if the revocation status of his certificate cannot be determined.
 	// "allow-valid" - Allow the client to authenticate only when the revocation check returned an explicit positive response.
 	// </pre>
@@ -64,29 +63,29 @@ type MsgVpn struct {
 	// The field from the client certificate to use as the client username. The default value is `"common-name"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "common-name" - the username is extracted from the certificate's Common Name.
-	// "subject-alternate-name-msupn" - the username is extracted from the certificate's Other Name type of the Subject Alternative Name and must have the msUPN signature.
+	// "common-name" - The username is extracted from the certificate's Common Name.
+	// "subject-alternate-name-msupn" - The username is extracted from the certificate's Other Name type of the Subject Alternative Name and must have the msUPN signature.
 	// </pre>
 	//  Available since 2.5.
 	// Enum: [common-name subject-alternate-name-msupn]
 	AuthenticationClientCertUsernameSource string `json:"authenticationClientCertUsernameSource,omitempty"`
 
-	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the client certificate. When disabled, a certificate will be accepted even if the certificate is not valid according to the "Not Before" and "Not After" validity dates in the certificate. The default value is `true`.
+	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the client certificate. The default value is `true`.
 	AuthenticationClientCertValidateDateEnabled bool `json:"authenticationClientCertValidateDateEnabled,omitempty"`
 
-	// When enabled, if the client specifies a Client Username via the API connect method, the client provided Username is used instead of the Kerberos Principal name in Kerberos token. When disabled, the Kerberos Principal name is always used as the Client Username. The default value is `false`.
+	// Enable or disable allowing a client to specify a Client Username via the API connect method. When disabled, the Kerberos Principal name is always used. The default value is `false`.
 	AuthenticationKerberosAllowAPIProvidedUsernameEnabled bool `json:"authenticationKerberosAllowApiProvidedUsernameEnabled,omitempty"`
 
-	// Enable or disable Kerberos Authentication for clients in the Message VPN. If a user provides credentials for a different authentication scheme, this setting is not applicable. The default value is `false`.
+	// Enable or disable Kerberos authentication in the Message VPN. The default value is `false`.
 	AuthenticationKerberosEnabled bool `json:"authenticationKerberosEnabled,omitempty"`
 
-	// The name of the attribute that should be retrieved from the LDAP server as part of the LDAP search when authorizing a client. It indicates that the client belongs to a particular group (i.e. the value associated with this attribute). The default value is `"memberOf"`.
+	// The name of the attribute that is retrieved from the LDAP server as part of the LDAP search when authorizing a client connecting to the Message VPN. The default value is `"memberOf"`.
 	AuthorizationLdapGroupMembershipAttributeName string `json:"authorizationLdapGroupMembershipAttributeName,omitempty"`
 
-	// The LDAP Profile name to be used when "authorizationType" is "ldap". The default value is `""`.
+	// The name of the LDAP Profile to use for client authorization. The default value is `""`.
 	AuthorizationProfileName string `json:"authorizationProfileName,omitempty"`
 
-	// Authorization mechanism to be used for clients connecting to the Message VPN. The default value is `"internal"`. The allowed values and their meaning are:
+	// The type of authorization to use for clients connecting to the Message VPN. The default value is `"internal"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "ldap" - LDAP authorization.
@@ -96,17 +95,20 @@ type MsgVpn struct {
 	// Enum: [ldap internal]
 	AuthorizationType string `json:"authorizationType,omitempty"`
 
-	// Enable or disable validation of the Common Name (CN) in the server certificate from the Remote Router. If enabled, the Common Name is checked against the list of Trusted Common Names configured for the Bridge. The default value is `true`.
+	// Enable or disable validation of the Common Name (CN) in the server certificate from the remote broker. If enabled, the Common Name is checked against the list of Trusted Common Names configured for the Bridge. The default value is `true`.
 	BridgingTLSServerCertEnforceTrustedCommonNameEnabled bool `json:"bridgingTlsServerCertEnforceTrustedCommonNameEnabled,omitempty"`
 
-	// The maximum depth for the server certificate chain. The depth of the chain is defined as the number of signing CA certificates that are present in the chain back to the trusted self-signed root CA certificate. The default value is `3`.
+	// The maximum depth for a server certificate chain. The depth of a chain is defined as the number of signing CA certificates that are present in the chain back to a trusted self-signed root CA certificate. The default value is `3`.
 	BridgingTLSServerCertMaxChainDepth int64 `json:"bridgingTlsServerCertMaxChainDepth,omitempty"`
 
-	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the server certificate. When disabled, a certificate will be accepted even if the certificate is not valid according to the "Not Before" and "Not After" validity dates in the certificate. The default value is `true`.
+	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the server certificate. When disabled, a certificate will be accepted even if the certificate is not valid based on these dates. The default value is `true`.
 	BridgingTLSServerCertValidateDateEnabled bool `json:"bridgingTlsServerCertValidateDateEnabled,omitempty"`
 
 	// Enable or disable managing of cache instances over the message bus. The default value is `true`.
 	DistributedCacheManagementEnabled bool `json:"distributedCacheManagementEnabled,omitempty"`
+
+	// Enable or disable Dynamic Message Routing (DMR) for the Message VPN. The default value is `false`. Available since 2.11.
+	DmrEnabled bool `json:"dmrEnabled,omitempty"`
 
 	// Enable or disable the Message VPN. The default value is `false`.
 	Enabled *bool `json:"enabled,omitempty"`
@@ -129,7 +131,7 @@ type MsgVpn struct {
 	// event ingress msg rate threshold
 	EventIngressMsgRateThreshold *EventThresholdByValue `json:"eventIngressMsgRateThreshold,omitempty"`
 
-	// Size in KB for what is being considered a large message for the Message VPN. The default value is `1024`.
+	// The threshold, in kilobytes, after which a message is considered to be large for the Message VPN. The default value is `1024`.
 	EventLargeMsgThreshold int64 `json:"eventLargeMsgThreshold,omitempty"`
 
 	// A prefix applied to all published Events in the Message VPN. The default value is `""`.
@@ -193,59 +195,54 @@ type MsgVpn struct {
 	// Enable or disable JNDI access for clients in the Message VPN. The default value is `false`. Available since 2.2.
 	JndiEnabled bool `json:"jndiEnabled,omitempty"`
 
-	// The maximum number of client connections that can be simultaneously connected to the Message VPN. This value may be higher than supported by the hardware. The default is the maximum value supported by the hardware. The default is the max value supported by the hardware.
+	// The maximum number of client connections to the Message VPN. The default is the max value supported by the platform.
 	MaxConnectionCount *int64 `json:"maxConnectionCount,omitempty"`
 
-	// The maximum number of egress flows that can be created in the Message VPN. The default value is `16000`.
+	// The maximum number of transmit flows that can be created in the Message VPN. The default value is `1000`.
 	MaxEgressFlowCount *int64 `json:"maxEgressFlowCount,omitempty"`
 
-	// The maximum number of Queues and Topic Endpoints that can be created in the Message VPN. The default value is `16000`.
+	// The maximum number of Queues and Topic Endpoints that can be created in the Message VPN. The default value is `1000`.
 	MaxEndpointCount *int64 `json:"maxEndpointCount,omitempty"`
 
-	// The maximum number of ingress flows that can be created in the Message VPN. The default value is `16000`.
+	// The maximum number of receive flows that can be created in the Message VPN. The default value is `1000`.
 	MaxIngressFlowCount *int64 `json:"maxIngressFlowCount,omitempty"`
 
-	// The maximum Message Spool usage by the Message VPN, in megabytes. The default value is `0`.
+	// The maximum message spool usage by the Message VPN, in megabytes. The default value is `0`.
 	MaxMsgSpoolUsage *int64 `json:"maxMsgSpoolUsage,omitempty"`
 
-	// The maximum number of local client subscriptions (both primary and backup) that can be added to the Message VPN. The default varies by platform. The default varies by platform.
+	// The maximum number of local client subscriptions (both primary and backup) that can be added to the Message VPN. The default varies by platform.
 	MaxSubscriptionCount *int64 `json:"maxSubscriptionCount,omitempty"`
 
-	// The maximum number of transacted sessions for the Message VPN. The default varies by platform. The default varies by platform.
+	// The maximum number of transacted sessions that can be created in the Message VPN. The default varies by platform.
 	MaxTransactedSessionCount *int64 `json:"maxTransactedSessionCount,omitempty"`
 
-	// The maximum number of transactions for the Message VPN. The default varies by platform. The default varies by platform.
+	// The maximum number of transactions that can be created in the Message VPN. The default varies by platform.
 	MaxTransactionCount *int64 `json:"maxTransactionCount,omitempty"`
+
+	// The maximum total memory usage of the MQTT Retain feature for this Message VPN, in MB. If the maximum memory is reached, any arriving retain messages that require more memory are discarded.
+	//
+	// A value of -1 indicates that the memory is bounded only by the global max memory limit. A value of 0 prevents MQTT Retain from becoming operational. The default value is `-1`. Available since 2.11.
+	MqttRetainMaxMemory int32 `json:"mqttRetainMaxMemory,omitempty"`
 
 	// The name of the Message VPN.
 	MsgVpnName string `json:"msgVpnName,omitempty"`
 
-	// IP version to use if DNS lookup contains both an IPv4 and IPv6 address. The default value is `"ipv6"`. The allowed values and their meaning are:
-	//
-	// <pre>
-	// "ipv4" - Use IPv4 address when DNS lookup contains both an IPv4 and IPv6 address.
-	// "ipv6" - Use IPv6 address when DNS lookup contains both an IPv4 and IPv6 address.
-	// </pre>
-	//  Available since 2.9.
-	// Enum: [ipv4 ipv6]
-	PreferIPVersion string `json:"preferIpVersion,omitempty"`
-
-	// The acknowledgement (ACK) propagation interval for the Replication Bridge, in number of replicated messages. The default value is `20`.
+	// The acknowledgement (ACK) propagation interval for the replication Bridge, in number of replicated messages. The default value is `20`.
 	ReplicationAckPropagationIntervalMsgCount int64 `json:"replicationAckPropagationIntervalMsgCount,omitempty"`
 
-	// The Client Username the Replication Bridge uses to login to the Remote Message VPN on the Replication mate. The default value is `""`.
+	// The Client Username the replication Bridge uses to login to the remote Message VPN. The default value is `""`.
 	ReplicationBridgeAuthenticationBasicClientUsername string `json:"replicationBridgeAuthenticationBasicClientUsername,omitempty"`
 
-	// The password the Replication Bridge uses to login to the Remote Message VPN on the Replication mate. The default is to have no password. The default is to have no `replicationBridgeAuthenticationBasicPassword`.
+	// The password for the Client Username. The default is to have no `replicationBridgeAuthenticationBasicPassword`.
 	ReplicationBridgeAuthenticationBasicPassword string `json:"replicationBridgeAuthenticationBasicPassword,omitempty"`
 
-	// The PEM formatted content for the client certificate used by this bridge to login to the Remote Message VPN. It must consist of a private key and between one and three certificates comprising the certificate trust chain. The default value is `""`. Available since 2.9.
+	// The PEM formatted content for the client certificate used by this bridge to login to the Remote Message VPN. It must consist of a private key and between one and three certificates comprising the certificate trust chain. Changing this attribute requires an HTTPS connection. The default value is `""`. Available since 2.9.
 	ReplicationBridgeAuthenticationClientCertContent string `json:"replicationBridgeAuthenticationClientCertContent,omitempty"`
 
-	// The password for the client certificate used by this bridge to login to the Remote Message VPN. The default value is `""`. Available since 2.9.
+	// The password for the client certificate. Changing this attribute requires an HTTPS connection. The default value is `""`. Available since 2.9.
 	ReplicationBridgeAuthenticationClientCertPassword string `json:"replicationBridgeAuthenticationClientCertPassword,omitempty"`
 
-	// The Authentication Scheme for the Replication Bridge in the Message VPN. The default value is `"basic"`. The allowed values and their meaning are:
+	// The authentication scheme for the replication Bridge in the Message VPN. The default value is `"basic"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "basic" - Basic Authentication Scheme (via username and password).
@@ -255,25 +252,25 @@ type MsgVpn struct {
 	// Enum: [basic client-certificate]
 	ReplicationBridgeAuthenticationScheme string `json:"replicationBridgeAuthenticationScheme,omitempty"`
 
-	// Whether compression is used for the Replication Bridge. The default value is `false`.
+	// Enable or disable use of compression for the replication Bridge. The default value is `false`.
 	ReplicationBridgeCompressedDataEnabled bool `json:"replicationBridgeCompressedDataEnabled,omitempty"`
 
-	// The size of the window used for guaranteed messages published to the Replication Bridge, in messages. The default value is `255`.
+	// The size of the window used for guaranteed messages published to the replication Bridge, in messages. The default value is `255`.
 	ReplicationBridgeEgressFlowWindowSize int64 `json:"replicationBridgeEgressFlowWindowSize,omitempty"`
 
-	// Number of seconds that must pass before retrying the Replication Bridge connection. The default value is `3`.
+	// The number of seconds that must pass before retrying the replication Bridge connection. The default value is `3`.
 	ReplicationBridgeRetryDelay int64 `json:"replicationBridgeRetryDelay,omitempty"`
 
-	// Enable or disable use of TLS for the Replication Bridge connection. The default value is `false`.
+	// Enable or disable use of TLS for the replication Bridge connection. The default value is `false`.
 	ReplicationBridgeTLSEnabled bool `json:"replicationBridgeTlsEnabled,omitempty"`
 
-	// The Client Profile for the Unidirectional Replication Bridge. The Client Profile must exist in the local Message VPN, and it is used only for the TCP parameters. The default value is `"#client-profile"`.
+	// The Client Profile for the unidirectional replication Bridge in the Message VPN. It is used only for the TCP parameters. The default value is `"#client-profile"`.
 	ReplicationBridgeUnidirectionalClientProfileName string `json:"replicationBridgeUnidirectionalClientProfileName,omitempty"`
 
-	// Enable or disable the Replication feature for the Message VPN. The default value is `false`.
+	// Enable or disable replication for the Message VPN. The default value is `false`.
 	ReplicationEnabled *bool `json:"replicationEnabled,omitempty"`
 
-	// The behavior to take when enabling the Replication feature for the Message VPN, depending on the existence of the Replication Queue. The default value is `"fail-on-existing-queue"`. The allowed values and their meaning are:
+	// The behavior to take when enabling replication for the Message VPN, depending on the existence of the replication Queue. The default value is `"fail-on-existing-queue"`. The allowed values and their meaning are:
 	//
 	// <pre>
 	// "fail-on-existing-queue" - The data replication queue must not already exist.
@@ -284,30 +281,30 @@ type MsgVpn struct {
 	// Enum: [fail-on-existing-queue force-use-existing-queue force-recreate-queue]
 	ReplicationEnabledQueueBehavior string `json:"replicationEnabledQueueBehavior,omitempty"`
 
-	// The maximum Message Spool usage by the Replication Bridge Queue (quota), in megabytes. The default value is `60000`.
+	// The maximum message spool usage by the replication Bridge local Queue (quota), in megabytes. The default value is `60000`.
 	ReplicationQueueMaxMsgSpoolUsage int64 `json:"replicationQueueMaxMsgSpoolUsage,omitempty"`
 
-	// Assign the message discard behavior, that is the circumstances under which a negative acknowledgement (NACK) is sent to the Client on the Replication Bridge Queue discards. The default value is `true`.
+	// Enable or disable whether messages discarded on the replication Bridge local Queue are rejected back to the sender. The default value is `true`.
 	ReplicationQueueRejectMsgToSenderOnDiscardEnabled bool `json:"replicationQueueRejectMsgToSenderOnDiscardEnabled,omitempty"`
 
-	// Enable or disable the synchronously replicated topics ineligible behavior of the Replication Bridge. If enabled and the synchronous replication becomes ineligible, guaranteed messages published to synchronously replicated topics will be rejected back to the sender as a negative acknowledgement (NACK). If disabled, the synchronous replication will revert to the asynchronous one. The default value is `false`.
+	// Enable or disable whether guaranteed messages published to synchronously replicated Topics are rejected back to the sender when synchronous replication becomes ineligible. The default value is `false`.
 	ReplicationRejectMsgWhenSyncIneligibleEnabled bool `json:"replicationRejectMsgWhenSyncIneligibleEnabled,omitempty"`
 
 	// The replication role for the Message VPN. The default value is `"standby"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "active" - Assume the Active role in Replication for the Message VPN.
-	// "standby" - Assume the Standby role in Replication for the Message VPN.
+	// "active" - Assume the Active role in replication for the Message VPN.
+	// "standby" - Assume the Standby role in replication for the Message VPN.
 	// </pre>
 	//
 	// Enum: [active standby]
 	ReplicationRole string `json:"replicationRole,omitempty"`
 
-	// The transaction replication mode for all transactions within the Message VPN. When mode is asynchronous, all transactions originated by clients are replicated to the standby site using the asynchronous replication. When mode is synchronous, all transactions originated by clients are replicated to the standby site using the synchronous replication. Changing this value during operation will not affect existing transactions, it is only used upon starting a transaction. The default value is `"async"`. The allowed values and their meaning are:
+	// The transaction replication mode for all transactions within the Message VPN. Changing this value during operation will not affect existing transactions; it is only used upon starting a transaction. The default value is `"async"`. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "sync" - Synchronous replication-mode. Published messages are acknowledged when they are spooled on the standby site.
-	// "async" - Asynchronous replication-mode. Published messages are acknowledged when they are spooled locally.
+	// "sync" - Messages are acknowledged when replicated (spooled remotely).
+	// "async" - Messages are acknowledged when pending replication (spooled locally).
 	// </pre>
 	//
 	// Enum: [sync async]
@@ -316,10 +313,10 @@ type MsgVpn struct {
 	// Enable or disable validation of the Common Name (CN) in the server certificate from the remote REST Consumer. If enabled, the Common Name is checked against the list of Trusted Common Names configured for the REST Consumer. The default value is `true`.
 	RestTLSServerCertEnforceTrustedCommonNameEnabled bool `json:"restTlsServerCertEnforceTrustedCommonNameEnabled,omitempty"`
 
-	// The maximum depth for the server certificate from the remote REST Consumer chain. The depth of the chain is defined as the number of signing CA certificates that are present in the chain back to the trusted self-signed root CA certificate. The default value is `3`.
+	// The maximum depth for a REST Consumer server certificate chain. The depth of a chain is defined as the number of signing CA certificates that are present in the chain back to a trusted self-signed root CA certificate. The default value is `3`.
 	RestTLSServerCertMaxChainDepth int64 `json:"restTlsServerCertMaxChainDepth,omitempty"`
 
-	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the server certificate from the remote REST Consumer. When disabled, a certificate will be accepted even if the certificate is not valid according to the "Not Before" and "Not After" validity dates in the certificate. The default value is `true`.
+	// Enable or disable validation of the "Not Before" and "Not After" validity dates in the REST Consumer server certificate. The default value is `true`.
 	RestTLSServerCertValidateDateEnabled bool `json:"restTlsServerCertValidateDateEnabled,omitempty"`
 
 	// Enable or disable "admin client" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
@@ -334,13 +331,10 @@ type MsgVpn struct {
 	// Enable or disable SEMP over the message bus for the current Message VPN. The default value is `true`.
 	SempOverMsgBusEnabled bool `json:"sempOverMsgBusEnabled,omitempty"`
 
-	// Enable or disable "legacy-show-clear" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
-	SempOverMsgBusLegacyShowClearEnabled bool `json:"sempOverMsgBusLegacyShowClearEnabled,omitempty"`
-
 	// Enable or disable "show" SEMP over the message bus commands for the current Message VPN. The default value is `false`.
 	SempOverMsgBusShowEnabled bool `json:"sempOverMsgBusShowEnabled,omitempty"`
 
-	// The maximum number of AMQP client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the hardware. Available since 2.2.
+	// The maximum number of AMQP client connections that can be simultaneously connected to the Message VPN. This value may be higher than supported by the platform. The default is the max value supported by the platform. Available since 2.2.
 	ServiceAmqpMaxConnectionCount int64 `json:"serviceAmqpMaxConnectionCount,omitempty"`
 
 	// Enable or disable the plain-text AMQP service in the Message VPN. Disabling causes clients connected to the corresponding listen-port to be disconnected. The default value is `false`. Available since 2.2.
@@ -355,7 +349,7 @@ type MsgVpn struct {
 	// The port number for AMQP clients that connect to the Message VPN over TLS. The default is to have no `serviceAmqpTlsListenPort`. Available since 2.2.
 	ServiceAmqpTLSListenPort int64 `json:"serviceAmqpTlsListenPort,omitempty"`
 
-	// The maximum number of MQTT client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the hardware. Available since 2.1.
+	// The maximum number of MQTT client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the platform. Available since 2.1.
 	ServiceMqttMaxConnectionCount int64 `json:"serviceMqttMaxConnectionCount,omitempty"`
 
 	// Enable or disable the plain-text MQTT service in the Message VPN. Disabling causes clients currently connected to be disconnected. The default value is `false`. Available since 2.1.
@@ -382,7 +376,7 @@ type MsgVpn struct {
 	// The port number for plain-text MQTT clients that connect to the Message VPN using WebSocket. The default value is `0`. Available since 2.1.
 	ServiceMqttWebSocketListenPort int64 `json:"serviceMqttWebSocketListenPort,omitempty"`
 
-	// The maximum number of REST incoming client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the hardware.
+	// The maximum number of REST incoming client connections that can be simultaneously connected to the Message VPN. This value may be higher than supported by the platform. The default is the max value supported by the platform.
 	ServiceRestIncomingMaxConnectionCount int64 `json:"serviceRestIncomingMaxConnectionCount,omitempty"`
 
 	// Enable or disable the plain-text REST service for incoming clients in the Message VPN. Disabling causes clients currently connected to be disconnected. The default value is `false`.
@@ -401,7 +395,7 @@ type MsgVpn struct {
 	//
 	// <pre>
 	// "gateway" - Act as a message gateway through which REST messages are propagated.
-	// "messaging" - Act as a message router on which REST messages are queued.
+	// "messaging" - Act as a message broker on which REST messages are queued.
 	// </pre>
 	//  Available since 2.6.
 	// Enum: [gateway messaging]
@@ -410,7 +404,7 @@ type MsgVpn struct {
 	// The maximum number of REST Consumer (outgoing) client connections that can be simultaneously connected to the Message VPN. The default varies by platform.
 	ServiceRestOutgoingMaxConnectionCount int64 `json:"serviceRestOutgoingMaxConnectionCount,omitempty"`
 
-	// The maximum number of SMF client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the hardware.
+	// The maximum number of SMF client connections that can be simultaneously connected to the Message VPN. This value may be higher than supported by the platform. The default is the max value supported by the platform.
 	ServiceSmfMaxConnectionCount int64 `json:"serviceSmfMaxConnectionCount,omitempty"`
 
 	// Enable or disable the plain-text SMF service in the Message VPN. Disabling causes clients currently connected to be disconnected. The default value is `true`.
@@ -419,7 +413,7 @@ type MsgVpn struct {
 	// Enable or disable the use of TLS for the SMF service in the Message VPN. Disabling causes clients currently connected over TLS to be disconnected. The default value is `true`.
 	ServiceSmfTLSEnabled bool `json:"serviceSmfTlsEnabled,omitempty"`
 
-	// The maximum number of Web Transport client connections that can be simultaneously connected to the Message VPN. The default is the max value supported by the hardware.
+	// The maximum number of Web Transport client connections that can be simultaneously connected to the Message VPN. This value may be higher than supported by the platform. The default is the max value supported by the platform.
 	ServiceWebMaxConnectionCount int64 `json:"serviceWebMaxConnectionCount,omitempty"`
 
 	// Enable or disable the plain-text Web Transport service in the Message VPN. Disabling causes clients currently connected to be disconnected. The default value is `true`.
@@ -513,10 +507,6 @@ func (m *MsgVpn) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateEventTransactionCountThreshold(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePreferIPVersion(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1044,49 +1034,6 @@ func (m *MsgVpn) validateEventTransactionCountThreshold(formats strfmt.Registry)
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var msgVpnTypePreferIPVersionPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["ipv4","ipv6"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		msgVpnTypePreferIPVersionPropEnum = append(msgVpnTypePreferIPVersionPropEnum, v)
-	}
-}
-
-const (
-
-	// MsgVpnPreferIPVersionIPV4 captures enum value "ipv4"
-	MsgVpnPreferIPVersionIPV4 string = "ipv4"
-
-	// MsgVpnPreferIPVersionIPV6 captures enum value "ipv6"
-	MsgVpnPreferIPVersionIPV6 string = "ipv6"
-)
-
-// prop value enum
-func (m *MsgVpn) validatePreferIPVersionEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, msgVpnTypePreferIPVersionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *MsgVpn) validatePreferIPVersion(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.PreferIPVersion) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validatePreferIPVersionEnum("preferIpVersion", "body", m.PreferIPVersion); err != nil {
-		return err
 	}
 
 	return nil

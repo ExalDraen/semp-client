@@ -64,17 +64,17 @@ for the get msg vpn jndi queue operation typically these are written to a http.R
 type GetMsgVpnJndiQueueParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueName
-	  The queueName of the JNDI Queue.
+	  The JNDI name of the JMS Queue.
 
 	*/
 	QueueName string
 	/*Select
-	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See [Select](#select "Description of the syntax of the `select` parameter").
+	  Include in the response only selected attributes of the object, or exclude from the response selected attributes of the object. See the documentation for the `select` parameter.
 
 	*/
 	Select []string

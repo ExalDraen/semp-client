@@ -51,7 +51,7 @@ func NewGetMsgVpnReplayLogsOK() *GetMsgVpnReplayLogsOK {
 
 /*GetMsgVpnReplayLogsOK handles this case with default header values.
 
-The list of ReplayLog objects' attributes, and the request metadata.
+The list of Replay Log objects' attributes, and the request metadata.
 */
 type GetMsgVpnReplayLogsOK struct {
 	Payload *models.MsgVpnReplayLogsResponse
@@ -82,7 +82,7 @@ func NewGetMsgVpnReplayLogsDefault(code int) *GetMsgVpnReplayLogsDefault {
 
 /*GetMsgVpnReplayLogsDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetMsgVpnReplayLogsDefault struct {
 	_statusCode int

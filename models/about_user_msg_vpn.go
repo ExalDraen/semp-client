@@ -19,12 +19,12 @@ import (
 // swagger:model AboutUserMsgVpn
 type AboutUserMsgVpn struct {
 
-	// Message VPN access level of the Current User. The allowed values and their meaning are:
+	// The Message VPN access level of the User. The allowed values and their meaning are:
 	//
 	// <pre>
-	// "none" - No access allowed.
-	// "read-only" - Read only.
-	// "read-write" - Read and Write.
+	// "none" - No access.
+	// "read-only" - Read only access.
+	// "read-write" - Read and write access.
 	// </pre>
 	//
 	// Enum: [none read-only read-write]

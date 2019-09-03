@@ -63,12 +63,12 @@ for the delete msg vpn jndi queue operation typically these are written to a htt
 type DeleteMsgVpnJndiQueueParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueName
-	  The queueName of the JNDI Queue.
+	  The JNDI name of the JMS Queue.
 
 	*/
 	QueueName string

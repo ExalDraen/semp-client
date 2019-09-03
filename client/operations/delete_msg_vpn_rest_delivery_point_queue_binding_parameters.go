@@ -63,17 +63,17 @@ for the delete msg vpn rest delivery point queue binding operation typically the
 type DeleteMsgVpnRestDeliveryPointQueueBindingParams struct {
 
 	/*MsgVpnName
-	  The msgVpnName of the Message VPN.
+	  The name of the Message VPN.
 
 	*/
 	MsgVpnName string
 	/*QueueBindingName
-	  The queueBindingName of the Queue Binding.
+	  The name of a queue in the Message VPN.
 
 	*/
 	QueueBindingName string
 	/*RestDeliveryPointName
-	  The restDeliveryPointName of the REST Delivery Point.
+	  The name of the REST Delivery Point.
 
 	*/
 	RestDeliveryPointName string

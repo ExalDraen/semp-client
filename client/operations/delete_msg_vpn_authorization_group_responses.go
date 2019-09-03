@@ -82,7 +82,7 @@ func NewDeleteMsgVpnAuthorizationGroupDefault(code int) *DeleteMsgVpnAuthorizati
 
 /*DeleteMsgVpnAuthorizationGroupDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type DeleteMsgVpnAuthorizationGroupDefault struct {
 	_statusCode int

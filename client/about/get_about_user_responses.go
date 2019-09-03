@@ -51,7 +51,7 @@ func NewGetAboutUserOK() *GetAboutUserOK {
 
 /*GetAboutUserOK handles this case with default header values.
 
-The Current User object's attributes, and the request metadata.
+The User object's attributes, and the request metadata.
 */
 type GetAboutUserOK struct {
 	Payload *models.AboutUserResponse
@@ -82,7 +82,7 @@ func NewGetAboutUserDefault(code int) *GetAboutUserDefault {
 
 /*GetAboutUserDefault handles this case with default header values.
 
-Error response
+The error response.
 */
 type GetAboutUserDefault struct {
 	_statusCode int

@@ -14,3 +14,7 @@ First formal release
 ### Added
 
 * Changelog
+
+### Changed
+
+* Switch to Go modules.
